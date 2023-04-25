@@ -13,7 +13,7 @@ const Productbox = styled.div`
    align-items: flex-start;
 `
 
-const Info = styled.div`
+export const Info = styled.div`
 display: flex;
 flex-direction: column;
 width: 405px;
@@ -35,7 +35,7 @@ p{
     color: #FFFFFF;
 }
 `
-const Imagebox = styled.div`
+export const  Imagebox = styled.div`
 align-items: center;
 justify-content: center;
 display: flex;
@@ -50,7 +50,7 @@ object-fit: cover;
 }
 `
 
-const Namebox = styled.div`
+export const Namebox = styled.div`
 align-items: center;
 justify-content: center;
 gap: 10px;

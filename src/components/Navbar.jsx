@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
+import { AuthContext } from '../context/AuthContext'
+import { signOut } from 'firebase/auth'
+import { auth } from '../firebase'
 
 const Container = styled.div`
 height: 60px;
@@ -18,6 +21,9 @@ width: 100%;
 gap: 8px;
 padding: 15px 87px;
 justify-content: space-between;
+img{
+  cursor: pointer;
+}
 `
 
 const Center = styled.div`
@@ -66,8 +72,53 @@ cursor: pointer;
 }
 `
 
+const UserModal = styled.div`
+position:absolute;
+padding:${({navbar}) => (navbar ? '5px 5px' : '0px 0px')};
+border-radius: 10px;
+background: #F5F5F5;
+top: ${({navbar}) => (navbar ? '80px' : '70px')};
+opacity: ${({navbar}) => (navbar ? '1' : '0')};
+transition: 450ms;
+right:10px;
+display: flex;
+flex-direction: column;
+ul {
+    list-style: none;
+    width: 100%;
+    li{
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        color: #3A4F5C;
+        :hover{
+          background: #00806E;
+          color: #FFFFFF;
+        }
+    }
+}
+`
+
 
 const Navbar = () => {
+
+  const {currentUser} = useContext(AuthContext)
+  const [navbar,setNavBar] = useState(false)
+  
+  const toggleNav = () => {
+    setNavBar(!navbar)
+  }
+      
+      const handleSignOut = (e) => {
+          e.preventDefault();
+          signOut(auth).then(() => {
+           console.log("User has logged out")
+          }).catch((error) => {
+            console.log(error);
+          })
+        }
+
   return (
     <Container>
       <Wrapper>
@@ -80,8 +131,19 @@ const Navbar = () => {
         <Link to="/About" style={{textDecoration:"none"}}> <p>About Us</p></Link>
       </Center>
       <Right>
-        <img src='./images/Vector.png'/>
-        <Link to="/Landing" style={{textDecoration:"none"}}> <Button>Sign Up</Button> </Link>
+        <img src='./images/Vector.png' alt='search'/>
+        {currentUser ?
+         <Button onClick={handleSignOut}>Log out</Button> : 
+         <Link to="/Landing" style={{textDecoration:"none"}}> <Button>Sign Up</Button> </Link>}
+        <img onClick={toggleNav} src='./images/menuicon.png' alt='menu'/>
+
+        <UserModal navbar={navbar}>
+                <ul>
+                <Link to="/Profile" style={{textDecoration:"none"}}> <li>Profile</li></Link>
+                  <li onClick={handleSignOut}>Log out</li>
+                </ul>
+              </UserModal>
+
       </Right>
       </Wrapper>
     </Container>

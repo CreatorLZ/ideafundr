@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
 
 
 
@@ -400,8 +401,8 @@ const Landing = () => {
     Get investment for your brightest Idea by demonstrating<br/> in a fully immersive virtual environment
     </Secondp>
     <Buttondiv>
-        <Button1>Sign In</Button1>
-        <Button2>Sign Up Now</Button2>
+    <Link to="/Login"><Button1>Sign In</Button1></Link>
+        <Link to="/Register"> <Button2>Sign Up Now</Button2></Link>
     </Buttondiv>
     </Left>
     <Right>

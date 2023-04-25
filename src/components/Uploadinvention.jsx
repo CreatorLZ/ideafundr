@@ -4,6 +4,8 @@ import { useState } from 'react'
 import styled from 'styled-components';
 import { P2 } from '../pages/About';
 import { Button } from '../pages/Landing';
+import Spinner from './Spinner';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
 display: flex;
@@ -33,13 +35,13 @@ iframe{
 
 const Uploadinvention = () => {
     const [name, setName] = useState("");
-    const [selectedFile, setSelectedFile] = useState(null);
-    const [selectedImage, setSelectedImage] = useState(null);
     const [siteId, setSiteId] = useState(null);
     const [deployFormData, setDeployFormData] = useState(new FormData());
+    const [loading , setLoading] = useState(false)
     const [sites, setSites] = useState([]);
     useEffect(()=> {
         console.log('working')
+        setLoading(true)
         // get list of all swfit xr projects
         fetch('https://api.swiftxr.io/v1/sites/list',{
             method: 'GET',
@@ -51,7 +53,9 @@ const Uploadinvention = () => {
         }).then(response=> response.json())
         .then((res) => {
             console.log(res);
+            setLoading(false)
             setSites(res.sites);
+            
         })
         .catch(error => console.error(error));
     },[]);
@@ -129,14 +133,16 @@ const Uploadinvention = () => {
             </form>
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gridGap: '1rem' }}>
-      {sites.map(site => (
+      { loading ? <Spinner/> : sites.map(site => (
+        <div>
         <div key={site.id} style={{ maxWidth: '400px', height: '410px' }}>
           <iframe src={site.site_url} style={{ width: '100%', height: '100%', border: 'none' }} />
-          <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
-                <p style={{color:'#3A4F5C'}}>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</p>
-                <Button>View</Button>
-                </div>
         </div>
+          <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
+          <p style={{color:'#3A4F5C'}}>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</p>
+          <Link to="/Invention"> <Button style={{cursor:'pointer'}}>View</Button></Link>
+          </div>
+          </div>
       ))}
     </div>
      

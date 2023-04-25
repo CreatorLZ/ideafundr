@@ -133,11 +133,10 @@ const Home = () => {
         </Whybox>
         <Wrappercard>
             <Child>
-                <img src='./images/SwiftXR 2.png'/>
+            <img src='./images/SwiftXR 2.png'/>
                 <P1>Headset</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
-                <P2>Easy device connection
-Max. 30 hrs battery life</P2>
+                <P2>6061 aluminum frame and fork provide a smooth, stable ride Mechanical disc brakes offer excellent...</P2>
                 <Button>View</Button>
                 </div>
             </Child>
