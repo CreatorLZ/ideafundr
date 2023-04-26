@@ -6,6 +6,7 @@ import Coming from '../components/Coming'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 export const Container = styled.div`
 width: 100%;
@@ -121,6 +122,8 @@ padding: 5px;
 
 const Home = () => {
   return (
+    <div>
+        <Navbar/>
     <Container>
         <Wrapper>
         <Slider/>
@@ -245,6 +248,7 @@ const Home = () => {
         <Newsletter/>
         <Footer/>
     </Container>
+    </div>
   )
 }
 

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Button, Button1 } from './Landing'
 import { Buttondiv } from './Home'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 const Container = styled.div`
 width: 100%;
@@ -139,6 +140,8 @@ gap: 10px;
 
 const Profile = () => {
   return (
+    <div>
+        <Navbar/>
    <Container>
    <Wrapper>
    <Info >
@@ -244,6 +247,7 @@ const Profile = () => {
    </Descriptionbox>
    <Footer/>
    </Container>
+   </div>
   )
 }
 

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
 
 
 
@@ -390,6 +391,8 @@ margin-left:40px;
 
 const Landing = () => {
   return (
+    <div>
+    <Navbar/>
    <Container>
     <Wrapper>
         <Firstprompt>
@@ -487,6 +490,7 @@ const Landing = () => {
        <Footer/>
     </Wrapper>
    </Container>
+   </div>
   )
 }
 

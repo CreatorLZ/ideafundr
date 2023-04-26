@@ -4,6 +4,7 @@ import { Thirdprompt2, Thirdpromptdiv1, Thirdpromptdiv2, Thirdpromptdiv3, Thirdp
 import Coming2 from '../components/Coming2'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 
 const Container = styled.div`
@@ -53,6 +54,8 @@ color: #F2F2F2;
 
 const About = () => {
   return (
+    <div>
+        <Navbar/>
     <Container>
   <Whoweare>
     <Right>
@@ -107,6 +110,7 @@ IdeaFundr continuously strive to improve and enhance our platform based on user 
         <Newsletter/>
         <Footer/>
     </Container>
+    </div>
   )
 }
 
