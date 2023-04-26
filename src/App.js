@@ -50,11 +50,11 @@ function App() {
     <Route path='/' element={<Root/>}>
     <Route index element ={currentUser ?<Home/> : <Landing/>}/>
     <Route path='/Landing' element ={<Landing/>}/>
-    <Route path='/About' element ={currentUser ? <Landing/>: <About/>}/>
-    <Route path='/Explore' element ={currentUser ? <Landing/>:<Explore/>}/>
-    <Route path='/Invention' element ={currentUser ? <Landing/>:<Invention/>}/>
-    <Route path='/Investors' element ={currentUser ? <Landing/>:<Investors/>}/>
-    <Route path='/Inventors' element ={currentUser ? <Landing/>:<Inventors/>}/>
+    <Route path='/About' element ={currentUser ? <About/> : <Landing/>}/>
+    <Route path='/Explore' element ={currentUser ? <Explore/>:<Landing/>}/>
+    <Route path='/Invention' element ={currentUser ?<Invention/> :<Landing/>}/>
+    <Route path='/Investors' element ={currentUser ? <Investors/>:<Landing/>}/>
+    <Route path='/Inventors' element ={currentUser ? <Inventors/> :<Landing/>}/>
     <Route path='/Register' element ={currentUser? <Home/>:<Register/>}/>
     <Route path='/Login' element ={currentUser? <Home/>:<Login/>}/>
     <Route path='/Profile' element ={currentUser? <Profile/>:<Landing/>}/>
