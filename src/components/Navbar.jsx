@@ -124,11 +124,11 @@ const Navbar = () => {
       <Wrapper>
      <Link to="/"> <Logo src='./images/Logo.png' alt='Logo'  /></Link>
       <Center >
-      <Link to="/" style={{textDecoration:"none"}}><p>Home</p></Link>
-      <Link to="/Explore" style={{textDecoration:"none"}}> <p>Explore</p></Link>
-      <Link to="/Inventors" style={{textDecoration:"none"}}><p>Inventors</p></Link>
-      <Link to="/Investors" style={{textDecoration:"none"}}><p>Investors</p></Link>
-        <Link to="/About" style={{textDecoration:"none"}}> <p>About Us</p></Link>
+      <Link to="/" style={{textDecoration:"none",color: '#3A4F5C'}}><p>Home</p></Link>
+      <Link to="/Explore" style={{textDecoration:"none",color: '#3A4F5C'}}> <p>Explore</p></Link>
+      <Link to="/Inventors" style={{textDecoration:"none",color: '#3A4F5C'}}><p>Inventors</p></Link>
+      <Link to="/Investors" style={{textDecoration:"none",color: '#3A4F5C'}}><p>Investors</p></Link>
+        <Link to="/About" style={{textDecoration:"none",color: '#3A4F5C'}}> <p>About Us</p></Link>
       </Center>
       <Right>
         <img src='./images/Vector.png' alt='search'/>

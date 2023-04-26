@@ -1,10 +1,10 @@
 import React from 'react'
-import Uploadinvention from '../components/Uploadinvention'
+import Allinventions from '../components/Allinventions'
 
 const Explore = () => {
   return (
     <div>
-      <Uploadinvention/>
+      <Allinventions/>
     </div>
   )
 }

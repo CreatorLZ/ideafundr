@@ -9,6 +9,7 @@ const Inventors = () => {
       <Comingsoon style={{width:'100%', heigth:'100%'}}>
         Coming soon
       </Comingsoon>
+      {/* <iframe src="https://ideafundr.wordpress.com" title="Ideafundr Blog" style={{width:'100%', height:'600px'}}></iframe> */}
       </Container>
     </div>
   )

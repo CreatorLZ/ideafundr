@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Logo } from './Navbar'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
 display: flex;
@@ -30,6 +31,7 @@ const FlexItem = styled.div`
   box-sizing: border-box;
   padding: 10px;
   cursor: pointer;
+  color: #3A4F5C;
 `;
 
 const Socialdiv = styled.div`
@@ -58,14 +60,14 @@ const Footer = () => {
     <Logo src='./images/Logo.png' alt='Logo'  />
     <Wrapper>
     <FlexContainer>
-      <FlexItem>About Us</FlexItem>
+      <FlexItem><Link to="/About" style={{textDecoration:"none",color: '#3A4F5C'}}>About Us</Link></FlexItem>
       <FlexItem>FAQ's </FlexItem>
       <FlexItem>Home</FlexItem>
       <FlexItem>Inventors</FlexItem>
       <FlexItem>Privacy Policy</FlexItem>
       <FlexItem>Contact Us</FlexItem>
-      <FlexItem>Blogs</FlexItem>
-      <FlexItem>Explore</FlexItem>
+      <FlexItem><a href="https://ideafundr.wordpress.com" style={{textDecoration:'none',color: '#3A4F5C'}}>Blog</a></FlexItem>
+      <FlexItem><Link to="/Explore" style={{textDecoration:"none",color: '#3A4F5C'}}>Explore</Link></FlexItem>
       <FlexItem>Investors</FlexItem>
       <FlexItem>Terms & Condition</FlexItem>
     </FlexContainer>

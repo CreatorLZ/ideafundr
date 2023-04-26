@@ -33,7 +33,7 @@ iframe{
 }
 `
 
-const Uploadinvention = () => {
+const Allinventions = () => {
     const [name, setName] = useState("");
     const [siteId, setSiteId] = useState(null);
     const [deployFormData, setDeployFormData] = useState(new FormData());
@@ -119,7 +119,7 @@ const Uploadinvention = () => {
        }
   return (
     <Container>
-        <div>
+        <div style={{display:'none'}}>
      <form onSubmit={handleSubmit}>
      <input 
      type='text'
@@ -136,7 +136,7 @@ const Uploadinvention = () => {
       { loading ? <Spinner/> : sites.map(site => (
         <div>
         <div key={site.id} style={{ maxWidth: '400px', height: '410px' }}>
-          <iframe src={site.site_url} style={{ width: '100%', height: '100%', border: 'none' }} />
+          <iframe src={site.site_url} title='models' style={{ width: '100%', height: '100%', border: 'none' }} />
         </div>
           <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
           <p style={{color:'#3A4F5C'}}>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</p>
@@ -150,4 +150,4 @@ const Uploadinvention = () => {
   )
 }
 
-export default Uploadinvention
+export default Allinventions

@@ -5,6 +5,7 @@ import { Button, Button1, Whybox } from './Landing'
 import Coming from '../components/Coming'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
 width: 100%;
@@ -133,51 +134,51 @@ const Home = () => {
         </Whybox>
         <Wrappercard>
             <Child>
-            <img src='./images/SwiftXR 2.png'/>
+            <img src='./images/SwiftXR 2.png' alt=''/>
                 <P1>Headset</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>6061 aluminum frame and fork provide a smooth, stable ride Mechanical disc brakes offer excellent...</P2>
-                <Button>View</Button>
+                <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
             <Child>
-                <img src='./images/Bicyle1.png'/>
+                <img src='./images/Bicyle1.png'alt=''/>
                 <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>6061 aluminum frame and fork provide a smooth, stable ride Mechanical disc brakes offer excellent...</P2>
-                <Button>View</Button>
+                <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
             <Child>
-                <img src='./images/mouse.png'/>
+                <img src='./images/mouse.png'alt=''/>
                 <P1>Mouse - Easy to use Wireless optical mouse</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>Quiet tactile clicking, Long-lasting battery life, Customizable seven-button inputs</P2>
-                <Button>View</Button>
+                <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
             <Child>
-                <img src='./images/Ride.png'/>
+                <img src='./images/Ride.png'alt=''/>
                 <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>6061 aluminum frame and fork provide a smooth, stable ride Mechanical disc brakes offer excellent...</P2>
-                <Button>View</Button>
+                <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
             <Child>
-                <img src='./images/SwiftXR.png'/>
+                <img src='./images/SwiftXR.png' alt=''/>
                 <P1>Bmax car</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>Front-wheel drive, 18-In. Graphite-Colored Alloy Wheels, LED Headlights With DRL</P2>
-                <Button>View</Button>
+                <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
             <Child>
-                <img src='./images/Knife.png'/>
+                <img src='./images/Knife.png' alt=''/>
                 <P1>Qknives - The perfect kitchen knife series</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
-                <Button>View</Button>
+                <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
         </Wrappercard>
@@ -189,24 +190,24 @@ const Home = () => {
         </Whybox>
         <Wrappercard2>
         <Child>
-                <img src='./images/Rectangle 11.png'/>
-                <P1>Qknives - The perfect kitchen knife series</P1>
+                <img src='./images/2.png' alt=''/>
+                <P1>Aliko Dangote</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
                 </div>
             </Child>
             <Child>
-                <img src='./images/Rec.png'/>
-                <P1>Qknives - The perfect kitchen knife series</P1>
+                <img src='./images/1.png' alt=''/>
+                <P1>Nigerian man</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
                 </div>
             </Child>
             <Child>
-                <img src='./images/Recta.png'/>
-                <P1>Qknives - The perfect kitchen knife series</P1>
+                <img src='./images/Rectangle 11 (3).png' alt=''/>
+                <P1>Nigerian woman</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
@@ -223,19 +224,19 @@ const Home = () => {
         </Whybox>
         <div style={{display:"flex", gap:"60px",marginTop:"40px"}}>
             <Categorycard>
-                <img src='images/Frame 436.png'/>
+                <img src='images/Frame 436.png' alt=''/>
                 <p>Home</p>
             </Categorycard>
             <Categorycard>
-            <img src='images/Frame 437.png'/>
+            <img src='images/Frame 437.png' alt=''/>
                 <p>Phones </p>
             </Categorycard>
             <Categorycard>
-            <img src='images/Frame 438.png'/>
+            <img src='images/Frame 438.png' alt=''/>
                 <p>Health</p>
             </Categorycard>
             <Categorycard>
-            <img src='images/Frame 439.png'/>
+            <img src='images/Frame 439.png' alt=''/>
                 <p>Transportation</p>
             </Categorycard>
             </div>
