@@ -409,11 +409,11 @@ const Landing = () => {
     </Buttondiv>
     </Left>
     <Right>
-    <img src='./images/Rectangle1.png'/>
+    <img src='./images/Rectangle1.png' alt='image'/>
     </Right>
         </Firstprompt>
         <Secondprompt>
-        <img src='./images/Rectangle2.png'/>
+        <img src='./images/Rectangle2.png' alt='image'/>
         <Secondprompttext>
         <P1>
             Are you an inventor?
@@ -454,7 +454,7 @@ const Landing = () => {
             <Button2>Showcase Your Invention</Button2>
           </Buttondiv>
         </Secondprompttext>
-        <img src='./images/Rectangle3.png'/>
+        <img src='./images/Rectangle3.png' alt='image'/>
         </Thirdprompt>
         <Thirdprompt2>
         <Whybox>

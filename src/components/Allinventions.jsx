@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
 import styled from 'styled-components';
-import { P2 } from '../pages/About';
 import { Button } from '../pages/Landing';
 import Spinner from './Spinner';
 import { Link } from 'react-router-dom';
@@ -15,28 +14,8 @@ flex-direction: column;
 padding: 60px;
 `
 
-const Iframebox = styled.div`
-display: grid;
-  grid-template-columns: repeat(3, 400px);
-  grid-template-rows: repeat(2, 410px);
-  grid-gap: 20px;
-  padding: 55px;
-align-items: flex-start;
-
-iframe{
-    width: 400px;
-  height: 410px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  object-fit: cover;
-}
-`
-
 const Allinventions = () => {
     const [name, setName] = useState("");
-    const [siteId, setSiteId] = useState(null);
     const [deployFormData, setDeployFormData] = useState(new FormData());
     const [loading , setLoading] = useState(false)
     const [sites, setSites] = useState([]);
@@ -69,7 +48,6 @@ const Allinventions = () => {
       }
        const handleSubmit = (e) =>{
         e.preventDefault();
-        const uploadFile = deployFormData;
 
         // set the site configs
 
@@ -96,7 +74,6 @@ const Allinventions = () => {
         .then((res)=>{
             console.log(res);
             const site_id = res?.site?.site_id
-            setSiteId(res?.site?.site_id);
             console.log('Gotten site Id: ' + site_id);
              //upload the 3d model to the site
 
@@ -137,8 +114,8 @@ const Allinventions = () => {
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gridGap: '1rem' }}>
       { loading ? <Spinner/> : sites.map(site => (
-        <div>
-        <div key={site.id} style={{ maxWidth: '400px', height: '410px' }}>
+        <div key={site.id}>
+        <div style={{ maxWidth: '400px', height: '410px' }}>
           <iframe src={site.site_url} title='models' style={{ width: '100%', height: '100%', border: 'none' }} />
         </div>
           <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>

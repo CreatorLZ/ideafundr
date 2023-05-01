@@ -74,9 +74,9 @@ const Footer = () => {
     <Socialdiv>
         <p>Social Media</p>
         <Icons>
-        <img src='./images/001-facebook.png' />
-        <img src='./images/003-twitter.png' />
-        <img src='./images/004-instagram.png' />
+        <img src='./images/001-facebook.png' alt='image' />
+        <img src='./images/003-twitter.png' alt='image' />
+        <img src='./images/004-instagram.png' alt='image' />
         </Icons>
     </Socialdiv>
     </Wrapper>

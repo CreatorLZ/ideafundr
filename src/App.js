@@ -13,7 +13,6 @@ import {createBrowserRouter,
      Link,
      Outlet,
      RouterProvider,
-     createHashRouter
 } from 'react-router-dom'
 import Explore from './pages/Explore';
 import Invention from './pages/Invention';
@@ -45,7 +44,7 @@ function App() {
   const {currentUser} = useContext(AuthContext)
   console.log(currentUser);
 
-  const router = createHashRouter(
+  const router = createBrowserRouter(
     createRoutesFromElements(
     <Route path='/' element={<Root/>}>
     <Route index element ={currentUser ?<Home/> : <Landing/>}/>

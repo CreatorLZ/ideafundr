@@ -86,6 +86,7 @@ flex-direction: column;
 ul {
     list-style: none;
     width: 100%;
+    padding: 10px;
     li{
         padding: 10px;
         border-radius: 5px;

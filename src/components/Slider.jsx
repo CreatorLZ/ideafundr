@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const images = [  { id: 1, image: './images/SwiftXR.png' },  { id: 2, image: './images/mouse.png' },  { id: 3, image: './images/Knife.png' },  { id: 4, image: './images/mouse.png' },  { id: 5, image: './images/SwiftXR.png' }];
+const images = [ 
+      { id: 1, image: './images/SwiftXR.png'},
+      { id: 2, image: './images/mouse.png' }, 
+      { id: 3, image: './images/Knife.png' }, 
+      { id: 4, image: './images/mouse.png' }, 
+      { id: 5, image: './images/Bicyle1.png'}];
 
 const SliderWrapper = styled.div`
   position: relative;
   width: 80%;
   height: 400px;
   overflow: hidden;
-  object-fit: cover;
 `;
 
 const Slide = styled.div`
@@ -19,17 +23,14 @@ const Slide = styled.div`
   height: 100%;
   opacity: ${({ active }) => active ? 1 : 0};
   transition: opacity 0.5s ease-in-out;
-  object-fit:cover;
 
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  img{
-    object-fit: cover;
-  }
+  object-fit: contain;
+  
 `;
 
 const ButtonWrapper = styled.div`

@@ -66,7 +66,7 @@ const About = () => {
 Our web platform is designed to streamline the investment process and provide a secure environment for product owners to find the right funding opportunities.
 Our team is made up of experienced professionals who understand the challenges of securing investments for product development. We are committed to providing a user-friendly platform that 
 offers valuable resources and support to help product owners navigate the investment landscape.</P2>
-    <img src='images/Rectangle 27.png'/>
+    <img src='images/Rectangle 27.png' alt='image'/>
     </Left>
   </Whoweare>
   <Thirdprompt2>
@@ -96,7 +96,7 @@ offers valuable resources and support to help product owners navigate the invest
         <Whoweare>
         <P1>What We Do</P1>
         <Left style={{gap:"10px"}}>
-        <img src='images/Rectangle 28.png'/>
+        <img src='images/Rectangle 28.png' alt='image'/>
     <P2>At IdeaFundr, our mission is to empower product owners by providing a seamless platform to connect with potential investors and secure funding for their products
 
 We foster a community of like-minded product owners and investors, allowing you to network, collaborate, and learn from each other.

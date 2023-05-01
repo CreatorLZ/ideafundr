@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Button1 } from './Landing'
-import { Buttondiv } from './Home'
+import {  Button1 } from './Landing'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
@@ -146,7 +145,7 @@ const Profile = () => {
    <Wrapper>
    <Info >
     <Imagebox>
-   <img src='./images/Recta.png'/>
+   <img src='./images/Recta.png' alt='image'/>
 <Namebox style={{display:'flex', flexDirection:'column'}}>
     <h3>Rokeeb Abdul</h3>
     <p>Ogun State, Nigeria  1:00am Local time</p>

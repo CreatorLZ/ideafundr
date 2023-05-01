@@ -68,11 +68,25 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
-              navigate("/");
+             // Set session timeout for 1 hour (in milliseconds)
+            const oneHourInMs = 60 * 60 * 1000;
+            auth.setPersistence(auth.Auth.Persistence.SESSION).then(() => {
+              auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                  auth.currentUser.getIdTokenResult(true)
+                    .then((idTokenResult) => {
+                      const authTimeInMs = idTokenResult.claims.auth_time * 1000;
+                      const expirationTime = authTimeInMs + oneHourInMs;
+                      const nowInMs = new Date().getTime();
+                      const delay = expirationTime - nowInMs;
+                      setTimeout(() => navigate("/"), delay);
+                    });
+                });
+            });
           } catch (err) {
             console.log(err);
             setError(true);
-              setLoading(false);
+            setLoading(false);
           }
         });
       });

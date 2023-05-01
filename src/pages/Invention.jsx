@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from './Landing'
 import { Buttondiv, Container } from './Home'
-import { Left, P1, Right } from './About'
+import { P1 } from './About'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
 
@@ -162,7 +162,7 @@ Try it , you'll adopt it</p>
    <Info >
     <h2>Inventor Information</h2>
     <Imagebox>
-   <img src='./images/Recta.png'/>
+   <img src='./images/Recta.png' alt='image'/>
 <Namebox style={{display:'flex', flexDirection:'column'}}>
     <h3>Rokeeb Abdul</h3>
     <p>Ogun State, Nigeria</p>
