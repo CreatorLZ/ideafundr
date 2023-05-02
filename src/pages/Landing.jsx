@@ -437,18 +437,17 @@ const Landing = () => {
         <Thirdprompt>
         <Secondprompttext>
         <P1 style={{color:" #3A4F5C"}}>
-            Are you an inventor?
+        Are you an Investor?
           </P1>
           <P2 style={{color:" #3A4F5C"}}>
-          Showcase your invention to prospective investors, so you <br/> can secure funding to bring your product to market and<br/> scale as you wish.
-          </P2>
+          Find promising inventions to invest in, so that you can<br/> support innovative ideas and potentially earn a return <br/>on your investment.          </P2>
           <P3 style={{color:" #3A4F5C"}}>
           Here’s what you need to do
           </P3>
           <Whattododiv>
             <Whattodobox2 style={{background: "#1D2D35"}}><p style={{ color:"#FFFFFF"}}>Create a detailed profile of your invention</p></Whattodobox2>
-            <Whattodobox2><p>Upload your invention demonstration using AR/VR</p></Whattodobox2>
-            <Whattodobox2><p>Connect with potential investors who might be interested in your idea</p></Whattodobox2>
+            <Whattodobox2 style={{background: "#1D2D35"}}><p style={{ color:"#FFFFFF"}}>Search for inventions based on your investment criteria</p></Whattodobox2>
+            <Whattodobox2 style={{background: "#1D2D35"}}><p style={{ color:"#FFFFFF"}}>Discover New Inventions</p></Whattodobox2>
           </Whattododiv>
           <Buttondiv style={{justifyContent:"center"}}>
             <Button2>Showcase Your Invention</Button2>

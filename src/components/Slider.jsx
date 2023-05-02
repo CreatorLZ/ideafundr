@@ -5,8 +5,9 @@ const images = [
       { id: 1, image: './images/SwiftXR.png'},
       { id: 2, image: './images/mouse.png' }, 
       { id: 3, image: './images/Knife.png' }, 
-      { id: 4, image: './images/mouse.png' }, 
-      { id: 5, image: './images/Bicyle1.png'}];
+      { id: 4, image: './images/SwiftXR 2.png' }, 
+      { id: 5, image: './images/Bicyle1.png'},
+      { id: 6, image: './images/Ride.png'}];
 
 const SliderWrapper = styled.div`
   position: relative;

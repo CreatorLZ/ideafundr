@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import {  Button1 } from './Landing'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import { AuthContext } from '../context/AuthContext'
 
 const Container = styled.div`
 width: 100%;
@@ -51,10 +52,10 @@ width: 70%;
 height: 108px;
 padding-top: 140px;
 img{
-    width: 94px;
+    width: 204px;
 height: 94px;
 border-radius: 50%;
-object-fit: cover;
+object-fit: contain;
 }
 `
 
@@ -138,6 +139,7 @@ gap: 10px;
 `
 
 const Profile = () => {
+    const {currentUser} = useContext(AuthContext)
   return (
     <div>
         <Navbar/>
@@ -145,9 +147,9 @@ const Profile = () => {
    <Wrapper>
    <Info >
     <Imagebox>
-   <img src='./images/Recta.png' alt='image'/>
+   <img src={currentUser.photoURL} alt='image'/>
 <Namebox style={{display:'flex', flexDirection:'column'}}>
-    <h3>Rokeeb Abdul</h3>
+    <h3>{currentUser.displayName}</h3>
     <p>Ogun State, Nigeria  1:00am Local time</p>
 </Namebox>
     </Imagebox>

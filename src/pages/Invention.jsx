@@ -4,6 +4,7 @@ import { Buttondiv, Container } from './Home'
 import { P1 } from './About'
 import styled from 'styled-components'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 
 
 const Productbox = styled.div`
@@ -119,6 +120,8 @@ padding-left: 60px;
 
 const Invention = () => {
   return (
+    <div>
+        <Navbar/>
     <Container>
     <Productbox>
    <P1 style={{fontSize:'28px', color:'#1D2D35'}}>Invention Information</P1>
@@ -183,6 +186,7 @@ Try it , you'll adopt it</p>
    </Descriptionbox>
    <Footer/>
     </Container>
+    </div>
   )
 }
 
