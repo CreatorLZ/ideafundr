@@ -48,7 +48,7 @@ padding-top:50px;
    overflow: hidden;
    padding-left: 10px;
    line-height: 40px;
-   padding-top:10px;
+   padding-top:none;
 }
 `
 
