@@ -39,14 +39,15 @@ padding-top:50px;
    overflow: hidden;
  
 }
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 480px) {
    img{
     display: none;
    }
    background: linear-gradient(101.97deg, #FDFAFA 0.31%, rgba(217, 217, 217, 0.48) 100%), url(./images/Rectangle1.png) no-repeat center center fixed;
    background-size:cover;
    overflow: hidden;
-   padding-left: 30px;
+   padding-left: 10px;
+   line-height: 40px;
 }
 `
 
@@ -86,11 +87,17 @@ line-height: 22px;
 color: white;
 margin-top:25px;
 margin-bottom:10px;
+@media only screen and (max-width: 480px) {
+   margin-bottom:40px;
+}
 `
 const Whattododiv = styled.div`
 display: flex;
 gap: 20px;
 margin-bottom:80px;
+@media only screen and (max-width: 480px) {
+    display: none;
+}
 `
 const Whattodobox2 = styled.div`
 display: flex;
@@ -115,6 +122,10 @@ color: #1D2D35;
 }
 @media only screen and (max-width: 550px) {
    width: 140px;
+}
+@media only screen and (max-width: 480px) {
+    display: none; 
+   
 }
 `
 
@@ -152,6 +163,9 @@ width: 250px;
 @media only screen and (max-width: 580px) {
    width: 230px;
 }
+@media only screen and (max-width: 480px) {
+   width: 170px;
+}
 `
 
 const Button2 = styled.button`
@@ -172,6 +186,9 @@ cursor: pointer;
 @media only screen and (max-width: 580px) {
    width: 230px;
 }
+@media only screen and (max-width: 480px) {
+   width: 170px;
+}
 `
 
 const Firstp = styled.p`
@@ -179,6 +196,10 @@ font-style: normal;
 font-weight: 600;
 font-size: 64px;
 line-height: 87px;
+@media only screen and (max-width: 480px) {
+   line-height: 70px;
+   font-size: 50px;
+}
 `
 const Secondp = styled.p`
 font-style: normal;
@@ -186,6 +207,9 @@ font-weight: 400;
 font-size: 22px;
 line-height: 33px;
 margin-bottom:30px;
+@media only screen and (max-width: 480px) {
+   font-size: 20px;
+}
 `
 
 
@@ -206,7 +230,11 @@ background: #1D2D35;
 align-items: center;
 overflow: hidden;
 display: flex;
-
+ul{
+  display: none;
+  color: white;
+  gap: 15px;
+}
 img{
     width: 553px;
 height: 387px;
@@ -217,7 +245,18 @@ object-fit: cover;
    img{
     display: none;
    }
-   
+   button{
+      display: none;
+    } 
+}
+@media only screen and (max-width: 480px) {
+   img{
+    display: none;
+   }
+   ul{
+    display: flex;
+    flex-direction: column;
+   }
 }
 `
 const Thirdprompt = styled.div`
@@ -228,19 +267,33 @@ align-items: center;
 color: #3A4F5C;
 overflow: hidden;
 display: flex;
-
+ul{
+  display: none;
+}
 img{
     width: 553px;
 height: 387px;
 padding-left:88px;
 object-fit: cover;
 }
+
 @media only screen and (max-width: 850px) {
    img{
     display: none;
    }
    overflow: scroll;
+   ul{
+    display: flex;
+    flex-direction: column;
+    color: #3A4F5C;
+    gap: 15px;
+   }
+   button{
+    display: none;
+   }
+   margin-left:none;
 }
+
 `
 
 export const Thirdprompt2 = styled.div`
@@ -503,6 +556,11 @@ const Landing = () => {
             <Whattodobox2><p>Upload your invention demonstration using AR/VR</p></Whattodobox2>
             <Whattodobox2><p>Connect with potential investors who might be interested in your idea</p></Whattodobox2>
           </Whattododiv>
+          <ul>
+            <li><p>Create a detailed profile of your invention</p></li>
+            <li><p>Upload your invention demonstration using AR/VR</p></li>
+            <li><p>Connect with potential investors who might be interested in your idea</p></li>
+          </ul>
           <Buttondiv style={{justifyContent:"center"}}>
             <Button2>Showcase Your Invention</Button2>
           </Buttondiv>
@@ -525,6 +583,11 @@ const Landing = () => {
           </Whattododiv>
           <Buttondiv style={{justifyContent:"center"}}>
             <Button2>Discover New Inventions</Button2>
+            <ul>
+              <li><p>Create a detailed profile of your invention</p></li>
+              <li><p>Search for inventions based on your investment criteria</p></li>
+              <li><p>Connect with inventors</p></li>
+            </ul>
           </Buttondiv>
         </Secondprompttext>
         <img src='./images/Rectangle3.png' alt='image'/>
