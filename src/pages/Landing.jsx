@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
 
 
 
@@ -17,6 +16,7 @@ display: flex;
 width: 100%;
 height:100%;
 flex-direction:column;
+
 `
 
 const Firstprompt = styled.div`
@@ -30,6 +30,24 @@ align-items: center;
 justify-content: space-between;
 padding: 15px 60px;
 padding-top:50px;
+@media only screen and (max-width: 850px) {
+   img{
+    display: none;
+   }
+   background: linear-gradient(101.97deg, #FDFAFA 0.31%, rgba(217, 217, 217, 0.48) 100%), url(./images/Rectangle1.png) no-repeat center center fixed;
+   background-size:cover;
+   overflow: hidden;
+ 
+}
+@media only screen and (max-width: 580px) {
+   img{
+    display: none;
+   }
+   background: linear-gradient(101.97deg, #FDFAFA 0.31%, rgba(217, 217, 217, 0.48) 100%), url(./images/Rectangle1.png) no-repeat center center fixed;
+   background-size:cover;
+   overflow: hidden;
+   padding-left: 30px;
+}
 `
 
 const Right = styled.div`
@@ -81,6 +99,7 @@ height: 160px;
 background: #FFFFFF;
 border-radius: 8px;
 align-items: center;
+justify-content: center;
 text-align: center;
 p{
   font-style: normal;
@@ -88,9 +107,14 @@ font-weight: 400;
 font-size: 16px;
 line-height: 22px;
 text-align: center;
-margin-left:12px;
 
 color: #1D2D35;
+}
+@media only screen and (max-width: 850px) {
+  width: 150px;
+}
+@media only screen and (max-width: 550px) {
+   width: 140px;
 }
 `
 
@@ -99,12 +123,14 @@ export const Button = styled.button`
 padding: 16px 32px;
 gap: 8px;
 background-color: #00806E;
+color:#FEFEFE ;
 border: none;
 border-radius:8px;
 cursor: pointer;
 :hover{
   transition:250ms;
   background-color: white;
+  color:#00806E;
 }
 `
 
@@ -122,6 +148,10 @@ width: 250px;
   background-color: #00806E;
   color: white;
 }
+
+@media only screen and (max-width: 580px) {
+   width: 230px;
+}
 `
 
 const Button2 = styled.button`
@@ -137,6 +167,10 @@ cursor: pointer;
   transition:250ms;
   background-color: white;
   color: #00806E;
+}
+
+@media only screen and (max-width: 580px) {
+   width: 230px;
 }
 `
 
@@ -179,6 +213,12 @@ height: 387px;
 padding-left:88px;
 object-fit: cover;
 }
+@media only screen and (max-width: 850px) {
+   img{
+    display: none;
+   }
+   
+}
 `
 const Thirdprompt = styled.div`
 width: 100%;
@@ -194,6 +234,12 @@ img{
 height: 387px;
 padding-left:88px;
 object-fit: cover;
+}
+@media only screen and (max-width: 850px) {
+   img{
+    display: none;
+   }
+   overflow: scroll;
 }
 `
 
@@ -214,6 +260,12 @@ height: 387px;
 padding-left:88px;
 object-fit: cover;
 }
+@media only screen and (max-width: 850px) {
+   img{
+    display: none;
+   }
+   
+}
 `
 export const Whybox = styled.div`
 width:100%;
@@ -229,6 +281,9 @@ p{
     font-size: 48px;
     line-height: 65px;
 
+}
+@media only screen and (max-width: 850px) {
+   margin-bottom:38px;
 }
 `
 
@@ -259,6 +314,10 @@ font-size: 16px;
 line-height: 22px;
 text-align: center;
 }
+@media only screen and (max-width: 850px) {
+   width: 250px;
+   margin-left:30px;
+}
 `
 export const Thirdpromptdiv2 = styled.div`
 position: absolute;
@@ -287,6 +346,11 @@ font-weight: 400;
 font-size: 16px;
 line-height: 22px;
 text-align: center;
+}
+@media only screen and (max-width: 850px) {
+   width: 250px;
+   left:45px;
+   top: 350px;
 }
 `
 
@@ -318,6 +382,11 @@ font-size: 16px;
 line-height: 22px;
 text-align: center;
 }
+@media only screen and (max-width: 850px) {
+   width: 260px;
+   left:320px;
+   top: 150px;
+}
 `
 
 export const Thirdpromptdiv4 = styled.div`
@@ -347,6 +416,11 @@ font-weight: 400;
 font-size: 16px;
 line-height: 22px;
 text-align: center;
+}
+@media only screen and (max-width: 850px) {
+   width: 260px;
+   left:310px;
+   top: 350px;
 }
 `
 
@@ -380,6 +454,7 @@ font-size: 36px;
 line-height: 22px;
 text-align: center;
 }
+
 `
 
 const Secondprompttext = styled.div`
@@ -392,7 +467,6 @@ margin-left:40px;
 const Landing = () => {
   return (
     <div>
-    <Navbar/>
    <Container>
     <Wrapper>
         <Firstprompt>
@@ -447,10 +521,10 @@ const Landing = () => {
           <Whattododiv>
             <Whattodobox2 style={{background: "#1D2D35"}}><p style={{ color:"#FFFFFF"}}>Create a detailed profile of your invention</p></Whattodobox2>
             <Whattodobox2 style={{background: "#1D2D35"}}><p style={{ color:"#FFFFFF"}}>Search for inventions based on your investment criteria</p></Whattodobox2>
-            <Whattodobox2 style={{background: "#1D2D35"}}><p style={{ color:"#FFFFFF"}}>Discover New Inventions</p></Whattodobox2>
+            <Whattodobox2 style={{background: "#1D2D35"}}><p style={{ color:"#FFFFFF"}}>Connect with inventors</p></Whattodobox2>
           </Whattododiv>
           <Buttondiv style={{justifyContent:"center"}}>
-            <Button2>Showcase Your Invention</Button2>
+            <Button2>Discover New Inventions</Button2>
           </Buttondiv>
         </Secondprompttext>
         <img src='./images/Rectangle3.png' alt='image'/>

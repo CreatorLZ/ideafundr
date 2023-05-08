@@ -12,6 +12,9 @@ gap: 8px;
 width: 100%;
 height: 370px;
 padding: 100px;
+@media only screen and (max-width: 850px) {
+   padding: 10px;
+}
 `
 
 const Wrapper = styled.div`
@@ -49,7 +52,7 @@ gap: 15px;
 img{
 width: 22px;
 height: 20px;
-object-fit: cover;
+object-fit: contain;
 cursor: pointer;
 }
 `

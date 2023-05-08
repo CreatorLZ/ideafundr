@@ -11,6 +11,11 @@ padding-bottom: 87px;
 Link{
   text-decoration: none;
 }
+@media only screen and (max-width: 600px) {
+  body {
+    display: none;
+  }
+}
 `
 
 const Wrapper = styled.div`
