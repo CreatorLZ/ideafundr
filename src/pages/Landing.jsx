@@ -48,6 +48,7 @@ padding-top:50px;
    overflow: hidden;
    padding-left: 10px;
    line-height: 40px;
+   padding-top:10px;
 }
 `
 
@@ -164,7 +165,7 @@ width: 250px;
    width: 230px;
 }
 @media only screen and (max-width: 480px) {
-   width: 170px;
+   width: 168px;
 }
 `
 
@@ -187,7 +188,7 @@ cursor: pointer;
    width: 230px;
 }
 @media only screen and (max-width: 480px) {
-   width: 170px;
+   width: 168px;
 }
 `
 
