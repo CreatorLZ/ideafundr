@@ -46,7 +46,7 @@ padding-top:50px;
    background: linear-gradient(101.97deg, #FDFAFA 0.31%, rgba(217, 217, 217, 0.48) 100%), url(./images/Rectangle1.png) no-repeat center center fixed;
    background-size:cover;
    overflow: hidden;
-   padding-left: 10px;
+   padding-left: 20px;
    line-height: 40px;
    padding-top:none;
 }
