@@ -553,6 +553,7 @@ const Secondprompttext = styled.div`
 display: flex;
 flex-direction: column;
 margin-left:40px;
+gap: 20px;
 @media only screen and (max-width: 500px) {
    margin: 0;
    padding: 20px;
