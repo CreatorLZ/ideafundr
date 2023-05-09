@@ -7,9 +7,8 @@ import { Link } from 'react-router-dom'
 
 
 const Container = styled.div `
-width: 100%;
-height: 100%;
-
+padding: 0;
+margin: 0;
 `
 const Wrapper = styled.div`
 display: flex;
@@ -44,7 +43,8 @@ padding-top:50px;
     display: none;
    }
    background: linear-gradient(101.97deg, #FDFAFA 0.31%, rgba(217, 217, 217, 0.48) 100%), url(./images/Rectangle1.png) no-repeat center center fixed;
-   background-size:cover;
+
+background-size: cover;
    overflow: hidden;
    padding-left: 20px;
    line-height: 40px;
@@ -308,6 +308,9 @@ color: #3A4F5C;
 overflow: hidden;
 display: flex;
 position: relative;
+ul{
+   display: none;
+}
 img{
     width: 553px;
 height: 387px;
@@ -320,14 +323,22 @@ object-fit: cover;
    }
    
 }
+@media only screen and (max-width: 480px) {
+   ul{
+      display: flex;
+      flex-direction: column;
+      color: #3A4F5C;
+      gap: 35px;
+      padding: 20px;
+}
+}
+
 `
 export const Whybox = styled.div`
 width:100%;
 height: 65px;
 display: flex;
 align-items: center;
-left: 529px;
-top: 27px;
 justify-content: center;
 p{
     font-style: normal;
@@ -338,6 +349,13 @@ p{
 }
 @media only screen and (max-width: 850px) {
    margin-bottom:38px;
+}
+@media only screen and (max-width: 480px) {
+p{
+  font-size: 2em;
+  text-align: center;
+  line-height: 40px;
+}
 }
 `
 
@@ -372,6 +390,9 @@ text-align: center;
    width: 250px;
    margin-left:30px;
 }
+@media only screen and (max-width: 480px) {
+   display: none;
+}
 `
 export const Thirdpromptdiv2 = styled.div`
 position: absolute;
@@ -405,6 +426,9 @@ text-align: center;
    width: 250px;
    left:45px;
    top: 350px;
+}
+@media only screen and (max-width: 480px) {
+   display: none;
 }
 `
 
@@ -441,6 +465,9 @@ text-align: center;
    left:320px;
    top: 150px;
 }
+@media only screen and (max-width: 480px) {
+   display: none;
+}
 `
 
 export const Thirdpromptdiv4 = styled.div`
@@ -475,6 +502,9 @@ text-align: center;
    width: 260px;
    left:310px;
    top: 350px;
+}
+@media only screen and (max-width: 480px) {
+   display: none;
 }
 `
 
@@ -618,9 +648,23 @@ const Landing = () => {
                  which will lead to successful crowdfunding campaign and help you lunch your invention.
                  </p>
         </Thirdpromptdiv4>
+        <ul>
+         <li><p>With our platform, you can easily
+            discover a revolutionary invention, 
+            which you can invest in and help bring to market.</p></li>
+            <li><p>With our platform , you can showcase your new invention to investors.
+                 which will lead to successful crowdfunding campaign and help you lunch your invention.
+                 </p></li>
+                 <li><p>With our platform , you can showcase your new invention to investors.
+                 which will lead to successful crowdfunding campaign and help you lunch your invention.
+                 </p></li>
+                 <li> <p>With our platform , you can showcase your new invention to investors.
+                 which will lead to successful crowdfunding campaign and help you lunch your invention.
+                 </p></li>
+        </ul>
         </Thirdprompt2>
         <Thirdprompt3>
-            <Whybox> <p>Frequently asked question (FAQs)</p> </Whybox>
+            <Whybox> <p>Frequently asked questions (FAQs)</p> </Whybox>
             <Comingsoon><p>Coming Soon</p></Comingsoon>
         </Thirdprompt3>
        <Newsletter/>

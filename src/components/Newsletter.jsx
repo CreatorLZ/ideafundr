@@ -21,6 +21,12 @@ form{
     input{
         padding: 15px;
     }
+    
+}
+@media only screen and (max-width: 480px) {
+  form{
+    width: 70%;
+  }
 }
 
 `
@@ -34,8 +40,6 @@ width:100%;
 height: 65px;
 display: flex;
 align-items: center;
-left: 529px;
-top: 27px;
 justify-content: center;
 p{
     font-style: normal;
@@ -44,6 +48,12 @@ p{
     line-height: 65px;
 
 }
+/* @media only screen and (max-width: 480px) {
+  p{
+    padding: 20px;
+    text-align: center;
+  }
+} */
 `
 
 const Button = styled.button`
@@ -57,13 +67,16 @@ cursor: pointer;
   transition:250ms;
   background-color: white;
 }
+@media only screen and (max-width: 480px) {
+
+}
 `
 
 const Newsletter = () => {
   return (
     <Container >
             <Whybox> <p style={{fontSize:"24px"}}> Join our Newsletter</p> </Whybox>
-            <p>Discover new and clever products in the IdeaFundr newsletter</p>
+            <p style={{padding:'5px', textAlign:'center'}}>Discover new and clever products in the IdeaFundr newsletter</p>
             <form>
                 <input type='text' placeholder='name@gmail.com'/>
                 <Checkbox>
