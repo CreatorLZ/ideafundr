@@ -38,7 +38,7 @@ padding-top:50px;
    overflow: hidden;
  
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    img{
     display: none;
    }
@@ -71,6 +71,7 @@ font-weight: 600;
 font-size: 24px;
 line-height: 33px;
 color: white;
+
 `
 
 const P2 = styled.p`
@@ -89,7 +90,7 @@ line-height: 22px;
 color: white;
 margin-top:25px;
 margin-bottom:10px;
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    margin-bottom:40px;
 }
 `
@@ -97,7 +98,7 @@ const Whattododiv = styled.div`
 display: flex;
 gap: 20px;
 margin-bottom:80px;
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
     display: none;
 }
 `
@@ -125,7 +126,7 @@ color: #1D2D35;
 @media only screen and (max-width: 550px) {
    width: 140px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
     display: none; 
    
 }
@@ -165,7 +166,7 @@ width: 250px;
 @media only screen and (max-width: 580px) {
    width: 230px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    width: 168px;
 }
 `
@@ -188,7 +189,7 @@ cursor: pointer;
 @media only screen and (max-width: 580px) {
    width: 230px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    width: 168px;
 }
 `
@@ -198,7 +199,7 @@ font-style: normal;
 font-weight: 600;
 font-size: 64px;
 line-height: 87px;
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    line-height: 40px;
    font-size: 30px;
 
@@ -210,7 +211,7 @@ font-weight: 400;
 font-size: 22px;
 line-height: 33px;
 margin-bottom:30px;
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    font-size: 20px;
 }
 `
@@ -252,7 +253,7 @@ object-fit: cover;
       display: none;
     } 
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    img{
     display: none;
    }
@@ -260,6 +261,7 @@ object-fit: cover;
     display: flex;
     flex-direction: column;
    }
+   height: 70vh;
 }
 `
 const Thirdprompt = styled.div`
@@ -296,6 +298,9 @@ object-fit: cover;
    }
    margin-left:none;
 }
+@media only screen and (max-width: 500px) {
+   height: 70vh;
+}
 
 `
 
@@ -325,13 +330,14 @@ object-fit: cover;
    }
    
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    ul{
       display: flex;
       flex-direction: column;
       color: #3A4F5C;
       gap: 35px;
       padding: 20px;
+      height: 70vh;
 }
 }
 
@@ -352,7 +358,7 @@ p{
 @media only screen and (max-width: 850px) {
    margin-bottom:38px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
 p{
   font-size: 2em;
   text-align: center;
@@ -392,7 +398,7 @@ text-align: center;
    width: 250px;
    margin-left:30px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    display: none;
 }
 `
@@ -429,7 +435,7 @@ text-align: center;
    left:45px;
    top: 350px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    display: none;
 }
 `
@@ -467,7 +473,7 @@ text-align: center;
    left:320px;
    top: 150px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    display: none;
 }
 `
@@ -505,7 +511,7 @@ text-align: center;
    left:310px;
    top: 350px;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
    display: none;
 }
 `
@@ -547,6 +553,10 @@ const Secondprompttext = styled.div`
 display: flex;
 flex-direction: column;
 margin-left:40px;
+@media only screen and (max-width: 500px) {
+   margin: 0;
+   padding: 20px;
+}
 `;
 
 
