@@ -49,6 +49,7 @@ background-size: cover;
    padding-left: 20px;
    line-height: 40px;
    padding-top:none;
+   height: 70vh;
 }
 `
 
@@ -198,8 +199,9 @@ font-weight: 600;
 font-size: 64px;
 line-height: 87px;
 @media only screen and (max-width: 480px) {
-   line-height: 70px;
-   font-size: 50px;
+   line-height: 40px;
+   font-size: 30px;
+
 }
 `
 const Secondp = styled.p`
