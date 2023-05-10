@@ -7,7 +7,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from './Landing'
 import styled from 'styled-components';
 import { Wrapper } from '../components/Registerstyles';
-import Footer from '../components/Footer';
 // import { auth,db } from '../firebase';
 
 
@@ -136,12 +135,11 @@ const Register = () => {
             <span>choose a profile picture</span>
           </label>
           <p style={{marginBottom:'20px'}}>By clicking “Sign Up” you agree to our Term of use and our Privacy Policy</p>
-          <Button style={{width:'550px'}}>{loading ? <AnimatedLoader src='./images/loading-gif2.gif' alt='loading'/> :" Sign up"}</Button>
+          <Button >{loading ? <AnimatedLoader src='./images/loading-gif2.gif' alt='loading'/> :" Sign up"}</Button>
           {error && <span style={{ fontSize: "14px", color: "red", fontWeight: "200" }}>something went wrong...</span>}
         </form>
         <p >Already have an account?  <Link style={{textDecoration:"none"}} to="/login">Sign in</Link></p>
       </Wrapper>
-      <Footer/>
     </Container>
 
   )

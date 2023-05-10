@@ -49,7 +49,7 @@ background-size: cover;
    padding-left: 20px;
    line-height: 40px;
    padding-top:none;
-   height: 70vh;
+   height: 80vh;
 }
 `
 
@@ -157,10 +157,13 @@ border: 1px solid #00806E;
 border-radius:8px;
 cursor: pointer;
 width: 250px;
+transition: ease 1s;
 :hover{
   transition:250ms;
   background-color: #00806E;
   color: white;
+ 
+ 
 }
 
 @media only screen and (max-width: 580px) {
@@ -168,6 +171,7 @@ width: 250px;
 }
 @media only screen and (max-width: 500px) {
    width: 168px;
+   
 }
 `
 
@@ -180,6 +184,7 @@ border: none;
 border-radius:5px;
 width: 250px;
 cursor: pointer;
+transition: ease 1s;
 :hover{
   transition:250ms;
   background-color: white;

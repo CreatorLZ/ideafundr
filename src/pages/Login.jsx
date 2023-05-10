@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Button } from './Landing'
 import styled from 'styled-components';
 import { Wrapper } from '../components/Registerstyles';
-import Footer from '../components/Footer';
 
 export const AnimatedLoader = styled.img`
   width: 1px;
@@ -15,13 +14,16 @@ export const AnimatedLoader = styled.img`
 
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 37px;
+  height: vh;
+ 
   background: #FAFAFA;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 500px) {
+   
+  }
 `
 
 const Login = () => {
@@ -87,16 +89,16 @@ const Login = () => {
             minLength="6"
             name='password'
             required />
-          <Button style={{ width: '550px' }}>{loading ?
+          <Button >{loading ?
             <AnimatedLoader src='./images/loading-gif2.gif' alt='loading' />
             :
             " Sign in"}
           </Button>
           {error && <span style={{ fontSize: "14px", color: "red", fontWeight: "200" }}>something went wrong...</span>}
         </form>
-        <p>Don't have an account?  <Link style={{ textDecoration: "none" }} to="/Register">Sign up</Link></p>
+        <p>Don't have an account?  <Link style={{ textDecoration: "none" ,color:' #8095A2;'}} to="/Register">Sign up</Link></p>
       </Wrapper>
-      <Footer />
+ 
     </Container>
   )
 }

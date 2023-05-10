@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
-height: 100%;
+height: 100vh;
 width: 45%;
 border-radius: 10px;
 display: flex;
@@ -9,6 +9,7 @@ align-items: center;
 justify-content: center;
 flex-direction: column;
 padding: 5px 10px;
+
  input {
     display: flex;
 flex-direction: row;
@@ -54,5 +55,13 @@ form{
 hr{
     width:80%;
 }
+@media only screen and (max-width: 500px) {
+    width: 100%;
+   input{
+    width: 100%;
+   }
+   margin-bottom:40px;
+}
+
 `
 

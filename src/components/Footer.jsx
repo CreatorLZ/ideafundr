@@ -15,11 +15,20 @@ padding: 100px;
 @media only screen and (max-width: 850px) {
    padding: 10px;
 }
+@media only screen and (max-width: 500px) {
+   flex-direction: column;
+   align-items: center;
+   padding: 0px;
+}
 `
 
 const Wrapper = styled.div`
 display: flex;
 width: 100%;
+@media only screen and (max-width: 500px) {
+   flex-direction: column;
+   align-items: center;
+}
 `
 
 const FlexContainer = styled.div`
