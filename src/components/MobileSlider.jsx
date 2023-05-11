@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const images =   [ 
+const images = [ 
     { id: 1, image: './images/SwiftXR.png'},
     { id: 2, image: './images/mouse.png' }, 
     { id: 3, image: './images/Knife.png' }, 
@@ -9,11 +9,10 @@ const images =   [
     { id: 5, image: './images/Bicyle1.png'},
     { id: 6, image: './images/Ride.png'}];
 
-
 const SliderWrapper = styled.div`
 display: none;
-@media only screen and (max-width: 500px) {  
-    display: flex;  
+@media only screen and (max-width: 500px) {
+     display: flex;
     position: relative;
     width: 100%;
     height: 400px;
@@ -40,16 +39,18 @@ const Image = styled.img`
 
 const ButtonWrapper = styled.div`
 display: none;
-@media only screen and (max-width: 500px) { 
+@media only screen and (max-width: 500px) {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    position: relative; /* Added position relative */
+    z-index: 1; /* Added higher z-index */
 }
 `;
 
 const Button = styled.button`
   border: none;
-  background-color: ${({ active }) => active ? '#000' : '#ddd'};
+  background-color: ${({ active }) => (active ? '#000' : '#ddd')};
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -58,7 +59,7 @@ const Button = styled.button`
   outline: none;
 `;
 
-const MobileSlider = () => {
+const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = () => {
@@ -93,4 +94,4 @@ const MobileSlider = () => {
   );
 };
 
-export default MobileSlider;
+export default Slider;
