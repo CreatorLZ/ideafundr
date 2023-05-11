@@ -105,7 +105,7 @@ gap: 8px;
 `;
 
 const Categories = styled.div`
-    height: 537px;
+    height: 100vhpx;
     width: 100%;
     background: #FFFFFF;
     display: flex;
@@ -114,7 +114,8 @@ const Categories = styled.div`
     justify-content: center;
    
         @media only screen and (max-width: 500px) {
-   margin-top:450px;
+   margin-top:100px;
+   margin-bottom:50px;
 
     }
 `
