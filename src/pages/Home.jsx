@@ -30,6 +30,9 @@ display: flex;align-items: center;
 justify-content: center;
 gap: 20px;
 padding: 50px;
+@media only screen and (max-width: 500px) {
+      margin-top:60px;
+}
 `
 const P1 = styled.p`
  font-style: normal;
@@ -52,6 +55,10 @@ const Wrappercard = styled.div`
   padding: 55px;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 500px) {
+      display: flex;
+      flex-direction: column;
+}
 `;
 
 const Wrappercard2 = styled.div`
@@ -62,6 +69,10 @@ const Wrappercard2 = styled.div`
   padding: 55px;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 500px) {
+    display: flex;
+      flex-direction: column;
+}
 `;
 
 const Child = styled.div`
@@ -87,6 +98,10 @@ align-items: center;
 padding: 8px 24px;
 gap: 8px;
   }
+  @media only screen and (max-width: 500px) {
+    width: 370px;
+  height: 480px;
+}
 `;
 
 const Categories = styled.div`
@@ -97,6 +112,11 @@ const Categories = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+   
+        @media only screen and (max-width: 500px) {
+   margin-top:450px;
+
+    }
 `
 
 const Categorycard = styled.div`
@@ -118,6 +138,18 @@ font-weight: 400;
 font-size: 24px;
 line-height: 33px;
 padding: 5px;
+}
+/* @media only screen and (max-width: 500px) {
+    width: 80px;
+  height: 80px;
+} */
+`
+
+const Categorydiv = styled.div`
+@media only screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+   
 }
 `
 
@@ -227,7 +259,7 @@ const Home = () => {
             <p>Which categories interest you? </p>
             <p style={{fontWeight:"400",fontSize:"15px"}}>Discover project just for you and get great recommendation when you select your interst.</p>
         </Whybox>
-        <div style={{display:"flex", gap:"60px",marginTop:"40px"}}>
+        <Categorydiv style={{display:"flex", gap:"60px",marginTop:"40px"}}>
             <Categorycard>
                 <img src='images/Frame 436.png' alt=''/>
                 <p>Home</p>
@@ -244,7 +276,7 @@ const Home = () => {
             <img src='images/Frame 439.png' alt=''/>
                 <p>Transportation</p>
             </Categorycard>
-            </div>
+            </Categorydiv>
         </Categories>
         <Coming/>
         <Newsletter/>
