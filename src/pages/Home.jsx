@@ -16,6 +16,7 @@ padding: 37px;
 background: #FAFAFA;
 display: flex;
 flex-direction: column;
+overflow: hidden;
 `
 const Wrapper = styled.div`
 width: 100%;
@@ -58,6 +59,7 @@ const Wrappercard = styled.div`
   @media only screen and (max-width: 500px) {
       display: flex;
       flex-direction: column;
+      gap: 40px;
 }
 `;
 
@@ -72,6 +74,7 @@ const Wrappercard2 = styled.div`
   @media only screen and (max-width: 500px) {
     display: flex;
       flex-direction: column;
+      gap: 40px;
 }
 `;
 
