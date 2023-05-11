@@ -80,7 +80,7 @@ const Child = styled.div`
   height: 410px;
   display: flex;
   flex-direction: column;
-  border: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
   border-radius: 10px;
   object-fit: cover;
 
@@ -99,8 +99,12 @@ padding: 8px 24px;
 gap: 8px;
   }
   @media only screen and (max-width: 500px) {
-    width: 370px;
-  height: 480px;
+    width: 300px;
+  height: 380px;
+  img{
+    height: 320px;
+    width: 100%;
+  }
 }
 `;
 
@@ -256,7 +260,7 @@ const Home = () => {
             <Button>View More</Button>
         </Buttondiv>
         <Categories>
-            <Whybox style={{paddingTop:"0px", flexDirection:"column"}}>
+            <Whybox style={{marginTop:"100px", flexDirection:"column"}}>
             <p>Which categories interest you? </p>
             <p style={{fontWeight:"400",fontSize:"15px"}}>Discover project just for you and get great recommendation when you select your interst.</p>
         </Whybox>
