@@ -1,49 +1,49 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const images = [ 
-      { id: 1, image: './images/SwiftXR.png'},
-      { id: 2, image: './images/mouse.png' }, 
-      { id: 3, image: './images/Knife.png' }, 
-      { id: 4, image: './images/SwiftXR 2.png' }, 
-      { id: 5, image: './images/Bicyle1.png'},
-      { id: 6, image: './images/Ride.png'}];
+const images =   [ 
+    { id: 1, image: './images/SwiftXR.png'},
+    { id: 2, image: './images/mouse.png' }, 
+    { id: 3, image: './images/Knife.png' }, 
+    { id: 4, image: './images/SwiftXR 2.png' }, 
+    { id: 5, image: './images/Bicyle1.png'},
+    { id: 6, image: './images/Ride.png'}];
+
 
 const SliderWrapper = styled.div`
-  position: relative;
-  width: 80%;
-  height: 400px;
-  overflow: hidden;
-  @media only screen and (max-width: 500px) {
-      display: none;
+display: none;
+@media only screen and (max-width: 500px) {  
+    display: flex;  
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
 `;
 
 const Slide = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  left: ${({ activeIndex }) => `calc(-${activeIndex * 100}%)`};
   width: 100%;
   height: 100%;
-  opacity: ${({ active }) => active ? 1 : 0};
-  transition: opacity 0.5s ease-in-out;
-
+  display: flex;
+  transition: left 0.5s ease-in-out;
 `;
 
 const Image = styled.img`
+  flex: 1;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  
 `;
 
 const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  @media only screen and (max-width: 500px) {
-      display: none;
+display: none;
+@media only screen and (max-width: 500px) { 
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 `;
 
@@ -58,7 +58,7 @@ const Button = styled.button`
   outline: none;
 `;
 
-const Slider = () => {
+const MobileSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = () => {
@@ -70,13 +70,13 @@ const Slider = () => {
   };
 
   return (
-    <>
+    <div>
       <SliderWrapper>
-        {images.map((image, index) => (
-          <Slide key={image.id} active={index === activeIndex}>
-            <Image src={image.image} alt={`Slide ${image.id}`} />
-          </Slide>
-        ))}
+        <Slide activeIndex={activeIndex}>
+          {images.map((image) => (
+            <Image key={image.id} src={image.image} alt={`Slide ${image.id}`} />
+          ))}
+        </Slide>
       </SliderWrapper>
       <ButtonWrapper>
         <Button onClick={handlePrev}>Prev</Button>
@@ -89,8 +89,8 @@ const Slider = () => {
         ))}
         <Button onClick={handleNext}>Next</Button>
       </ButtonWrapper>
-    </>
+    </div>
   );
 };
 
-export default Slider;
+export default MobileSlider;

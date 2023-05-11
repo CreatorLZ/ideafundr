@@ -11,11 +11,7 @@ padding-bottom: 87px;
 Link{
   text-decoration: none;
 }
-@media only screen and (max-width: 600px) {
-  body {
-    display: none;
-  }
-}
+
 `
 
 const Wrapper = styled.div`
@@ -29,6 +25,10 @@ justify-content: space-between;
 img{
   cursor: pointer;
 }
+@media only screen and (max-width: 500px) {
+   padding: 15px;
+}
+
 `
 
 const Center = styled.div`
@@ -43,6 +43,10 @@ p{
   font-weight: 400;
 font-size: 24px;
 }
+@media only screen and (max-width: 500px) {
+    display: none;
+}
+
 `
 
 const Right = styled.div`
@@ -56,6 +60,9 @@ img {
   height: 20px;
   width: 20px;
 }
+@media only screen and (max-width: 500px) {
+    display: none;
+}
 
 `
 
@@ -63,6 +70,10 @@ export const Logo = styled.img`
 width: 183px;
 height: 64px;
 object-fit: cover;
+@media only screen and (max-width: 500px) {
+    width: 180px;
+}
+
 `
 const Button = styled.button`
 padding: 16px 32px;
@@ -104,6 +115,10 @@ ul {
         }
     }
 }
+@media only screen and (max-width: 500px) {
+    display: none;
+}
+
 `
 
 

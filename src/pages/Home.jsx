@@ -7,6 +7,7 @@ import Newsletter from '../components/Newsletter'
 import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import MobileSlider from '../components/MobileSlider'
 
 export const Container = styled.div`
 width: 100%;
@@ -127,6 +128,7 @@ const Home = () => {
     <Container>
         <Wrapper>
         <Slider/>
+        <MobileSlider/>
         </Wrapper>
         <Buttondiv>
         <Button style={{width:"250px"}}>Explore Investments</Button>
