@@ -119,6 +119,11 @@ gap: 8px;
   button{
     display: none;
   }
+  &:nth-child(3) {
+      grid-row: 1 / 3;
+      grid-column: 1 / 2;
+      align-self: center;
+    }
 }
 `;
 
