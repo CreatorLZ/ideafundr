@@ -72,10 +72,12 @@ const Wrappercard2 = styled.div`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 500px) {
-    display: flex;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    padding: 30px;
+    grid-template-rows: repeat(2, 1fr);
+    p{
+        display: none;
+    }
 }
 `;
 
@@ -108,6 +110,7 @@ gap: 8px;
   @media only screen and (max-width: 500px) {
     width: 200px;
   height: 280px;
+  margin-bottom: 50px;
   img{
     height: 220px;
     width: 100%;
@@ -248,7 +251,7 @@ const Home = () => {
         <Wrappercard2>
         <Child>
                 <img src='./images/2.png' alt=''/>
-                <P1>Aliko Dangote</P1>
+                <h3>Aliko Dangote</h3>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
@@ -256,7 +259,7 @@ const Home = () => {
             </Child>
             <Child>
                 <img src='./images/1.png' alt=''/>
-                <P1>Nigerian man</P1>
+                <h4>Nigerian man</h4>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
@@ -264,7 +267,15 @@ const Home = () => {
             </Child>
             <Child>
                 <img src='./images/Rectangle 11 (3).png' alt=''/>
-                <P1>Nigerian woman</P1>
+                <h4>Nigerian woman</h4>
+                <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
+                <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
+                <Button>View</Button>
+                </div>
+            </Child>
+            <Child>
+                <img src='./images/2.png' alt=''/>
+                <h3>Aliko Dangote</h3>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
