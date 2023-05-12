@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Logo } from './Navbar'
 import { Link } from 'react-router-dom'
 
 const Container = styled.div`
@@ -17,9 +16,19 @@ padding: 100px;
 }
 @media only screen and (max-width: 500px) {
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    padding: 0px;
 }
+`
+ const Logo = styled.img`
+width: 183px;
+height: 64px;
+object-fit: cover;
+@media only screen and (max-width: 500px) {
+    width: 180px;
+    margin-left: 10px;
+  }
+
 `
 
 const Wrapper = styled.div`
@@ -57,7 +66,7 @@ padding: 25px;
 `
 const Icons = styled.div`
 display: flex;
-gap: 15px;
+gap: 45px;
 img{
 width: 22px;
 height: 20px;
@@ -83,16 +92,15 @@ const Footer = () => {
       <FlexItem><Link to="/Investors" style={{textDecoration:"none",color: '#3A4F5C'}}>Investors</Link></FlexItem>
       <FlexItem>Terms & Condition</FlexItem>
     </FlexContainer>
+    </Wrapper>
+    <div style={{display:"flex",flexDirection:'column', alignItems:"center", justifyContent:"center", width:"100%", marginTop:"20px"}}>
     <Socialdiv>
-        <p>Social Media</p>
         <Icons>
         <img src='./images/001-facebook.png' alt='image' />
         <img src='./images/003-twitter.png' alt='image' />
         <img src='./images/004-instagram.png' alt='image' />
         </Icons>
     </Socialdiv>
-    </Wrapper>
-    <div style={{display:"flex", alignItems:"center", justifyContent:"center", width:"100%", marginTop:"20px"}}>
     <p>Copyright © 2023. Ideafundr. All rights reserved.</p>
     </div>
    </Container>
