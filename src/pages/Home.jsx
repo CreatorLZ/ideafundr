@@ -73,11 +73,9 @@ const Wrappercard2 = styled.div`
   justify-content: center;
  
   @media only screen and (max-width: 500px) {
-    display: flex;
-     width: 100%;
-     flex-direction: column;
-     padding: 10px;
-     gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 10px;
     p{
         display: none;
     }
