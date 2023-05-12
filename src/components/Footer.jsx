@@ -10,7 +10,7 @@ align-items: flex-start;
 padding: 40px 88px;
 gap: 8px;
 width: 100%;
-height: 370px;
+height: 70vh;
 padding: 100px;
 @media only screen and (max-width: 850px) {
    padding: 10px;

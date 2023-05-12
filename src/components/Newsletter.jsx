@@ -27,7 +27,7 @@ form{
   form{
     width: 70%;
   }
-  margin-bottom:50px
+  margin-bottom:10px;
 }
 
 `
