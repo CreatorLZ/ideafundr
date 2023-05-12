@@ -108,7 +108,7 @@ padding: 8px 24px;
 gap: 8px;
   }
   @media only screen and (max-width: 500px) {
-    width: 200px;
+    width: 180px;
   height: 280px;
   margin-bottom: 50px;
   img{
