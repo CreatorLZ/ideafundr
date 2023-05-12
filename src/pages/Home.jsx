@@ -57,10 +57,10 @@ const Wrappercard = styled.div`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 500px) {
-      display: flex;
-      flex-direction: column;
-      gap: 100px;
-}
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 30px;
+  }
 `;
 
 const Wrappercard2 = styled.div`
@@ -73,8 +73,9 @@ const Wrappercard2 = styled.div`
   justify-content: center;
   @media only screen and (max-width: 500px) {
     display: flex;
-      flex-direction: column;
-      gap: 80px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 30px;
 }
 `;
 
@@ -86,7 +87,10 @@ const Child = styled.div`
   /* border: 1px solid lightgray; */
   border-radius: 10px;
   object-fit: cover;
-
+  padding: 10px;
+ p{
+    text-decoration: none;
+ }
   img{
     height: 340px;
     width: 100%;
@@ -102,11 +106,14 @@ padding: 8px 24px;
 gap: 8px;
   }
   @media only screen and (max-width: 500px) {
-    width: 300px;
-  height: 380px;
+    width: 200px;
+  height: 280px;
   img{
-    height: 320px;
+    height: 220px;
     width: 100%;
+  }
+  button{
+    display: none;
   }
 }
 `;
@@ -178,7 +185,7 @@ const Home = () => {
             <p>Trending Inventions </p>
         </Whybox>
         <Wrappercard>
-            <Child>
+        <Link style={{textDecoration:'none', color:'black'}} to="/Invention">  <Child>
             <img src='./images/SwiftXR 2.png' alt=''/>
                 <P1>Headset</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
@@ -186,7 +193,8 @@ const Home = () => {
                 <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
-            <Child>
+            </Link>
+            <Link style={{textDecoration:'none', color:'black'}} to="/Invention">  <Child>
                 <img src='./images/Bicyle1.png'alt=''/>
                 <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
@@ -194,15 +202,17 @@ const Home = () => {
                 <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
-            <Child>
+            </Link>
+            <Link style={{textDecoration:'none', color:'black'}} to="/Invention"> <Child>
                 <img src='./images/mouse.png'alt=''/>
-                <P1>Mouse - Easy to use Wireless optical mouse</P1>
+                <P1 style={{textDecoration:'none'}}>Mouse - Easy to use Wireless optical mouse</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>Quiet tactile clicking, Long-lasting battery life, Customizable seven-button inputs</P2>
                 <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
-            <Child>
+            </Link>
+            <Link style={{textDecoration:'none', color:'black'}} to="/Invention"> <Child>
                 <img src='./images/Ride.png'alt=''/>
                 <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
@@ -210,7 +220,8 @@ const Home = () => {
                 <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
-            <Child>
+            </Link>
+            <Link style={{textDecoration:'none', color:'black'}} to="/Invention"><Child>
                 <img src='./images/SwiftXR.png' alt=''/>
                 <P1>Bmax car</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
@@ -218,14 +229,15 @@ const Home = () => {
                 <Link to="/Invention"><Button>View</Button></Link>
                 </div>
             </Child>
-            <Child>
+            </Link>
+            <Link style={{textDecoration:'none', color:'black'}} to="/Invention"><Child>
                 <img src='./images/Knife.png' alt=''/>
-                <P1>Qknives - The perfect kitchen knife series</P1>
+                <P1 style={{textDecoration:'none'}}> Qknives - The perfect kitchen knife series</P1>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Link to="/Invention"><Button>View</Button></Link>
                 </div>
-            </Child>
+            </Child></Link>
         </Wrappercard>
         <Buttondiv>
             <Button>View all inventions</Button>

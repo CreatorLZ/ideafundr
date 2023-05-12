@@ -93,7 +93,7 @@ const Footer = () => {
       <FlexItem>Terms & Condition</FlexItem>
     </FlexContainer>
     </Wrapper>
-    <div style={{display:"flex",flexDirection:'column', alignItems:"center", justifyContent:"center", width:"100%", marginTop:"20px"}}>
+    <div style={{display:"flex",flexDirection:'column', alignItems:"center", justifyContent:"center", width:"100%", marginTop:"20px",gap:'20px'}}>
     <Socialdiv>
         <Icons>
         <img src='./images/001-facebook.png' alt='image' />
