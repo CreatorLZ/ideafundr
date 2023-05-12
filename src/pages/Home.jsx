@@ -25,6 +25,7 @@ align-items: center;
 justify-content: center;
 height: 376px;
 padding: 40px;
+/* overflow: hidden; */
 `
 export const Buttondiv = styled.div`
 display: flex;align-items: center;

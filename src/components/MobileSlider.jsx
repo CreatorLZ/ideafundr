@@ -32,6 +32,7 @@ display: none;
    height: 100%;
    display: flex;
    transition: left 0.5s ease-in-out;
+
 }
 `;
 
