@@ -60,7 +60,7 @@ const Wrappercard = styled.div`
   @media only screen and (max-width: 500px) {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 80px;
 }
 `;
 

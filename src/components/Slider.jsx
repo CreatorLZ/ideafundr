@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const images = [ 
@@ -68,6 +68,15 @@ const Slider = () => {
   const handleNext = () => {
     setActiveIndex(activeIndex === images.length - 1 ? 0 : activeIndex + 1);
   };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [activeIndex]);
 
   return (
     <>
