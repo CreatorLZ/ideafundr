@@ -81,16 +81,16 @@ const Footer = () => {
     <Logo src='./images/Logo.png' alt='Logo'  />
     <Wrapper>
     <FlexContainer>
-      <FlexItem><Link to="/About" style={{textDecoration:"none",color: '#3A4F5C'}}>About Us</Link></FlexItem>
+      <FlexItem><Link to="/About" style={{textDecoration:"none",color: '#3A4F5C'}}>About</Link></FlexItem>
       <FlexItem>FAQ's </FlexItem>
       <FlexItem><Link to="/Home" style={{textDecoration:"none",color: '#3A4F5C'}}>Home</Link></FlexItem>
       <FlexItem><Link to="/Inventors" style={{textDecoration:"none",color: '#3A4F5C'}}>Inventors</Link></FlexItem>
-      <FlexItem>Privacy Policy</FlexItem>
-      <FlexItem>Contact Us</FlexItem>
+      <FlexItem>P Policy</FlexItem>
+      <FlexItem>Contact</FlexItem>
       <FlexItem><a href="https://ideafundr.wordpress.com" style={{textDecoration:'none',color: '#3A4F5C'}}>Blog</a></FlexItem>
       <FlexItem><Link to="/Explore" style={{textDecoration:"none",color: '#3A4F5C'}}>Explore</Link></FlexItem>
       <FlexItem><Link to="/Investors" style={{textDecoration:"none",color: '#3A4F5C'}}>Investors</Link></FlexItem>
-      <FlexItem>Terms & Condition</FlexItem>
+      <FlexItem>T's & C's</FlexItem>
     </FlexContainer>
     </Wrapper>
     <div style={{display:"flex",flexDirection:'column', alignItems:"center", justifyContent:"center", width:"100%", marginTop:"20px",gap:'20px'}}>

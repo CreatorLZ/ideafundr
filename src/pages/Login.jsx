@@ -89,12 +89,12 @@ const Login = () => {
             minLength="6"
             name='password'
             required />
+           {error && <span style={{ fontSize: "14px", color: "red", fontWeight: "200",margin:'20px' }}>something went wrong...</span>}
           <Button >{loading ?
             <AnimatedLoader src='./images/loading-gif2.gif' alt='loading' />
             :
             " Sign in"}
           </Button>
-          {error && <span style={{ fontSize: "14px", color: "red", fontWeight: "200" }}>something went wrong...</span>}
         </form>
         <p>Don't have an account?  <Link style={{ textDecoration: "none" ,color:' #8095A2;'}} to="/Register">Sign up</Link></p>
       </Wrapper>

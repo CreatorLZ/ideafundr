@@ -135,8 +135,8 @@ const Register = () => {
             <span>choose a profile picture</span>
           </label>
           <p style={{marginBottom:'20px'}}>By clicking “Sign Up” you agree to our Term of use and our Privacy Policy</p>
+          {error && <span style={{ fontSize: "14px", color: "red", fontWeight: "200", margin:'20px' }}>something went wrong...</span>}
           <Button >{loading ? <AnimatedLoader src='./images/loading-gif2.gif' alt='loading'/> :" Sign up"}</Button>
-          {error && <span style={{ fontSize: "14px", color: "red", fontWeight: "200" }}>something went wrong...</span>}
         </form>
         <p >Already have an account?  <Link style={{textDecoration:"none"}} to="/login">Sign in</Link></p>
       </Wrapper>

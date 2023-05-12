@@ -126,6 +126,56 @@ gap: 8px;
     }
 }
 `;
+const Child2 = styled.div`
+  width: 400px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid lightgray; */
+  border-radius: 10px;
+  object-fit: cover;
+  padding: 10px;
+ p{
+    text-decoration: none;
+ }
+  img{
+    height: 340px;
+    width: 100%;
+  }
+  button{
+    width: 86px;
+    border-radius: 4px;
+height: 38px;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 8px 24px;
+gap: 8px;
+  }
+  @media only screen and (max-width: 500px) {
+    /* background: rgba(253, 253, 253, 0.1); */
+    box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2);
+    width: 210px;
+  height: 260px;
+  margin-bottom: 50px;
+  text-align: center;
+  h4{
+    margin-top: 15px;
+  }
+  img{
+    height: 180px;
+    width: 100%;
+  }
+  button{
+    display: none;
+  }
+  &:nth-child(3) {
+      grid-row: 1 / 3;
+      grid-column: 1 / 2;
+      align-self: center;
+    }
+}
+`;
 
 const Categories = styled.div`
     height: 100vhpx;
@@ -187,8 +237,8 @@ const Home = () => {
         <MobileSlider/>
         </Wrapper>
         <Buttondiv>
-        <Button style={{width:"250px"}}>Explore Investments</Button>
-        <Button1>Add Invention</Button1>
+        <Button style={{width:"fit-content"}}>Explore Investments</Button>
+        <Button1 style={{width:"fit-content"}}>Add Invention</Button1>
         </Buttondiv>
         <Whybox style={{paddingTop:"80px"}}>
             <p>Trending Inventions </p>
@@ -255,30 +305,30 @@ const Home = () => {
             <p>Popular Investors </p>
         </Whybox>
         <Wrappercard2>
-        <Child>
+        <Child2>
                 <img src='./images/2.png' alt=''/>
                 <h4>Aliko Dangote</h4>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
                 </div>
-            </Child>
-            <Child>
+            </Child2>
+            <Child2>
                 <img src='./images/1.png' alt=''/>
                 <h4>Nigerian man</h4>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
                 </div>
-            </Child>
-            <Child>
+            </Child2>
+            <Child2>
                 <img src='./images/Rectangle 11 (3).png' alt=''/>
                 <h4>Nigerian woman</h4>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
                 </div>
-            </Child>
+            </Child2>
         </Wrappercard2>
             <Buttondiv >
             <Button>View More</Button>
