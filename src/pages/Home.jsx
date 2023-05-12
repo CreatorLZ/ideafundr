@@ -12,7 +12,6 @@ import MobileSlider from '../components/MobileSlider'
 export const Container = styled.div`
 width: 100%;
 height: 100%;
-padding: 37px;
 background: #FAFAFA;
 display: flex;
 flex-direction: column;
@@ -24,7 +23,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 376px;
-padding: 40px;
+/* padding: 40px; */
 /* overflow: hidden; */
 `
 export const Buttondiv = styled.div`
@@ -60,7 +59,7 @@ const Wrappercard = styled.div`
   @media only screen and (max-width: 500px) {
       display: flex;
       flex-direction: column;
-      gap: 80px;
+      gap: 100px;
 }
 `;
 
@@ -75,7 +74,7 @@ const Wrappercard2 = styled.div`
   @media only screen and (max-width: 500px) {
     display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 80px;
 }
 `;
 

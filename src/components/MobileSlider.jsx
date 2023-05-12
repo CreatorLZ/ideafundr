@@ -86,13 +86,13 @@ const Button = styled.button`
 const PrevButton = styled(Button)`
   position: absolute;
   left: 5px;
-  bottom:250px;
+  bottom:220px;
 `;
 
 const NextButton = styled(Button)`
   position: absolute;
   right: 5px;
-  bottom:250px;
+  bottom:220px;
 `;
 
 const MobileSlider = () => {
