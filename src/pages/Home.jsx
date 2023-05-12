@@ -71,10 +71,13 @@ const Wrappercard2 = styled.div`
   padding: 55px;
   align-items: center;
   justify-content: center;
+ 
   @media only screen and (max-width: 500px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
+     width: 100%;
+     flex-direction: column;
+     padding: 10px;
+     gap: 5px;
     p{
         display: none;
     }
@@ -251,7 +254,7 @@ const Home = () => {
         <Wrappercard2>
         <Child>
                 <img src='./images/2.png' alt=''/>
-                <h3>Aliko Dangote</h3>
+                <h4>Aliko Dangote</h4>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
@@ -268,14 +271,6 @@ const Home = () => {
             <Child>
                 <img src='./images/Rectangle 11 (3).png' alt=''/>
                 <h4>Nigerian woman</h4>
-                <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
-                <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
-                <Button>View</Button>
-                </div>
-            </Child>
-            <Child>
-                <img src='./images/2.png' alt=''/>
-                <h3>Aliko Dangote</h3>
                 <div style={{display:"flex", paddingLeft:"2px", alignItems:"center", justifyContent:"center", marginTop:"20px"}}>
                 <P2>67 layers Damascus steel with a VG10 steel core. Danish design. Built to last a lifetime.</P2>
                 <Button>View</Button>
