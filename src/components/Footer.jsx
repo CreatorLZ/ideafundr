@@ -9,7 +9,7 @@ align-items: flex-start;
 padding: 40px 88px;
 gap: 8px;
 width: 100%;
-height: 70vh;
+height: 50vh;
 padding: 100px;
 @media only screen and (max-width: 850px) {
    padding: 10px;
@@ -18,6 +18,8 @@ padding: 100px;
    flex-direction: column;
    align-items: flex-start;
    padding: 0px;
+   height: 70vh;
+   padding-top:50px;
 }
 `
  const Logo = styled.img`
@@ -90,7 +92,7 @@ const Footer = () => {
       <FlexItem><a href="https://ideafundr.wordpress.com" style={{textDecoration:'none',color: '#3A4F5C'}}>Blog</a></FlexItem>
       <FlexItem><Link to="/Explore" style={{textDecoration:"none",color: '#3A4F5C'}}>Explore</Link></FlexItem>
       <FlexItem><Link to="/Investors" style={{textDecoration:"none",color: '#3A4F5C'}}>Investors</Link></FlexItem>
-      <FlexItem>T's & C's</FlexItem>
+      <FlexItem>T & C's</FlexItem>
     </FlexContainer>
     </Wrapper>
     <div style={{display:"flex",flexDirection:'column', alignItems:"center", justifyContent:"center", width:"100%", marginTop:"20px",gap:'20px'}}>

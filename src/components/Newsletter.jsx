@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 width: 100%;
-height: 90vh;
+height: 70vh;
 flex-direction: column;
 background: white;
 color: #3A4F5C;
@@ -27,7 +27,7 @@ form{
   form{
     width: 70%;
   }
-  margin-bottom:10px;
+  /* margin-bottom:10px; */
 }
 
 `

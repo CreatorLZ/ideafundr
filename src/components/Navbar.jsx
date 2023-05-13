@@ -94,7 +94,7 @@ const SidebarNav = styled.nav`
   margin: 0;
   padding: 0;
   @media only screen and (max-width: 500px) {
-    width: 230px;
+    width: 300px;
     display: flex;
   }
 `;
