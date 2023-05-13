@@ -149,9 +149,9 @@ export const Button = styled.button`
     background-color: white;
     color: #00806e;
   }
-  :focus{
-  outline: none;
-}
+  :focus {
+    outline: none;
+  }
 `;
 
 export const Button1 = styled.button`
@@ -172,9 +172,9 @@ export const Button1 = styled.button`
     background-color: #00806e;
     color: white;
   }
-  :focus{
-  outline: none;
-}
+  :focus {
+    outline: none;
+  }
 
   @media only screen and (max-width: 580px) {
     width: 230px;
