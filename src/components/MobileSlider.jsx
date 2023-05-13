@@ -56,7 +56,7 @@ const ButtonWrapper = styled.div`
 
 const Button = styled.button`
   border: none;
-  z-index: 100;
+  z-index: 50;
   background-color: transparent;
   width: 50px;
   height: 50px;

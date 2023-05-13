@@ -1,5 +1,3 @@
-
-
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
@@ -11,7 +9,7 @@ const firebaseConfig = {
   projectId: "ingressive-ad517",
   storageBucket: "ingressive-ad517.appspot.com",
   messagingSenderId: "124001843071",
-  appId: "1:124001843071:web:e792b713189532760c4c4a"
+  appId: "1:124001843071:web:e792b713189532760c4c4a",
 };
 
 // Initialize Firebase

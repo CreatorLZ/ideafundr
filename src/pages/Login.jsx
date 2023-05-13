@@ -1,33 +1,35 @@
-import React, { useState, useEffect } from 'react'
-import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import React, { useState, useEffect } from "react";
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
 import { auth } from "../firebase";
-import { Link, useNavigate } from 'react-router-dom';
-import { Button } from './Landing'
-import styled from 'styled-components';
-import { Wrapper } from '../components/Registerstyles';
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "./Landing";
+import styled from "styled-components";
+import { Wrapper } from "../components/Registerstyles";
 
 export const AnimatedLoader = styled.img`
   width: 1px;
   height: 1px;
   object-fit: cover;
-`
+`;
 
 export const Container = styled.div`
   width: 100%;
   height: vh;
- 
-  background: #FAFAFA;
+
+  background: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 500px) {
-   
   }
-`
+`;
 
 const Login = () => {
-
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
@@ -77,30 +79,53 @@ const Login = () => {
 
   return (
     <Container>
-      <Wrapper style={{ paddingTop: '100px' }}>
+      <Wrapper style={{ paddingTop: "100px" }}>
         <form onSubmit={handleSubmit}>
-
-          <input placeholder='email address'
+          <input
+            placeholder="email address"
             type="email"
-            name='email'
-            required />
-          <input placeholder='password'
+            name="email"
+            required
+          />
+          <input
+            placeholder="password"
             type="password"
             minLength="6"
-            name='password'
-            required />
-           {error && <span style={{ fontSize: "14px", color: "red", fontWeight: "200",margin:'20px' }}>something went wrong...</span>}
-          <Button >{loading ?
-            <AnimatedLoader src='./images/loading-gif2.gif' alt='loading' />
-            :
-            " Sign in"}
+            name="password"
+            required
+          />
+          {error && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: "red",
+                fontWeight: "200",
+                margin: "20px",
+              }}
+            >
+              something went wrong...
+            </span>
+          )}
+          <Button>
+            {loading ? (
+              <AnimatedLoader src="./images/loading-gif2.gif" alt="loading" />
+            ) : (
+              " Sign in"
+            )}
           </Button>
         </form>
-        <p>Don't have an account?  <Link style={{ textDecoration: "none" ,color:' #8095A2;'}} to="/Register">Sign up</Link></p>
+        <p>
+          Don't have an account?{" "}
+          <Link
+            style={{ textDecoration: "none", color: " #8095A2;" }}
+            to="/Register"
+          >
+            Sign up
+          </Link>
+        </p>
       </Wrapper>
- 
     </Container>
-  )
-}
+  );
+};
 
 export default Login;

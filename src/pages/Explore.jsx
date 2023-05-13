@@ -1,13 +1,12 @@
-import React from 'react'
-import Allinventions from '../components/Allinventions'
+import React from "react";
+import Allinventions from "../components/Allinventions";
 
 const Explore = () => {
   return (
     <div>
-      <Allinventions/>
+      <Allinventions />
     </div>
-  )
-}
+  );
+};
 
-export default Explore
-
+export default Explore;
