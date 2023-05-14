@@ -239,7 +239,7 @@ const Buttondiv = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  Link{
+  Link {
     text-decoration: none;
   }
 `;
@@ -577,181 +577,181 @@ const Secondprompttext = styled.div`
 
 const Landing = () => {
   return (
-      <Container>
-        <Wrapper>
-          <Firstprompt>
-            <Left>
-              <Firstp>
-                Showcase your <span style={{color:'#FF6B6B'}}>invention</span> to <span style={{color:'#00806e'}}>investors</span> with immersive tech
-              </Firstp>
-              <Secondp>
-                Get investment for your brightest Idea by demonstrating
-                <br /> in a fully immersive virtual environment
-              </Secondp>
-              <Buttondiv>
-                <Link style={{textDecoration:'none'}} to="/Login">
-                  <Button1 >Sign In</Button1>
-                </Link>
-                <Link to="/Register">
-                  <Button2>Sign Up Now</Button2>
-                </Link>
-              </Buttondiv>
-            </Left>
-            <Right>
-              <img src="./images/Rectangle1.png" alt="image" />
-            </Right>
-          </Firstprompt>
-          <Secondprompt>
-            <img src="./images/Rectangle2.png" alt="image" />
-            <Secondprompttext>
-              <P1>Are you an inventor?</P1>
-              <P2>
-                Showcase your invention to prospective investors, so you <br />{" "}
-                can secure funding to bring your product to market and
-                <br /> scale as you wish.
-              </P2>
-              <P3>Here’s what you need to do</P3>
-              <Whattododiv>
-                <Whattodobox2>
-                  <p>Create a detailed profile of your invention</p>
-                </Whattodobox2>
-                <Whattodobox2>
-                  <p>Upload your invention demonstration using AR/VR</p>
-                </Whattodobox2>
-                <Whattodobox2>
-                  <p>
-                    Connect with potential investors who might be interested in
-                    your idea
-                  </p>
-                </Whattodobox2>
-              </Whattododiv>
+    <Container>
+      <Wrapper>
+        <Firstprompt>
+          <Left>
+            <Firstp>
+              Showcase your <span style={{ color: "#FF6B6B" }}>invention</span>{" "}
+              to <span style={{ color: "#00806e" }}>investors</span> with
+              immersive tech
+            </Firstp>
+            <Secondp>
+              Get investment for your brightest Idea by demonstrating
+              <br /> in a fully immersive virtual environment
+            </Secondp>
+            <Buttondiv>
+              <Link style={{ textDecoration: "none" }} to="/Login">
+                <Button1>Sign In</Button1>
+              </Link>
+              <Link to="/Register">
+                <Button2>Sign Up Now</Button2>
+              </Link>
+            </Buttondiv>
+          </Left>
+          <Right>
+            <img src="./images/Rectangle1.png" alt="image" />
+          </Right>
+        </Firstprompt>
+        <Secondprompt>
+          <img src="./images/Rectangle2.png" alt="image" />
+          <Secondprompttext>
+            <P1>Are you an inventor?</P1>
+            <P2>
+              Showcase your invention to prospective investors, so you <br />{" "}
+              can secure funding to bring your product to market and
+              <br /> scale as you wish.
+            </P2>
+            <P3>Here’s what you need to do</P3>
+            <Whattododiv>
+              <Whattodobox2>
+                <p>Create a detailed profile of your invention</p>
+              </Whattodobox2>
+              <Whattodobox2>
+                <p>Upload your invention demonstration using AR/VR</p>
+              </Whattodobox2>
+              <Whattodobox2>
+                <p>
+                  Connect with potential investors who might be interested in
+                  your idea
+                </p>
+              </Whattodobox2>
+            </Whattododiv>
+            <ul>
+              <li>
+                <p>Create a detailed profile of your invention</p>
+              </li>
+              <li>
+                <p>Upload your invention demonstration using AR/VR</p>
+              </li>
+              <li>
+                <p>
+                  Connect with potential investors who might be interested in
+                  your idea
+                </p>
+              </li>
+            </ul>
+            <Buttondiv style={{ justifyContent: "center" }}>
+              <Button2>Showcase Your Invention</Button2>
+            </Buttondiv>
+          </Secondprompttext>
+        </Secondprompt>
+        <Thirdprompt>
+          <Secondprompttext>
+            <P1 style={{ color: " #3A4F5C" }}>Are you an Investor?</P1>
+            <P2 style={{ color: " #3A4F5C" }}>
+              Find promising inventions to invest in, so that you can
+              <br /> support innovative ideas and potentially earn a return{" "}
+              <br />
+              on your investment.{" "}
+            </P2>
+            <P3 style={{ color: " #3A4F5C" }}>Here’s what you need to do</P3>
+            <Whattododiv>
+              <Whattodobox2 style={{ background: "#1D2D35" }}>
+                <p style={{ color: "#FFFFFF" }}>
+                  Create a detailed profile of your invention
+                </p>
+              </Whattodobox2>
+              <Whattodobox2 style={{ background: "#1D2D35" }}>
+                <p style={{ color: "#FFFFFF" }}>
+                  Search for inventions based on your investment criteria
+                </p>
+              </Whattodobox2>
+              <Whattodobox2 style={{ background: "#1D2D35" }}>
+                <p style={{ color: "#FFFFFF" }}>Connect with inventors</p>
+              </Whattodobox2>
+            </Whattododiv>
+            <Buttondiv style={{ justifyContent: "center" }}>
+              <Button2>Discover New Inventions</Button2>
               <ul>
                 <li>
                   <p>Create a detailed profile of your invention</p>
                 </li>
                 <li>
-                  <p>Upload your invention demonstration using AR/VR</p>
+                  <p>Search for inventions based on your investment criteria</p>
                 </li>
                 <li>
-                  <p>
-                    Connect with potential investors who might be interested in
-                    your idea
-                  </p>
+                  <p>Connect with inventors</p>
                 </li>
               </ul>
-              <Buttondiv style={{ justifyContent: "center" }}>
-                <Button2>Showcase Your Invention</Button2>
-              </Buttondiv>
-            </Secondprompttext>
-          </Secondprompt>
-          <Thirdprompt>
-            <Secondprompttext>
-              <P1 style={{ color: " #3A4F5C" }}>Are you an Investor?</P1>
-              <P2 style={{ color: " #3A4F5C" }}>
-                Find promising inventions to invest in, so that you can
-                <br /> support innovative ideas and potentially earn a return{" "}
-                <br />
-                on your investment.{" "}
-              </P2>
-              <P3 style={{ color: " #3A4F5C" }}>Here’s what you need to do</P3>
-              <Whattododiv>
-                <Whattodobox2 style={{ background: "#1D2D35" }}>
-                  <p style={{ color: "#FFFFFF" }}>
-                    Create a detailed profile of your invention
-                  </p>
-                </Whattodobox2>
-                <Whattodobox2 style={{ background: "#1D2D35" }}>
-                  <p style={{ color: "#FFFFFF" }}>
-                    Search for inventions based on your investment criteria
-                  </p>
-                </Whattodobox2>
-                <Whattodobox2 style={{ background: "#1D2D35" }}>
-                  <p style={{ color: "#FFFFFF" }}>Connect with inventors</p>
-                </Whattodobox2>
-              </Whattododiv>
-              <Buttondiv style={{ justifyContent: "center" }}>
-                <Button2>Discover New Inventions</Button2>
-                <ul>
-                  <li>
-                    <p>Create a detailed profile of your invention</p>
-                  </li>
-                  <li>
-                    <p>
-                      Search for inventions based on your investment criteria
-                    </p>
-                  </li>
-                  <li>
-                    <p>Connect with inventors</p>
-                  </li>
-                </ul>
-              </Buttondiv>
-            </Secondprompttext>
-            <img src="./images/Rectangle3.png" alt="image" />
-          </Thirdprompt>
-          <Thirdprompt2>
-            <Whybox>
-              <p>Why choose us?</p>
-            </Whybox>
-            <Thirdpromptdiv1>
+            </Buttondiv>
+          </Secondprompttext>
+          <img src="./images/Rectangle3.png" alt="image" />
+        </Thirdprompt>
+        <Thirdprompt2>
+          <Whybox>
+            <p>Why choose us?</p>
+          </Whybox>
+          <Thirdpromptdiv1>
+            <p>
+              With our platform, you can easily discover a revolutionary
+              invention, which you can invest in and help bring to market.
+            </p>
+          </Thirdpromptdiv1>
+          <Thirdpromptdiv2>
+            <p>
+              With our platform , you can showcase your new invention to
+              investors. which will lead to successful crowdfunding campaign and
+              help you lunch your invention.
+            </p>
+          </Thirdpromptdiv2>
+          <Thirdpromptdiv3>
+            <p>
+              With our platform , you can showcase your new invention to
+              investors. which will lead to successful crowdfunding campaign and
+              help you lunch your invention.
+            </p>
+          </Thirdpromptdiv3>
+          <Thirdpromptdiv4>
+            <p>
+              With our platform , you can showcase your new invention to
+              investors. which will lead to successful crowdfunding campaign and
+              help you lunch your invention.
+            </p>
+          </Thirdpromptdiv4>
+          <ul>
+            <li>
               <p>
                 With our platform, you can easily discover a revolutionary
                 invention, which you can invest in and help bring to market.
               </p>
-            </Thirdpromptdiv1>
-            <Thirdpromptdiv2>
+            </li>
+            <li>
               <p>
                 With our platform , you can showcase your new invention to
                 investors. which will lead to successful crowdfunding campaign
                 and help you lunch your invention.
               </p>
-            </Thirdpromptdiv2>
-            <Thirdpromptdiv3>
+            </li>
+            <li>
               <p>
                 With our platform , you can showcase your new invention to
                 investors. which will lead to successful crowdfunding campaign
                 and help you lunch your invention.
               </p>
-            </Thirdpromptdiv3>
-            <Thirdpromptdiv4>
+            </li>
+            <li>
+              {" "}
               <p>
                 With our platform , you can showcase your new invention to
                 investors. which will lead to successful crowdfunding campaign
                 and help you lunch your invention.
               </p>
-            </Thirdpromptdiv4>
-            <ul>
-              <li>
-                <p>
-                  With our platform, you can easily discover a revolutionary
-                  invention, which you can invest in and help bring to market.
-                </p>
-              </li>
-              <li>
-                <p>
-                  With our platform , you can showcase your new invention to
-                  investors. which will lead to successful crowdfunding campaign
-                  and help you lunch your invention.
-                </p>
-              </li>
-              <li>
-                <p>
-                  With our platform , you can showcase your new invention to
-                  investors. which will lead to successful crowdfunding campaign
-                  and help you lunch your invention.
-                </p>
-              </li>
-              <li>
-                {" "}
-                <p>
-                  With our platform , you can showcase your new invention to
-                  investors. which will lead to successful crowdfunding campaign
-                  and help you lunch your invention.
-                </p>
-              </li>
-            </ul>
-          </Thirdprompt2>
-          
-          <Whybox style={{ paddingTop: "80px" }}>
+            </li>
+          </ul>
+        </Thirdprompt2>
+
+        <Whybox style={{ paddingTop: "80px" }}>
           <p>Featured Invention </p>
         </Whybox>
         <Wrappercard2>
@@ -765,12 +765,11 @@ const Landing = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 marginTop: "20px",
-                color:'#3A4F5C'
+                color: "#3A4F5C",
               }}
             >
-              <P2 style={{color:'#3A4F5C'}}>
-              Easy device connection
-Max. 30 hrs battery life
+              <P2 style={{ color: "#3A4F5C" }}>
+                Easy device connection Max. 30 hrs battery life
               </P2>
               <Button>View</Button>
             </div>
@@ -787,8 +786,9 @@ Max. 30 hrs battery life
                 marginTop: "20px",
               }}
             >
-              <P2 style={{color:'#3A4F5C'}}>
-              6061 aluminum frame and fork provide a smooth, stable ride Mechanical disc brakes offer excellent...
+              <P2 style={{ color: "#3A4F5C" }}>
+                6061 aluminum frame and fork provide a smooth, stable ride
+                Mechanical disc brakes offer excellent...
               </P2>
               <Button>View</Button>
             </div>
@@ -805,30 +805,37 @@ Max. 30 hrs battery life
                 marginTop: "20px",
               }}
             >
-              <P2 style={{color:'#3A4F5C'}}>
-              Quiet tactile clicking, Long-lasting battery life, Customizable seven-button inputs
+              <P2 style={{ color: "#3A4F5C" }}>
+                Quiet tactile clicking, Long-lasting battery life, Customizable
+                seven-button inputs
               </P2>
               <Button>View</Button>
             </div>
           </Child2>
         </Wrappercard2>
-        <Buttondiv style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <Buttondiv
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Button>View All Inventions</Button>
         </Buttondiv>
-          
-          <Thirdprompt3>
-            <Whybox>
-              {" "}
-              <p>Frequently asked questions (FAQs)</p>{" "}
-            </Whybox>
-            <Comingsoon>
-              <p>Coming Soon</p>
-            </Comingsoon>
-          </Thirdprompt3>
-          <Newsletter />
-          <Footer />
-        </Wrapper>
-      </Container>
+
+        <Thirdprompt3>
+          <Whybox>
+            {" "}
+            <p>Frequently asked questions (FAQs)</p>{" "}
+          </Whybox>
+          <Comingsoon>
+            <p>Coming Soon</p>
+          </Comingsoon>
+        </Thirdprompt3>
+        <Newsletter />
+        <Footer />
+      </Wrapper>
+    </Container>
   );
 };
 

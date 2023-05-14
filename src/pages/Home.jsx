@@ -108,7 +108,7 @@ const Child = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 8px;
-    background: #FF6B6B;
+    background: #ff6b6b;
   }
   @media only screen and (max-width: 500px) {
     width: 180px;
@@ -153,7 +153,7 @@ export const Child2 = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 8px;
-    background: #FF6B6B;
+    background: #ff6b6b;
   }
   @media only screen and (max-width: 500px) {
     /* background: rgba(253, 253, 253, 0.1); */
@@ -230,286 +230,286 @@ const Categorydiv = styled.div`
 
 const Home = () => {
   return (
-      <Container>
-        <Wrapper>
-          <Slider />
-          <MobileSlider />
-        </Wrapper>
-        <Buttondiv>
-          <Button style={{ width: "fit-content" }}>Explore Investments</Button>
-          <Button1 style={{ width: "fit-content" }}>Add Invention</Button1>
-        </Buttondiv>
-        <Whybox style={{ paddingTop: "80px" }}>
-          <p>Trending Inventions </p>
+    <Container>
+      <Wrapper>
+        <Slider />
+        <MobileSlider />
+      </Wrapper>
+      <Buttondiv>
+        <Button style={{ width: "fit-content" }}>Explore Investments</Button>
+        <Button1 style={{ width: "fit-content" }}>Add Invention</Button1>
+      </Buttondiv>
+      <Whybox style={{ paddingTop: "80px" }}>
+        <p>Trending Inventions </p>
+      </Whybox>
+      <Wrappercard>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to="/Invention"
+        >
+          {" "}
+          <Child>
+            <img src="./images/SwiftXR 2.png" alt="" />
+            <P1>Headset</P1>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2>
+                6061 aluminum frame and fork provide a smooth, stable ride
+                Mechanical disc brakes offer excellent...
+              </P2>
+              <Link to="/Invention">
+                <Button>View</Button>
+              </Link>
+            </div>
+          </Child>
+        </Link>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to="/Invention"
+        >
+          {" "}
+          <Child>
+            <img src="./images/Bicyle1.png" alt="" />
+            <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2>
+                6061 aluminum frame and fork provide a smooth, stable ride
+                Mechanical disc brakes offer excellent...
+              </P2>
+              <Link to="/Invention">
+                <Button>View</Button>
+              </Link>
+            </div>
+          </Child>
+        </Link>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to="/Invention"
+        >
+          {" "}
+          <Child>
+            <img src="./images/mouse.png" alt="" />
+            <P1 style={{ textDecoration: "none" }}>
+              Mouse - Easy to use Wireless optical mouse
+            </P1>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2>
+                Quiet tactile clicking, Long-lasting battery life, Customizable
+                seven-button inputs
+              </P2>
+              <Link to="/Invention">
+                <Button>View</Button>
+              </Link>
+            </div>
+          </Child>
+        </Link>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to="/Invention"
+        >
+          {" "}
+          <Child>
+            <img src="./images/Ride.png" alt="" />
+            <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2>
+                6061 aluminum frame and fork provide a smooth, stable ride
+                Mechanical disc brakes offer excellent...
+              </P2>
+              <Link to="/Invention">
+                <Button>View</Button>
+              </Link>
+            </div>
+          </Child>
+        </Link>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to="/Invention"
+        >
+          <Child>
+            <img src="./images/SwiftXR.png" alt="" />
+            <P1>Bmax car</P1>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2>
+                Front-wheel drive, 18-In. Graphite-Colored Alloy Wheels, LED
+                Headlights With DRL
+              </P2>
+              <Link to="/Invention">
+                <Button>View</Button>
+              </Link>
+            </div>
+          </Child>
+        </Link>
+        <Link
+          style={{ textDecoration: "none", color: "black" }}
+          to="/Invention"
+        >
+          <Child>
+            <img src="./images/Knife.png" alt="" />
+            <P1 style={{ textDecoration: "none" }}>
+              {" "}
+              Qknives - The perfect kitchen knife series
+            </P1>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2>
+                67 layers Damascus steel with a VG10 steel core. Danish design.
+                Built to last a lifetime.
+              </P2>
+              <Link to="/Invention">
+                <Button>View</Button>
+              </Link>
+            </div>
+          </Child>
+        </Link>
+      </Wrappercard>
+      <Buttondiv>
+        <Button>View all inventions</Button>
+      </Buttondiv>
+      <Whybox style={{ paddingTop: "80px" }}>
+        <p>Popular Investors </p>
+      </Whybox>
+      <Wrappercard2>
+        <Child2>
+          <img src="./images/2.png" alt="" />
+          <h4>Aliko Dangote</h4>
+          <div
+            style={{
+              display: "flex",
+              paddingLeft: "2px",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "20px",
+            }}
+          >
+            <P2>
+              67 layers Damascus steel with a VG10 steel core. Danish design.
+              Built to last a lifetime.
+            </P2>
+            <Button>View</Button>
+          </div>
+        </Child2>
+        <Child2>
+          <img src="./images/1.png" alt="" />
+          <h4>Nigerian man</h4>
+          <div
+            style={{
+              display: "flex",
+              paddingLeft: "2px",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "20px",
+            }}
+          >
+            <P2>
+              67 layers Damascus steel with a VG10 steel core. Danish design.
+              Built to last a lifetime.
+            </P2>
+            <Button>View</Button>
+          </div>
+        </Child2>
+        <Child2>
+          <img src="./images/Rectangle 11 (3).png" alt="" />
+          <h4>Nigerian woman</h4>
+          <div
+            style={{
+              display: "flex",
+              paddingLeft: "2px",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "20px",
+            }}
+          >
+            <P2>
+              67 layers Damascus steel with a VG10 steel core. Danish design.
+              Built to last a lifetime.
+            </P2>
+            <Button>View</Button>
+          </div>
+        </Child2>
+      </Wrappercard2>
+      <Buttondiv>
+        <Button>View More</Button>
+      </Buttondiv>
+      <Categories>
+        <Whybox style={{ marginTop: "100px", flexDirection: "column" }}>
+          <p>Which categories interest you? </p>
+          <p style={{ fontWeight: "400", fontSize: "15px" }}>
+            Discover project just for you and get great recommendation when you
+            select your interst.
+          </p>
         </Whybox>
-        <Wrappercard>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Invention"
-          >
-            {" "}
-            <Child>
-              <img src="./images/SwiftXR 2.png" alt="" />
-              <P1>Headset</P1>
-              <div
-                style={{
-                  display: "flex",
-                  paddingLeft: "2px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginTop: "20px",
-                }}
-              >
-                <P2>
-                  6061 aluminum frame and fork provide a smooth, stable ride
-                  Mechanical disc brakes offer excellent...
-                </P2>
-                <Link to="/Invention">
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Child>
-          </Link>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Invention"
-          >
-            {" "}
-            <Child>
-              <img src="./images/Bicyle1.png" alt="" />
-              <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
-              <div
-                style={{
-                  display: "flex",
-                  paddingLeft: "2px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginTop: "20px",
-                }}
-              >
-                <P2>
-                  6061 aluminum frame and fork provide a smooth, stable ride
-                  Mechanical disc brakes offer excellent...
-                </P2>
-                <Link to="/Invention">
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Child>
-          </Link>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Invention"
-          >
-            {" "}
-            <Child>
-              <img src="./images/mouse.png" alt="" />
-              <P1 style={{ textDecoration: "none" }}>
-                Mouse - Easy to use Wireless optical mouse
-              </P1>
-              <div
-                style={{
-                  display: "flex",
-                  paddingLeft: "2px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginTop: "20px",
-                }}
-              >
-                <P2>
-                  Quiet tactile clicking, Long-lasting battery life,
-                  Customizable seven-button inputs
-                </P2>
-                <Link to="/Invention">
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Child>
-          </Link>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Invention"
-          >
-            {" "}
-            <Child>
-              <img src="./images/Ride.png" alt="" />
-              <P1>Bicycles - 26 inches Adult big size tyre bicycle</P1>
-              <div
-                style={{
-                  display: "flex",
-                  paddingLeft: "2px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginTop: "20px",
-                }}
-              >
-                <P2>
-                  6061 aluminum frame and fork provide a smooth, stable ride
-                  Mechanical disc brakes offer excellent...
-                </P2>
-                <Link to="/Invention">
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Child>
-          </Link>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Invention"
-          >
-            <Child>
-              <img src="./images/SwiftXR.png" alt="" />
-              <P1>Bmax car</P1>
-              <div
-                style={{
-                  display: "flex",
-                  paddingLeft: "2px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginTop: "20px",
-                }}
-              >
-                <P2>
-                  Front-wheel drive, 18-In. Graphite-Colored Alloy Wheels, LED
-                  Headlights With DRL
-                </P2>
-                <Link to="/Invention">
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Child>
-          </Link>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/Invention"
-          >
-            <Child>
-              <img src="./images/Knife.png" alt="" />
-              <P1 style={{ textDecoration: "none" }}>
-                {" "}
-                Qknives - The perfect kitchen knife series
-              </P1>
-              <div
-                style={{
-                  display: "flex",
-                  paddingLeft: "2px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginTop: "20px",
-                }}
-              >
-                <P2>
-                  67 layers Damascus steel with a VG10 steel core. Danish
-                  design. Built to last a lifetime.
-                </P2>
-                <Link to="/Invention">
-                  <Button>View</Button>
-                </Link>
-              </div>
-            </Child>
-          </Link>
-        </Wrappercard>
-        <Buttondiv>
-          <Button>View all inventions</Button>
-        </Buttondiv>
-        <Whybox style={{ paddingTop: "80px" }}>
-          <p>Popular Investors </p>
-        </Whybox>
-        <Wrappercard2>
-          <Child2>
-            <img src="./images/2.png" alt="" />
-            <h4>Aliko Dangote</h4>
-            <div
-              style={{
-                display: "flex",
-                paddingLeft: "2px",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: "20px",
-              }}
-            >
-              <P2>
-                67 layers Damascus steel with a VG10 steel core. Danish design.
-                Built to last a lifetime.
-              </P2>
-              <Button>View</Button>
-            </div>
-          </Child2>
-          <Child2>
-            <img src="./images/1.png" alt="" />
-            <h4>Nigerian man</h4>
-            <div
-              style={{
-                display: "flex",
-                paddingLeft: "2px",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: "20px",
-              }}
-            >
-              <P2>
-                67 layers Damascus steel with a VG10 steel core. Danish design.
-                Built to last a lifetime.
-              </P2>
-              <Button>View</Button>
-            </div>
-          </Child2>
-          <Child2>
-            <img src="./images/Rectangle 11 (3).png" alt="" />
-            <h4>Nigerian woman</h4>
-            <div
-              style={{
-                display: "flex",
-                paddingLeft: "2px",
-                alignItems: "center",
-                justifyContent: "center",
-                marginTop: "20px",
-              }}
-            >
-              <P2>
-                67 layers Damascus steel with a VG10 steel core. Danish design.
-                Built to last a lifetime.
-              </P2>
-              <Button>View</Button>
-            </div>
-          </Child2>
-        </Wrappercard2>
-        <Buttondiv>
-          <Button>View More</Button>
-        </Buttondiv>
-        <Categories>
-          <Whybox style={{ marginTop: "100px", flexDirection: "column" }}>
-            <p>Which categories interest you? </p>
-            <p style={{ fontWeight: "400", fontSize: "15px" }}>
-              Discover project just for you and get great recommendation when
-              you select your interst.
-            </p>
-          </Whybox>
-          <Categorydiv
-            style={{ display: "flex", gap: "60px", marginTop: "40px" }}
-          >
-            <Categorycard>
-              <img src="images/Frame 436.png" alt="" />
-              <p>Home</p>
-            </Categorycard>
-            <Categorycard>
-              <img src="images/Frame 437.png" alt="" />
-              <p>Phones </p>
-            </Categorycard>
-            <Categorycard>
-              <img src="images/Frame 438.png" alt="" />
-              <p>Health</p>
-            </Categorycard>
-            <Categorycard>
-              <img src="images/Frame 439.png" alt="" />
-              <p>Transportation</p>
-            </Categorycard>
-          </Categorydiv>
-        </Categories>
-        <Coming />
-        <Newsletter />
-        <Footer />
-      </Container>
+        <Categorydiv
+          style={{ display: "flex", gap: "60px", marginTop: "40px" }}
+        >
+          <Categorycard>
+            <img src="images/Frame 436.png" alt="" />
+            <p>Home</p>
+          </Categorycard>
+          <Categorycard>
+            <img src="images/Frame 437.png" alt="" />
+            <p>Phones </p>
+          </Categorycard>
+          <Categorycard>
+            <img src="images/Frame 438.png" alt="" />
+            <p>Health</p>
+          </Categorycard>
+          <Categorycard>
+            <img src="images/Frame 439.png" alt="" />
+            <p>Transportation</p>
+          </Categorycard>
+        </Categorydiv>
+      </Categories>
+      <Coming />
+      <Newsletter />
+      <Footer />
+    </Container>
   );
 };
 
