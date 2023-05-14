@@ -19,8 +19,8 @@ const Container = styled.div`
     align-items: flex-start;
     justify-content: flex-end;
     padding: 0px;
-    height: 70vh;
-    margin-top: 10px;
+    height: 60vh;
+    padding-bottom:20px;
   }
 `;
 const Logo = styled.img`
