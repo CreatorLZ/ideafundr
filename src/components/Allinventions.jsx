@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { Button } from '../pages/Landing';
 import Spinner from './Spinner';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
 
 const Container = styled.div`
 display: flex;
@@ -96,8 +95,6 @@ const Allinventions = () => {
 
        }
   return (
-    <div>
-      <Navbar/>
     <Container>
         <div style={{display:'none'}}>
      <form onSubmit={handleSubmit}>
@@ -127,7 +124,6 @@ const Allinventions = () => {
     </div>
      
     </Container>  
-    </div>
   )
 }
 

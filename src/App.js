@@ -1,6 +1,5 @@
 import { ThemeProvider } from "styled-components";
 // import GlobalStyles from "./Global";
-// import Navbar from "./components/Navbar";
 // import Landing from './pages/Landing';
 // import Home from './pages/Home';
 // import About from './pages/About';
@@ -11,6 +10,7 @@ import { ThemeProvider } from "styled-components";
 // import Invention from './pages/Invention';
 // import Register from './pages/Register';
 // import Login from './pages/Login';
+import Navbar from "./components/Navbar";
 import { Suspense, lazy, useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import {
@@ -34,7 +34,8 @@ const Explore = lazy(() => import("./pages/Explore"));
 const Register = lazy(() => import("./pages/Register"));
 const Login = lazy(() => import("./pages/Login"));
 const GlobalStyles = lazy(() => import("./Global"));
-// const Navbar = lazy (()=> import('./components/Navbar'))
+
+
 
 const theme = {
   colors: {
@@ -45,7 +46,7 @@ const theme = {
 const Root = () => {
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar/>
       <>
         <Outlet />
       </>

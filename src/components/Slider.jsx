@@ -21,6 +21,7 @@ const SliderWrapper = styled.div`
 
 const Slide = styled.div`
   position: absolute;
+  padding-top:50px;
   top: 0;
   left: 0;
   width: 100%;

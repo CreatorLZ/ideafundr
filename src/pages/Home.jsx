@@ -6,7 +6,6 @@ import Coming from "../components/Coming";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import MobileSlider from "../components/MobileSlider";
 
 export const Container = styled.div`
@@ -229,8 +228,6 @@ const Categorydiv = styled.div`
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
       <Container>
         <Wrapper>
           <Slider />
@@ -511,7 +508,6 @@ const Home = () => {
         <Newsletter />
         <Footer />
       </Container>
-    </div>
   );
 };
 

@@ -9,6 +9,8 @@ import { Button1 } from "../pages/Landing";
 const Container = styled.div`
   height: 60px;
   padding-bottom: 87px;
+  display:  ${({currentUser}) => (currentUser !='' ? 'flex':' none')};
+  flex-direction: column;
   Link {
     text-decoration: none;
   }

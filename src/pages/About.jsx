@@ -11,7 +11,6 @@ import {
 import Coming2 from "../components/Coming2";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 
 const Container = styled.div`
   width: 100%;
@@ -60,8 +59,7 @@ export const P1 = styled.p`
 
 const About = () => {
   return (
-    <div>
-      <Navbar />
+  
       <Container>
         <Whoweare>
           <Right>
@@ -137,7 +135,6 @@ const About = () => {
         <Newsletter />
         <Footer />
       </Container>
-    </div>
   );
 };
 

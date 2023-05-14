@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { Button1 } from "./Landing";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import { AuthContext } from "../context/AuthContext";
 
 const Container = styled.div`
@@ -139,8 +138,6 @@ const Contactdetails = styled.div`
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);
   return (
-    <div>
-      <Navbar />
       <Container>
         <Wrapper>
           <Info>
@@ -233,7 +230,6 @@ const Profile = () => {
         </Descriptionbox>
         <Footer />
       </Container>
-    </div>
   );
 };
 

@@ -572,7 +572,6 @@ const Secondprompttext = styled.div`
 
 const Landing = () => {
   return (
-    <div>
       <Container>
         <Wrapper>
           <Firstprompt>
@@ -760,7 +759,6 @@ const Landing = () => {
           <Footer />
         </Wrapper>
       </Container>
-    </div>
   );
 };
 

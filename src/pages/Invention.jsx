@@ -4,7 +4,6 @@ import { Buttondiv, Container } from "./Home";
 import { P1 } from "./About";
 import styled from "styled-components";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 
 const Productbox = styled.div`
   display: flex;
@@ -119,8 +118,6 @@ const Contactdetails = styled.div`
 
 const Invention = () => {
   return (
-    <div>
-      <Navbar />
       <Container>
         <Productbox>
           <P1 style={{ fontSize: "28px", color: "#1D2D35" }}>
@@ -198,7 +195,6 @@ const Invention = () => {
         </Descriptionbox>
         <Footer />
       </Container>
-    </div>
   );
 };
 
