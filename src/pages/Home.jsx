@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import MobileSlider from "../components/MobileSlider";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background: #fafafa;
   display: flex;
@@ -64,7 +64,7 @@ const Wrappercard = styled.div`
   }
 `;
 
-const Wrappercard2 = styled.div`
+export const Wrappercard2 = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 400px);
   grid-template-rows: repeat(1, 410px);
@@ -108,6 +108,7 @@ const Child = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 8px;
+    background: #FF6B6B;
   }
   @media only screen and (max-width: 500px) {
     width: 180px;
@@ -127,7 +128,7 @@ const Child = styled.div`
     }
   }
 `;
-const Child2 = styled.div`
+export const Child2 = styled.div`
   width: 400px;
   height: 410px;
   display: flex;
@@ -152,6 +153,7 @@ const Child2 = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 8px;
+    background: #FF6B6B;
   }
   @media only screen and (max-width: 500px) {
     /* background: rgba(253, 253, 253, 0.1); */

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import { Child2, Wrappercard2 } from "./Home";
 
 const Container = styled.div`
   padding: 0;
@@ -581,7 +582,7 @@ const Landing = () => {
           <Firstprompt>
             <Left>
               <Firstp>
-                Showcase your invention to investors with immersive tech
+                Showcase your <span style={{color:'#FF6B6B'}}>invention</span> to <span style={{color:'#00806e'}}>investors</span> with immersive tech
               </Firstp>
               <Secondp>
                 Get investment for your brightest Idea by demonstrating
@@ -749,6 +750,72 @@ const Landing = () => {
               </li>
             </ul>
           </Thirdprompt2>
+          
+          <Whybox style={{ paddingTop: "80px" }}>
+          <p>Featured Invention </p>
+        </Whybox>
+        <Wrappercard2>
+          <Child2>
+            <img src="./images/SwiftXR 2.png" alt="headset" />
+            <h4>Headset</h4>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+                color:'#3A4F5C'
+              }}
+            >
+              <P2 style={{color:'#3A4F5C'}}>
+              Easy device connection
+Max. 30 hrs battery life
+              </P2>
+              <Button>View</Button>
+            </div>
+          </Child2>
+          <Child2>
+            <img src="./images/Ride.png" alt="" />
+            <h4>Bicycles - 26 inches Adult big size tyre bicycle</h4>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2 style={{color:'#3A4F5C'}}>
+              6061 aluminum frame and fork provide a smooth, stable ride Mechanical disc brakes offer excellent...
+              </P2>
+              <Button>View</Button>
+            </div>
+          </Child2>
+          <Child2>
+            <img src="./images/mouse.png" alt="" />
+            <h4>Mouse - Easy to use Wireless optical mouse</h4>
+            <div
+              style={{
+                display: "flex",
+                paddingLeft: "2px",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "20px",
+              }}
+            >
+              <P2 style={{color:'#3A4F5C'}}>
+              Quiet tactile clicking, Long-lasting battery life, Customizable seven-button inputs
+              </P2>
+              <Button>View</Button>
+            </div>
+          </Child2>
+        </Wrappercard2>
+        <Buttondiv style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <Button>View All Inventions</Button>
+        </Buttondiv>
+          
           <Thirdprompt3>
             <Whybox>
               {" "}
