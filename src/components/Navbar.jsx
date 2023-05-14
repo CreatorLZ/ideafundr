@@ -9,15 +9,13 @@ import { Button1 } from "../pages/Landing";
 const Container = styled.div`
   height: 60px;
   padding-bottom: 87px;
-  display:  ${({currentUser}) => (currentUser !='' ? 'flex':' none')};
-  flex-direction: column;
   Link {
     text-decoration: none;
   }
 `;
 
 const Wrapper = styled.div`
-  display: flex;
+ display:  flex;
   align-items: center;
   background-color: #f2f2f2;
   width: 100%;

@@ -138,9 +138,9 @@ const Whattodobox2 = styled.div`
 
 export const Button = styled.button`
   padding: 16px 32px;
-  gap: 8px;
   background-color: #00806e;
   color: #fefefe;
+  text-decoration: none;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -156,13 +156,13 @@ export const Button = styled.button`
 
 export const Button1 = styled.button`
   padding: 16px 32px;
-  gap: 8px;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #00806e;
   border: 1px solid #00806e;
+  text-decoration: none;
   border-radius: 8px;
   cursor: pointer;
   width: 250px;
@@ -236,7 +236,11 @@ const Left = styled.div`
 
 const Buttondiv = styled.div`
   display: flex;
+  align-items: center;
   gap: 10px;
+  Link{
+    text-decoration: none;
+  }
 `;
 
 const Secondprompt = styled.div`
@@ -584,11 +588,10 @@ const Landing = () => {
                 <br /> in a fully immersive virtual environment
               </Secondp>
               <Buttondiv>
-                <Link to="/Login">
-                  <Button1>Sign In</Button1>
+                <Link style={{textDecoration:'none'}} to="/Login">
+                  <Button1 >Sign In</Button1>
                 </Link>
                 <Link to="/Register">
-                  {" "}
                   <Button2>Sign Up Now</Button2>
                 </Link>
               </Buttondiv>

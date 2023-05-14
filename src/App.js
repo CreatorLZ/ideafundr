@@ -44,9 +44,10 @@ const theme = {
 };
 
 const Root = () => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <>
-      <Navbar/>
+      {currentUser? <Navbar/> : ''}
       <>
         <Outlet />
       </>
