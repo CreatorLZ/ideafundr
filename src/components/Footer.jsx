@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Container = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+/* justify-content: space-between; */
 align-items: flex-start;
 padding: 40px 88px;
 gap: 8px;
@@ -20,7 +20,7 @@ padding: 50px;
    align-items: flex-start;
    padding: 0px;
    height: 70vh;
-   padding-top:50px;
+   padding-top:20px;
    margin-top:20px
 }
 `
