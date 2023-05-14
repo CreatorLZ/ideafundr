@@ -20,7 +20,6 @@ const Container = styled.div`
     justify-content: flex-end;
     padding: 0px;
     height: 70vh;
-    padding-top: 5px;
     margin-top: 10px;
   }
 `;
