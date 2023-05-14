@@ -284,7 +284,7 @@ const Navbar = () => {
               <Button>Sign Up</Button>{" "}
             </Link>
           )}
-          <img onClick={toggleNav} src="./images/menuicon.png" alt="menu" />
+          <img onClick={toggleNav} src="./images/vertical.png" alt="menu" />
 
           <UserModal navbar={navbar}>
             <ul>
@@ -335,8 +335,16 @@ const Navbar = () => {
                 {" "}
                 <p>About Us</p>
               </Link>
+              <Link
+                to="/Profile"
+                style={{ textDecoration: "none", color: "#3A4F5C" }}
+              >
+                {" "}
+                <p>View Profile</p>
+              </Link>
             </Siderbarlinks>
             <Sidebarbuttons>
+            
               <Button1
                 style={{
                   marginTop: "50px",
@@ -345,9 +353,10 @@ const Navbar = () => {
                   height: "45px",
                 }}
               >
-                Profile
+                Settings
               </Button1>
-              <Button style={{ width: "70%", height: "45px" }}>Log-out</Button>
+          
+              <Button style={{ width: "70%", height: "45px" }} onClick={handleSignOut}>Log-out</Button>
             </Sidebarbuttons>
           </SidebarWrap>
         </SidebarNav>
