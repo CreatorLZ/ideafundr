@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom'
 const Container = styled.div`
 display: flex;
 flex-direction: column;
+justify-content: space-between;
 align-items: flex-start;
 padding: 40px 88px;
 gap: 8px;
 width: 100%;
-height: 50vh;
-padding: 100px;
+height: 70vh;
+padding: 50px;
 @media only screen and (max-width: 850px) {
    padding: 10px;
 }
@@ -20,6 +21,7 @@ padding: 100px;
    padding: 0px;
    height: 70vh;
    padding-top:50px;
+   margin-top:20px
 }
 `
  const Logo = styled.img`

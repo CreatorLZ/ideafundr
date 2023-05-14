@@ -55,8 +55,8 @@ const Right = styled.div`
 
   img {
     object-fit: cover;
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
   }
   @media only screen and (max-width: 500px) {
     display: none;
