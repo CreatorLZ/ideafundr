@@ -66,6 +66,7 @@ const Wrappercard = styled.div`
 
 export const Wrappercard2 = styled.div`
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 400px);
   grid-template-rows: repeat(1, 410px);
   grid-gap: 20px;
@@ -76,7 +77,8 @@ export const Wrappercard2 = styled.div`
   @media only screen and (max-width: 500px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    padding: 10px;
+    padding: 20px;
+    overflow-x: scroll;
     p {
       display: none;
     }
@@ -88,6 +90,8 @@ const Child = styled.div`
   height: 410px;
   display: flex;
   flex-direction: column;
+  box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2);
+  background: rgba(253, 253, 253, 0.1);
   /* border: 1px solid lightgray; */
   border-radius: 10px;
   object-fit: cover;
@@ -130,10 +134,11 @@ const Child = styled.div`
 `;
 export const Child2 = styled.div`
   width: 400px;
-  height: 410px;
+  height: 440px;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid lightgray; */
+  box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2);
+  background: rgba(253, 253, 253, 0.1);
   border-radius: 10px;
   object-fit: cover;
   padding: 10px;
@@ -156,11 +161,12 @@ export const Child2 = styled.div`
     background: #ff6b6b;
   }
   @media only screen and (max-width: 500px) {
-    /* background: rgba(253, 253, 253, 0.1); */
+    background: rgba(253, 253, 253, 0.1);
     box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2);
     width: 210px;
     height: 260px;
     margin-bottom: 50px;
+    padding: 10px;
     text-align: center;
     h4 {
       margin-top: 15px;
@@ -176,6 +182,7 @@ export const Child2 = styled.div`
       grid-row: 1 / 3;
       grid-column: 1 / 2;
       align-self: center;
+      margin-left: 10px;
     }
   }
 `;

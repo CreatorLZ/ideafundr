@@ -14,11 +14,12 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 const Firstprompt = styled.div`
-  width: 100wh;
-  height: 100vh;
+  width: 100%;
+  height: 90vh;
   background: #f5f5f5;
   overflow-y: hidden;
   display: flex;
@@ -69,6 +70,9 @@ const Right = styled.div`
     object-fit: cover;
     margin-left: 30px;
     margin-bottom: 150px;
+  }
+  @media only screen and (max-width: 500px) {
+    display: none;
   }
 `;
 
@@ -246,7 +250,7 @@ const Buttondiv = styled.div`
 
 const Secondprompt = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background: #1d2d35;
   align-items: center;
   overflow: hidden;
@@ -278,12 +282,12 @@ const Secondprompt = styled.div`
       display: flex;
       flex-direction: column;
     }
-    height: 70vh;
+    height: 90vh;
   }
 `;
 const Thirdprompt = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background: #f2f2f2;
   align-items: center;
   color: #3a4f5c;
@@ -316,7 +320,7 @@ const Thirdprompt = styled.div`
     margin-left: none;
   }
   @media only screen and (max-width: 500px) {
-    height: 70vh;
+    height: 90vh;
   }
 `;
 
