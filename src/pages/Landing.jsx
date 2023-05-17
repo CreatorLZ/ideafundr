@@ -350,13 +350,14 @@ export const Thirdprompt2 = styled.div`
     }
   }
   @media only screen and (max-width: 500px) {
+    height: 100%;
     ul {
       display: flex;
       flex-direction: column;
       color: #3a4f5c;
       gap: 35px;
       padding: 20px;
-      height: 70vh;
+      height: 100%;
     }
   }
 `;
@@ -381,6 +382,7 @@ export const Whybox = styled.div`
       text-align: center;
       line-height: 40px;
     }
+    
   }
 `;
 

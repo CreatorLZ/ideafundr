@@ -8,8 +8,13 @@ import Footer from "../components/Footer";
 const Productbox = styled.div`
   display: flex;
   flex-direction: column;
-  width: 90vw;
+  width: 100%;
   align-items: flex-start;
+  padding: 10px;
+  overflow: hidden;
+  @media only screen and (max-width: 500px) {
+    
+  }
 `;
 
 export const Info = styled.div`
@@ -63,16 +68,19 @@ const Descriptionbox = styled.div`
   gap: 10px;
   display: flex;
   width: 100%;
-  height: 1128px;
+  height: 100%;
   padding: 10px;
   padding-top: 150px;
+  @media only screen and (max-width: 500px) {
+   flex-direction: column;
+  }
 `;
 const Leftbox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 100px;
   width: 60%;
-  height: 100vh;
+  height: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -85,6 +93,10 @@ const Leftbox = styled.div`
   ul {
     padding: 30px;
   }
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    
+  }
 `;
 const Rightbox = styled.div`
   display: flex;
@@ -92,7 +104,7 @@ const Rightbox = styled.div`
   background: #3a4f5c;
   border-radius: 8px;
   width: 405px;
-  height: 80%;
+  height: 100%;
   padding: 10px;
   h2 {
     font-style: normal;
@@ -107,6 +119,10 @@ const Rightbox = styled.div`
   p {
     color: #ffffff;
   }
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 `;
 
 const Contactdetails = styled.div`
@@ -118,7 +134,7 @@ const Contactdetails = styled.div`
 
 const Invention = () => {
   return (
-      <Container>
+      <div style={{overflow:'hidden'}}>
         <Productbox>
           <P1 style={{ fontSize: "28px", color: "#1D2D35" }}>
             Invention Information
@@ -126,7 +142,7 @@ const Invention = () => {
           <iframe
             src="https://workpls.swiftxr.app/"
             style={{
-              width: "1264px",
+              width: "100%",
               height: "400px",
               flexDirection: "column",
             }}
@@ -140,10 +156,10 @@ const Invention = () => {
             Key Features: 67 layers Damascus steel with a VG10 steel core.
             Danish design. Built to last a lifetime.
           </p>
-        </Productbox>
         <Button style={{ width: "300px", marginTop: "20px" }}>
           Contact Inventor
         </Button>
+        </Productbox>
         <Descriptionbox>
           <Leftbox>
             <h3>Description</h3>
@@ -194,7 +210,7 @@ const Invention = () => {
           </Rightbox>
         </Descriptionbox>
         <Footer />
-      </Container>
+      </div>
   );
 };
 

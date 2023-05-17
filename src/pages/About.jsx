@@ -55,11 +55,12 @@ export const P2 = styled.p`
   line-height: 33px;
   color: #ffffff;
   @media only screen and (max-width: 500px) {
-    p{
+    
       font-size: 18px;
       font-weight: normal;
       padding-top: 0;
-    }
+      text-align: center;
+    
   }
 `;
 
@@ -132,6 +133,36 @@ const About = () => {
               of an invention to make informed investment decision.
             </p>
           </Thirdpromptdiv4>
+          <ul>
+            <li>
+              <p>
+                With our platform, you can easily discover a revolutionary
+                invention, which you can invest in and help bring to market.
+              </p>
+            </li>
+            <li>
+              <p>
+                With our platform , you can showcase your new invention to
+                investors. which will lead to successful crowdfunding campaign
+                and help you lunch your invention.
+              </p>
+            </li>
+            <li>
+              <p>
+                With our platform , you can showcase your new invention to
+                investors. which will lead to successful crowdfunding campaign
+                and help you lunch your invention.
+              </p>
+            </li>
+            <li>
+              {" "}
+              <p>
+                With our platform , you can showcase your new invention to
+                investors. which will lead to successful crowdfunding campaign
+                and help you lunch your invention.
+              </p>
+            </li>
+          </ul>
         </Thirdprompt2>
         <Whoweare>
           <P1>What We Do</P1>

@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   background-color: #f2f2f2;
   width: 100%;
   gap: 8px;
-  padding: 15px 87px;
+  padding: 15px;
   justify-content: space-between;
   img {
     cursor: pointer;
