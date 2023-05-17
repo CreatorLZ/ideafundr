@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AuthContext } from "../context/AuthContext";
@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
- display:  flex;
+  display: flex;
   align-items: center;
   background-color: #f2f2f2;
   width: 100%;
@@ -228,6 +228,19 @@ const Navbar = () => {
   const toggleNav = () => {
     setNavBar(!navbar);
   };
+  useEffect(() => {
+    const hideSidebar = () => {
+      if (sidebar) {
+        setSidebar(false);
+      }
+    };
+
+    window.addEventListener("beforeunload", hideSidebar);
+
+    return () => {
+      window.removeEventListener("beforeunload", hideSidebar);
+    };
+  }, [sidebar]);
 
   const handleSignOut = (e) => {
     e.preventDefault();
@@ -310,7 +323,12 @@ const Navbar = () => {
               onClick={showSidebar}
             />
             <Siderbarlinks>
-              <Link to="/" style={{ textDecoration: "none", color: "#3A4F5C" }}>
+              <Link
+                to="/"
+                style={{ textDecoration: "none", color: "#3A4F5C" }}
+                sidebar={sidebar}
+                onClick={showSidebar}
+              >
                 <p>Home</p>
               </Link>
               <Link
@@ -323,18 +341,24 @@ const Navbar = () => {
               <Link
                 to="/Inventors"
                 style={{ textDecoration: "none", color: "#3A4F5C" }}
+                sidebar={sidebar}
+                onClick={showSidebar}
               >
                 <p>Inventors</p>
               </Link>
               <Link
                 to="/Investors"
                 style={{ textDecoration: "none", color: "#3A4F5C" }}
+                sidebar={sidebar}
+                onClick={showSidebar}
               >
                 <p>Investors</p>
               </Link>
               <Link
                 to="/About"
                 style={{ textDecoration: "none", color: "#3A4F5C" }}
+                sidebar={sidebar}
+                onClick={showSidebar}
               >
                 {" "}
                 <p>About Us</p>
@@ -342,13 +366,14 @@ const Navbar = () => {
               <Link
                 to="/Profile"
                 style={{ textDecoration: "none", color: "#3A4F5C" }}
+                sidebar={sidebar}
+                onClick={showSidebar}
               >
                 {" "}
                 <p>View Profile</p>
               </Link>
             </Siderbarlinks>
             <Sidebarbuttons>
-            
               <Button1
                 style={{
                   marginTop: "50px",
@@ -356,11 +381,18 @@ const Navbar = () => {
                   width: "70%",
                   height: "45px",
                 }}
+                sidebar={sidebar}
+                onClick={showSidebar}
               >
                 Settings
               </Button1>
-          
-              <Button style={{ width: "70%", height: "45px" }} onClick={handleSignOut}>Log-out</Button>
+
+              <Button
+                style={{ width: "70%", height: "45px" }}
+                onClick={handleSignOut}
+              >
+                Log-out
+              </Button>
             </Sidebarbuttons>
           </SidebarWrap>
         </SidebarNav>

@@ -25,8 +25,16 @@ export const Whoweare = styled.div`
   height: 682px;
   background: #1d2d35;
   display: flex;
+  align-items: center;
   flex-direction: column;
   padding: 70px;
+  @media only screen and (max-width: 500px) {
+    img{
+      display: none;
+    }
+    padding: 10px;
+    height: 100%;
+  }
 `;
 export const Right = styled.div`
   display: flex;
@@ -46,6 +54,13 @@ export const P2 = styled.p`
   font-size: 24px;
   line-height: 33px;
   color: #ffffff;
+  @media only screen and (max-width: 500px) {
+    p{
+      font-size: 18px;
+      font-weight: normal;
+      padding-top: 0;
+    }
+  }
 `;
 
 export const P1 = styled.p`
@@ -55,6 +70,13 @@ export const P1 = styled.p`
   line-height: 65px;
   text-align: center;
   color: #f2f2f2;
+  @media only screen and (max-width: 500px) {
+    p{
+      font-size: 18px;
+      font-weight: normal;
+      padding: 0;
+    }
+  }
 `;
 
 const About = () => {
