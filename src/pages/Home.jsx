@@ -118,6 +118,7 @@ const Child = styled.div`
     width: 180px;
     height: 280px;
     margin-bottom: 50px;
+    box-shadow: none;
     img {
       height: 220px;
       width: 100%;
