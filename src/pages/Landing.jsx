@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
 const Firstprompt = styled.div`
   width: 100%;
-  height: 90vh;
+  height: 98vh;
   background: #f5f5f5;
   overflow-y: hidden;
   display: flex;
