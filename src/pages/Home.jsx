@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import MobileSlider from "../components/MobileSlider";
 
 export const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100%;
   background: #fafafa;
   display: flex;
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   justify-content: center;
   height: 376px;
   /* padding: 40px; */
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 export const Buttondiv = styled.div`
   display: flex;

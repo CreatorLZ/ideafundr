@@ -334,7 +334,9 @@ const Navbar = () => {
               <Link
                 to="/Explore"
                 style={{ textDecoration: "none", color: "#3A4F5C" }}
-              >
+                sidebar={sidebar}
+                onClick={showSidebar}
+              > 
                 {" "}
                 <p>Explore</p>
               </Link>
