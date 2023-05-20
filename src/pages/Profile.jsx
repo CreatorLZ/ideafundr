@@ -51,10 +51,10 @@ export const Imagebox = styled.div`
   height: 108px;
   padding-top: 140px;
   img {
+    object-fit: cover;
     width: 204px;
     height: 94px;
     border-radius: 50%;
-    object-fit: contain;
   }
 `;
 
@@ -138,98 +138,98 @@ const Contactdetails = styled.div`
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);
   return (
-      <Container>
-        <Wrapper>
-          <Info>
-            <Imagebox>
-              <img src={currentUser.photoURL} alt="image" />
-              <Namebox style={{ display: "flex", flexDirection: "column" }}>
-                <h3>{currentUser.displayName}</h3>
-                <p>Ogun State, Nigeria 1:00am Local time</p>
-              </Namebox>
-            </Imagebox>
-          </Info>
-          <Button1>Profile settings</Button1>
-        </Wrapper>
-        <Descriptionbox>
-          <Rightbox>
-            <Contactdetails>
-              <h3>Contact</h3>
-              <p>email@gmail.com</p>
-              <p>+234- 1111-567-670</p>
-              <p>website.com</p>
-              <p>Social media</p>
-            </Contactdetails>
-            <Contactdetails>
-              <h3>Language(s)</h3>
-              <p>Igbo</p>
-              <p>Hausa</p>
-              <p>Yoruba</p>
-              <p>English</p>
-            </Contactdetails>
-            <Contactdetails>
-              <h3>Skill</h3>
-              <p>Business management</p>
-              <p>Leadership</p>
-              <p>UX Design</p>
-              <p>Marketing</p>
-            </Contactdetails>
-            <Contactdetails>
-              <h3>Education</h3>
-              <p>University of Benin</p>
-              <p>English and Literature(ed)</p>
-              <p>Educational Foundations</p>
-              <p>2017-2021</p>
-            </Contactdetails>
-            <Contactdetails>
-              <h3>Investment History</h3>
-              <p>University of Benin</p>
-              <p>English and Literature(ed)</p>
-              <p>Educational Foundations</p>
-              <p>2017-2021</p>
-            </Contactdetails>
-          </Rightbox>
-          <Leftbox>
-            <h3>Investment Preferences</h3>
-            <ul>
-              <li>Industry: </li>
-              <li>Stage: </li>
-              <li>Location: </li>
-            </ul>
-            <hr />
-            <h3>Investment Portfolio</h3>
-            <ul>
-              <li>Amount</li>
-              <li>Valuation</li>
-              <li>Percentage Ownership</li>
-            </ul>
-            <hr />
-            <h3>Active Deal</h3>
-            <ul>
-              <li>Size</li>
-              <li>stage</li>
-              <li>Expected ROI</li>
-            </ul>
-            <hr />
-            <h3>Patent</h3>
-            <ul>
-              <li>Size</li>
-              <li>stage</li>
-              <li>Expected ROI</li>
-            </ul>
-            <hr />
-            <h3>Patent</h3>
-            <ul>
-              <li>Size</li>
-              <li>stage</li>
-              <li>Expected ROI</li>
-            </ul>
-            <hr />
-            <h3>Projects that might interest you</h3>
-          </Leftbox>
-        </Descriptionbox>
-        <Footer />
-      </Container>
+    <Container>
+      <Wrapper>
+        <Info>
+          <Imagebox>
+            <img src={currentUser.photoURL} alt="image" />
+            <Namebox style={{ display: "flex", flexDirection: "column" }}>
+              <h3>{currentUser.displayName}</h3>
+              <p>Ogun State, Nigeria 1:00am Local time</p>
+            </Namebox>
+          </Imagebox>
+        </Info>
+        <Button1>Profile settings</Button1>
+      </Wrapper>
+      <Descriptionbox>
+        <Rightbox>
+          <Contactdetails>
+            <h3>Contact</h3>
+            <p>email@gmail.com</p>
+            <p>+234- 1111-567-670</p>
+            <p>website.com</p>
+            <p>Social media</p>
+          </Contactdetails>
+          <Contactdetails>
+            <h3>Language(s)</h3>
+            <p>Igbo</p>
+            <p>Hausa</p>
+            <p>Yoruba</p>
+            <p>English</p>
+          </Contactdetails>
+          <Contactdetails>
+            <h3>Skill</h3>
+            <p>Business management</p>
+            <p>Leadership</p>
+            <p>UX Design</p>
+            <p>Marketing</p>
+          </Contactdetails>
+          <Contactdetails>
+            <h3>Education</h3>
+            <p>University of Benin</p>
+            <p>English and Literature(ed)</p>
+            <p>Educational Foundations</p>
+            <p>2017-2021</p>
+          </Contactdetails>
+          <Contactdetails>
+            <h3>Investment History</h3>
+            <p>University of Benin</p>
+            <p>English and Literature(ed)</p>
+            <p>Educational Foundations</p>
+            <p>2017-2021</p>
+          </Contactdetails>
+        </Rightbox>
+        <Leftbox>
+          <h3>Investment Preferences</h3>
+          <ul>
+            <li>Industry: </li>
+            <li>Stage: </li>
+            <li>Location: </li>
+          </ul>
+          <hr />
+          <h3>Investment Portfolio</h3>
+          <ul>
+            <li>Amount</li>
+            <li>Valuation</li>
+            <li>Percentage Ownership</li>
+          </ul>
+          <hr />
+          <h3>Active Deal</h3>
+          <ul>
+            <li>Size</li>
+            <li>stage</li>
+            <li>Expected ROI</li>
+          </ul>
+          <hr />
+          <h3>Patent</h3>
+          <ul>
+            <li>Size</li>
+            <li>stage</li>
+            <li>Expected ROI</li>
+          </ul>
+          <hr />
+          <h3>Patent</h3>
+          <ul>
+            <li>Size</li>
+            <li>stage</li>
+            <li>Expected ROI</li>
+          </ul>
+          <hr />
+          <h3>Projects that might interest you</h3>
+        </Leftbox>
+      </Descriptionbox>
+      <Footer />
+    </Container>
   );
 };
 

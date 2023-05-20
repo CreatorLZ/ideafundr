@@ -1,21 +1,9 @@
 import { ThemeProvider } from "styled-components";
-// import GlobalStyles from "./Global";
-// import Landing from './pages/Landing';
-// import Home from './pages/Home';
-// import About from './pages/About';
-// import Inventors from './pages/Inventors';
-// import Investors from './pages/Investors';
-// import Profile from './pages/Profile';
-// import Explore from './pages/Explore';
-// import Invention from './pages/Invention';
-// import Register from './pages/Register';
-// import Login from './pages/Login';
-import Navbar from "./components/Navbar";
 import { Suspense, lazy, useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import {
   createBrowserRouter,
-  createRoutesFromElements,
+  createRoutesFromChildren,
   Route,
   Link,
   Outlet,
@@ -23,19 +11,18 @@ import {
 } from "react-router-dom";
 import Spinneranimation from "./components/Spinner";
 
-const Landing = lazy(() => import("./pages/Landing"));
-const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Inventors = lazy(() => import("./pages/Inventors"));
-const Investors = lazy(() => import("./pages/Investors"));
-const Invention = lazy(() => import("./pages/Invention"));
-const Profile = lazy(() => import("./pages/Profile"));
-const Explore = lazy(() => import("./pages/Explore"));
-const Register = lazy(() => import("./pages/Register"));
-const Login = lazy(() => import("./pages/Login"));
-const GlobalStyles = lazy(() => import("./Global"));
-
-
+import Navbar from "./components/Navbar";
+import Landing from './pages/Landing';
+import Home from './pages/Home';
+import About from './pages/About';
+import Inventors from './pages/Inventors';
+import Investors from './pages/Investors';
+import Invention from './pages/Invention';
+import Profile from './pages/Profile';
+import Explore from './pages/Explore';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import GlobalStyles from './Global';
 
 const theme = {
   colors: {
@@ -45,12 +32,11 @@ const theme = {
 
 const Root = () => {
   const { currentUser } = useContext(AuthContext);
+
   return (
     <>
-      {currentUser? <Navbar/> : ''}
-      <>
-        <Outlet />
-      </>
+      {currentUser && <Navbar />}
+      <Outlet />
     </>
   );
 };
@@ -60,7 +46,7 @@ function App() {
   console.log(currentUser);
 
   const router = createBrowserRouter(
-    createRoutesFromElements(
+    createRoutesFromChildren(
       <Route path="/" element={<Root />}>
         <Route
           index
@@ -78,7 +64,7 @@ function App() {
           path="/Landing"
           element={
             <Suspense fallback={<Spinneranimation />}>
-              <Landing />{" "}
+              <Landing />
             </Suspense>
           }
         />
@@ -111,7 +97,7 @@ function App() {
           element={
             currentUser ? (
               <Suspense fallback={<Spinneranimation />}>
-                <Invention />{" "}
+                <Invention />
               </Suspense>
             ) : (
               <Landing />
@@ -135,7 +121,7 @@ function App() {
           element={
             currentUser ? (
               <Suspense fallback={<Spinneranimation />}>
-                <Inventors />{" "}
+                <Inventors />
               </Suspense>
             ) : (
               <Landing />
@@ -161,7 +147,7 @@ function App() {
               <Home />
             ) : (
               <Suspense fallback={<Spinneranimation />}>
-                <Login />{" "}
+                <Login />
               </Suspense>
             )
           }
@@ -171,7 +157,7 @@ function App() {
           element={
             currentUser ? (
               <Suspense fallback={<Spinneranimation />}>
-                <Profile />{" "}
+                <Profile />
               </Suspense>
             ) : (
               <Landing />

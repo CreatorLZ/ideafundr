@@ -382,7 +382,6 @@ export const Whybox = styled.div`
       text-align: center;
       line-height: 40px;
     }
-    
   }
 `;
 
