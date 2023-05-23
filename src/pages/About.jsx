@@ -18,6 +18,7 @@ const Container = styled.div`
   background: #fafafa;
   display: flex;
   flex-direction: column;
+  padding-top: 70px;
 `;
 
 export const Whoweare = styled.div`

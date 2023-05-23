@@ -15,6 +15,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding-top:70px;
 `;
 const Wrapper = styled.div`
   width: 100%;

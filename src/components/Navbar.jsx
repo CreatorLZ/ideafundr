@@ -8,6 +8,10 @@ import { Button1 } from "../pages/Landing";
 
 const Container = styled.div`
   height: 60px;
+  position: fixed;
+  width: 100vw;
+  z-index: 40;
+  top:0;
   padding-bottom: 87px;
   Link {
     text-decoration: none;
