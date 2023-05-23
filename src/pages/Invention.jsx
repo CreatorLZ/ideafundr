@@ -134,7 +134,7 @@ const Contactdetails = styled.div`
 
 const Invention = () => {
   return (
-      <div style={{overflow:'hidden'}}>
+      <div style={{overflow:'hidden',paddingTop:'100px'}}>
         <Productbox>
           <P1 style={{ fontSize: "28px", color: "#1D2D35" }}>
             Invention Information

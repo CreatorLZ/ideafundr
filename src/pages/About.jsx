@@ -19,6 +19,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 70px;
+  @media only screen and (max-width: 500px) {
+    padding-top: 100px;
+  }
 `;
 
 export const Whoweare = styled.div`
