@@ -5,25 +5,25 @@ import {
   createBrowserRouter,
   createRoutesFromChildren,
   Route,
-  Link,
   Outlet,
   RouterProvider,
   Navigate,
 } from "react-router-dom";
 import Spinneranimation from "./components/Spinner";
 
-import Navbar from "./components/Navbar";
-import Landing from "./pages/Landing";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Inventors from "./pages/Inventors";
-import Investors from "./pages/Investors";
-import Invention from "./pages/Invention";
-import Profile from "./pages/Profile";
-import Explore from "./pages/Explore";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
 import GlobalStyles from "./Global";
+import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
+const Landing = lazy(() => import("./pages/Landing"));
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Inventors = lazy(() => import("./pages/Inventors"));
+const Investors = lazy(() => import("./pages/Investors"));
+const Invention = lazy(() => import("./pages/Invention"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Explore = lazy(() => import("./pages/Explore"));
+const Register = lazy(() => import("./pages/Register"));
+const Login = lazy(() => import("./pages/Login"));
 
 const theme = {
   colors: {
@@ -49,6 +49,7 @@ function App() {
     if (!currentUser) {
       return <Navigate to="/Landing" />;
     }
+    return children;
   };
   const router = createBrowserRouter(
     createRoutesFromChildren(
@@ -152,6 +153,10 @@ function App() {
             </Suspense>
           }
         />
+        <Route path="*"
+        element={
+          <NotFound/>
+        }/>
       </Route>
     )
   );

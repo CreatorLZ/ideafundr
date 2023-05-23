@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  display: flex;
+  display: ${({ currentUser }) => (currentUser !== null ? "flex" : "none")};
   align-items: center;
   background-color: #f2f2f2;
   width: 100%;
@@ -68,9 +68,10 @@ const Right = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 183px;
+  width: 200px;
   height: 64px;
   object-fit: cover;
+  padding-left: 15px;
   @media only screen and (max-width: 500px) {
     width: 180px;
   }
