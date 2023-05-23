@@ -74,6 +74,7 @@ export const Logo = styled.img`
   padding-left: 15px;
   @media only screen and (max-width: 500px) {
     width: 180px;
+    padding-left: 0;
   }
 `;
 const Hamburger = styled.img`
