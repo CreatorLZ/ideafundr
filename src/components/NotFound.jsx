@@ -10,7 +10,7 @@ padding-top:15px;
 padding-bottom:50px;
 img{
     width: 100%;
-   height: 60vh;
+   height: 50vh;
    object-fit: contain;
 }
 Link{
@@ -18,6 +18,11 @@ Link{
     padding: 20px;
     background: #00806e;
 }
+@media only screen and (max-width: 500px) {
+    img{
+      height: 40vh;
+    }
+  }
 `
 
 
