@@ -8,21 +8,22 @@ import {
   Link,
   Outlet,
   RouterProvider,
+  Navigate,
 } from "react-router-dom";
 import Spinneranimation from "./components/Spinner";
 
 import Navbar from "./components/Navbar";
-import Landing from './pages/Landing';
-import Home from './pages/Home';
-import About from './pages/About';
-import Inventors from './pages/Inventors';
-import Investors from './pages/Investors';
-import Invention from './pages/Invention';
-import Profile from './pages/Profile';
-import Explore from './pages/Explore';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import GlobalStyles from './Global';
+import Landing from "./pages/Landing";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Inventors from "./pages/Inventors";
+import Investors from "./pages/Investors";
+import Invention from "./pages/Invention";
+import Profile from "./pages/Profile";
+import Explore from "./pages/Explore";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import GlobalStyles from "./Global";
 
 const theme = {
   colors: {
@@ -44,20 +45,22 @@ const Root = () => {
 function App() {
   const { currentUser } = useContext(AuthContext);
   console.log(currentUser);
-
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/Landing" />;
+    }
+  };
   const router = createBrowserRouter(
     createRoutesFromChildren(
       <Route path="/" element={<Root />}>
         <Route
           index
           element={
-            currentUser ? (
-              <Suspense fallback={<Spinneranimation />}>
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
                 <Home />
-              </Suspense>
-            ) : (
-              <Landing />
-            )
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
@@ -71,97 +74,82 @@ function App() {
         <Route
           path="/About"
           element={
-            currentUser ? (
-              <Suspense fallback={<Spinneranimation />}>
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
+                {" "}
                 <About />
-              </Suspense>
-            ) : (
-              <Landing />
-            )
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/Explore"
           element={
-            currentUser ? (
-              <Suspense fallback={<Spinneranimation />}>
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
                 <Explore />
-              </Suspense>
-            ) : (
-              <Landing />
-            )
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/Invention"
           element={
-            currentUser ? (
-              <Suspense fallback={<Spinneranimation />}>
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
+                {" "}
                 <Invention />
-              </Suspense>
-            ) : (
-              <Landing />
-            )
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/Investors"
           element={
-            currentUser ? (
-              <Suspense fallback={<Spinneranimation />}>
-                <Investors />
-              </Suspense>
-            ) : (
-              <Landing />
-            )
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
+                {" "}
+                <Investors />{" "}
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/Inventors"
           element={
-            currentUser ? (
-              <Suspense fallback={<Spinneranimation />}>
-                <Inventors />
-              </Suspense>
-            ) : (
-              <Landing />
-            )
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
+                {" "}
+                <Inventors />{" "}
+              </ProtectedRoute>
+            </Suspense>
           }
         />
         <Route
           path="/Register"
           element={
-            currentUser ? (
-              <Home />
-            ) : (
-              <Suspense fallback={<Spinneranimation />}>
-                <Register />
-              </Suspense>
-            )
+            <Suspense fallback={<Spinneranimation />}>
+              <Register />
+            </Suspense>
           }
         />
         <Route
           path="/Login"
           element={
-            currentUser ? (
-              <Home />
-            ) : (
-              <Suspense fallback={<Spinneranimation />}>
-                <Login />
-              </Suspense>
-            )
+            <Suspense fallback={<Spinneranimation />}>
+              <Login />
+            </Suspense>
           }
         />
         <Route
           path="/Profile"
           element={
-            currentUser ? (
-              <Suspense fallback={<Spinneranimation />}>
-                <Profile />
-              </Suspense>
-            ) : (
-              <Landing />
-            )
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
+                {" "}
+                <Profile />{" "}
+              </ProtectedRoute>
+            </Suspense>
           }
         />
       </Route>

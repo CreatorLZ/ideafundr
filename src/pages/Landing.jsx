@@ -151,7 +151,7 @@ export const Button = styled.button`
   cursor: pointer;
   :hover {
     transition: 250ms;
-    background-color: white;
+    background-color: #f8f4f4;
     color: #00806e;
   }
   :focus {
