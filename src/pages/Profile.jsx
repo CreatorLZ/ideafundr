@@ -55,7 +55,7 @@ export const Imagebox = styled.div`
     object-fit: cover;
     width: 204px;
     height: 94px;
-    border-radius: 50%;
+    border-radius: 100%;
   }
 `;
 

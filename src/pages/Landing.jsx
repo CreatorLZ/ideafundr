@@ -48,7 +48,7 @@ const Firstprompt = styled.div`
     background: linear-gradient(
         101.97deg,
         #fdfafa 0.31%,
-        rgba(217, 217, 217, 0.48) 100%
+        rgba(217, 217, 217, 0.48) 50%
       ),
       url(./images/Rectangle1.png) no-repeat center center fixed;
 
@@ -121,6 +121,7 @@ const Whattodobox2 = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 10px;
   p {
     font-style: normal;
     font-weight: 400;

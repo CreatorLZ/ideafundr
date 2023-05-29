@@ -1,41 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 
-const images = [ 
-      { id: 1, image: './images/mouse.png' }, 
-      { id: 2, image: './images/Knife.png' }, 
-      { id: 3, image: './images/SwiftXR.png'},
-      { id: 4, image: './images/SwiftXR 2.png' }, 
-      { id: 5, image: './images/Bicyle1.png'},
-      { id: 6, image: './images/Ride.png'}];
+const images = [
+  { id: 1, image: "./images/mouse.png" },
+  { id: 2, image: "./images/Knife.png" },
+  { id: 3, image: "./images/SwiftXR.png" },
+  { id: 4, image: "./images/SwiftXR 2.png" },
+  { id: 5, image: "./images/Bicyle1.png" },
+  { id: 6, image: "./images/Ride.png" },
+];
 
 const SliderWrapper = styled.div`
   position: relative;
   width: 80%;
-  height: 400px;
+  height: 370px;
   overflow: hidden;
   @media only screen and (max-width: 500px) {
-      display: none;
-}
+    display: none;
+  }
 `;
 
 const Slide = styled.div`
   position: absolute;
-  padding-top:50px;
+  padding-top: 50px;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: ${({ active }) => active ? 1 : 0};
+  opacity: ${({ active }) => (active ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
-
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  
 `;
 
 const ButtonWrapper = styled.div`
@@ -44,13 +43,13 @@ const ButtonWrapper = styled.div`
   align-items: center;
   margin-top: 20px;
   @media only screen and (max-width: 500px) {
-      display: none;
-}
+    display: none;
+  }
 `;
 
 const Button = styled.button`
   border: none;
-  background-color: ${({ active }) => active ? '#000' : '#ddd'};
+  background-color: ${({ active }) => (active ? "#000" : "#ddd")};
   width: 10px;
   height: 10px;
   border-radius: 50%;

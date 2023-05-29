@@ -32,6 +32,9 @@ export const Whoweare = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 70px;
+  img{
+    border-radius: 5px;
+  }
   @media only screen and (max-width: 500px) {
     img{
       display: none;
