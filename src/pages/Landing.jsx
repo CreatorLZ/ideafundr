@@ -56,8 +56,9 @@ const Firstprompt = styled.div`
     overflow: hidden;
     padding-left: 20px;
     line-height: 40px;
-    padding-top: none;
-    height: 80vh;
+    padding-top: 20px;
+    padding-bottom:10px;
+    height: fit-content;
   }
 `;
 
@@ -283,7 +284,7 @@ const Secondprompt = styled.div`
     li {
       display: flex;
       &::before {
-        content: "🗹";
+        content: "✅";
         margin-right: 8px;
       }
     }
@@ -344,7 +345,7 @@ const Thirdprompt = styled.div`
       li {
       display: flex;
       &::before {
-        content: "🗹";
+        content: "✅";
         margin-right: 8px;
       }
     }
