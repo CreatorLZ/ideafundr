@@ -7,7 +7,7 @@ import { Child2, Wrappercard2 } from "./Home";
 
 const Container = styled.div`
   padding: 0;
-  margin: 0;
+  margin-top: 80px;
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -32,25 +32,25 @@ const Firstprompt = styled.div`
     img {
       display: none;
     }
-    background: linear-gradient(
+    /* background: linear-gradient(
         101.97deg,
         #fdfafa 0.31%,
         rgba(217, 217, 217, 0.48) 100%
       ),
       url(./images/Rectangle1.png) no-repeat center center fixed;
     background-size: cover;
-    overflow: hidden;
+    overflow: hidden; */
   }
   @media only screen and (max-width: 500px) {
     img {
       display: none;
     }
-    background: linear-gradient(
+    /* background: linear-gradient(
         101.97deg,
         #fdfafa 0.31%,
         rgba(217, 217, 217, 0.48) 50%
       ),
-      url(./images/Rectangle1.png) no-repeat center center fixed;
+      url(./images/Rectangle1.png) no-repeat center center fixed; */
 
     background-size: cover;
     overflow: hidden;
@@ -90,6 +90,12 @@ const P2 = styled.p`
   font-size: 16px;
   line-height: 22px;
   color: white;
+
+  @media only screen and (max-width: 500px) {
+    br {
+      display: none;
+    }
+  }
 `;
 
 const P3 = styled.p`
@@ -160,23 +166,34 @@ export const Button = styled.button`
   }
 `;
 
-export const Button1 = styled.button`
-  padding: 16px 32px;
-  background-color: white;
+export const Button1 = styled.div`
+  padding: 5px 32px;
+  background-color: transparent;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 18px;
   color: #00806e;
-  border: 1px solid #00806e;
+  /* border: 1px solid #00806e; */
   text-decoration: none;
   border-radius: 8px;
   cursor: pointer;
   width: 250px;
   transition: ease 1s;
-  :hover {
-    transition: 250ms;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
     background-color: #00806e;
-    color: white;
+    transition: width 250ms ease-out;
+  }
+
+  &:hover::before {
+    width: 100%;
   }
   :focus {
     outline: none;
@@ -187,6 +204,7 @@ export const Button1 = styled.button`
   }
   @media only screen and (max-width: 500px) {
     width: 168px;
+    border-bottom: 2px solid #00806e;
   }
 `;
 
@@ -230,6 +248,7 @@ const Secondp = styled.p`
   font-size: 22px;
   line-height: 33px;
   margin-bottom: 30px;
+  color: grey;
   @media only screen and (max-width: 500px) {
     font-size: 20px;
   }
@@ -259,7 +278,15 @@ const Secondprompt = styled.div`
   ul {
     display: none;
     color: white;
+    list-style: none;
     gap: 15px;
+    li {
+      display: flex;
+      &::before {
+        content: "🗹";
+        margin-right: 8px;
+      }
+    }
   }
   img {
     width: 553px;
@@ -314,6 +341,13 @@ const Thirdprompt = styled.div`
       flex-direction: column;
       color: #3a4f5c;
       gap: 15px;
+      li {
+      display: flex;
+      &::before {
+        content: "🗹";
+        margin-right: 8px;
+      }
+    }
     }
     button {
       display: none;
@@ -359,6 +393,13 @@ export const Thirdprompt2 = styled.div`
       gap: 35px;
       padding: 20px;
       height: 100%;
+      li {
+      display: flex;
+      &::before {
+        content: "🔥";
+        margin-right: 8px;
+      }
+    }
     }
   }
 `;
@@ -590,18 +631,18 @@ const Landing = () => {
             <Firstp>
               Showcase your <span style={{ color: "#FF6B6B" }}>invention</span>{" "}
               to <span style={{ color: "#00806e" }}>investors</span> with
-              immersive tech
+              immersive tech.
             </Firstp>
             <Secondp>
-              Get investment for your brightest Idea by demonstrating
-              <br /> in a fully immersive virtual environment
+              Get investment for your brightest Idea by demonstrating in a fully
+              immersive virtual environment.
             </Secondp>
             <Buttondiv>
               <Link style={{ textDecoration: "none" }} to="/Login">
-                <Button1>Sign In</Button1>
+                <Button1 style={{fontSize:"18px"}}>Log in</Button1>
               </Link>
               <Link to="/Register">
-                <Button2>Sign Up Now</Button2>
+                <Button2 style={{fontSize:"18px"}}>Get started</Button2>
               </Link>
             </Buttondiv>
           </Left>

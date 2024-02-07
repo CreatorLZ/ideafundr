@@ -14,6 +14,7 @@ import Spinneranimation from "./components/Spinner";
 import GlobalStyles from "./Global";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
+import Navbar2 from "./components/Navbar2";
 const Landing = lazy(() => import("./pages/Landing"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -36,7 +37,7 @@ const Root = () => {
 
   return (
     <>
-      {currentUser && <Navbar />}
+      {currentUser? <Navbar /> : <Navbar2/>}
       <Outlet />
     </>
   );
@@ -76,10 +77,10 @@ function App() {
           path="/About"
           element={
             <Suspense fallback={<Spinneranimation />}>
-              <ProtectedRoute>
+              {/* <ProtectedRoute> */}
                 {" "}
                 <About />
-              </ProtectedRoute>
+              {/* </ProtectedRoute> */}
             </Suspense>
           }
         />
