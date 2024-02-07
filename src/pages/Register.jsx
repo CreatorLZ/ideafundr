@@ -1,5 +1,12 @@
-import React, { useState } from "react";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import React, { useState, useEffect } from "react";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  setPersistence,
+  browserSessionPersistence,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { auth, db, storage } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
@@ -7,7 +14,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./Landing";
 import styled from "styled-components";
 import { Wrapper } from "../components/Registerstyles";
-// import { auth,db } from '../firebase';
 
 export const AnimatedLoader = styled.img`
   width: 1px;
@@ -24,70 +30,74 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
 const Register = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    // Use onAuthStateChanged to listen for authentication state changes
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, navigate to the homepage
+        navigate("/");
+      }
+    });
+
+    return () => unsubscribe(); // Cleanup the listener on component unmount
+  }, [navigate]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //record all required form events
+    const oneHourInMs = 60 * 60 * 1000;
+    // record all required form events
     const email = e.target[2].value;
     const password = e.target[3].value;
     const displayName = e.target[0].value;
     const file = e.target[5].files[0];
 
     try {
-      //Create user
+      // Create user
       setLoading(true);
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
-      //Create a unique image name
+      // Create a unique image name
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
 
-      await uploadBytesResumable(storageRef, file).then(() => {
-        getDownloadURL(storageRef).then(async (downloadURL) => {
-          try {
-            //Update profile
-            await updateProfile(res.user, {
-              displayName,
-              photoURL: downloadURL,
-            });
-            //create user on firestore
-            await setDoc(doc(db, "users", res.user.uid), {
-              uid: res.user.uid,
-              displayName,
-              email,
-              photoURL: downloadURL,
-            });
-            // Set session timeout for 1 hour (in milliseconds)
-            const oneHourInMs = 60 * 60 * 1000;
-            auth.setPersistence(auth.Auth.Persistence.SESSION).then(() => {
-              auth.signInWithEmailAndPassword(email, password).then(() => {
-                auth.currentUser
-                  .getIdTokenResult(true)
-                  .then((idTokenResult) => {
-                    const authTimeInMs = idTokenResult.claims.auth_time * 1000;
-                    const expirationTime = authTimeInMs + oneHourInMs;
-                    const nowInMs = new Date().getTime();
-                    const delay = expirationTime - nowInMs;
-                    setTimeout(() => navigate("/"), delay);
-                  });
-              });
-            });
-          } catch (err) {
-            console.log(err);
-            setError(true);
-            setLoading(false);
-          }
-        });
+      await uploadBytesResumable(storageRef, file);
+      const downloadURL = await getDownloadURL(storageRef);
+
+      // Update profile
+      await updateProfile(res.user, {
+        displayName,
+        photoURL: downloadURL,
       });
+
+      // Create user on firestore
+      await setDoc(doc(db, "users", res.user.uid), {
+        uid: res.user.uid,
+        displayName,
+        email,
+        photoURL: downloadURL,
+      });
+
+      // Set session persistence
+      await setPersistence(auth, browserSessionPersistence);
+
+      // Sign in with the created user
+      await signInWithEmailAndPassword(auth, email, password);
+
+      setLoading(false);
     } catch (err) {
+      console.log(err);
       setError(true);
       setLoading(false);
     }
   };
+
+
 
   return (
     <Container>
