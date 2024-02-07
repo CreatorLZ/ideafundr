@@ -4,6 +4,9 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { Child2, Wrappercard2 } from "./Home";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Container = styled.div`
   padding: 0;
@@ -57,12 +60,13 @@ const Firstprompt = styled.div`
     padding-left: 20px;
     line-height: 40px;
     padding-top: 40px;
-    padding-bottom:10px;
+    padding-bottom:40px;
     height: fit-content;
   }
 `;
 
 const Right = styled.div`
+  width: 40vw;
   display: flex;
   align-items: center;
   img {
@@ -74,6 +78,20 @@ const Right = styled.div`
   }
   @media only screen and (max-width: 500px) {
     display: none;
+  }
+`;
+const Right2 = styled.div`
+  width: 85%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  img{
+    height: 100%;
+  }
+ 
+  @media only screen and (max-width: 500px) {
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -168,7 +186,7 @@ export const Button = styled.button`
 `;
 
 export const Button1 = styled.div`
-  padding: 5px 32px;
+  padding: 0px 32px;
   background-color: transparent;
   position: relative;
   display: flex;
@@ -258,6 +276,10 @@ const Secondp = styled.p`
 const Left = styled.div`
   display: flex;
   flex-direction: column;
+  width: 60vw;
+  @media only screen and (max-width: 500px) {
+   width: 100vw;
+  }
 `;
 
 const Buttondiv = styled.div`
@@ -624,6 +646,86 @@ const Secondprompttext = styled.div`
 `;
 
 const Landing = () => {
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "rgba(109, 107, 107, 0.2)",
+          width: "50px",
+          height: "70px",
+          zIndex: "10",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "rgba(109, 107, 107, 0.2)",
+          width: "50px",
+          height: "70px",
+          zIndex: "10",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 200,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <Container>
       <Wrapper>
@@ -646,9 +748,20 @@ const Landing = () => {
                 <Button2 style={{fontSize:"18px"}}>Get started</Button2>
               </Link>
             </Buttondiv>
+          <Right2 style={{paddingTop:"40px"}}>
+            <Slider style={{width:"100%",  paddingLeft:"40px" ,display:"flex", justifyContent:"center"}}{...settings}>
+              <div> <img style={{width:"90%",height:"100%", borderRadius:"10px"}} src="./images/invent.jfif" alt="image" /></div>
+              <div> <img style={{width:"90%",height:"100%",borderRadius:"10px"}}  src="./images/invent2.jfif" alt="image" /></div>
+              <div> <img style={{width:"90%",height:"100%",borderRadius:"10px"}}  src="./images/Rectangle1.png" alt="image" /></div>
+            </Slider>
+          </Right2>
           </Left>
-          <Right>
-            <img src="./images/Rectangle1.png" alt="image" />
+          <Right style={{paddingTop:"30px"}}>
+            <Slider style={{width:"100%", padding:"5px 20px" ,display:"flex", justifyContent:"center"}}{...settings}>
+              <div> <img style={{width:"90%", borderRadius:"10px"}} src="./images/invent.jfif" alt="image" /></div>
+              <div> <img style={{width:"90%",borderRadius:"10px"}}  src="./images/invent2.jfif" alt="image" /></div>
+              <div> <img style={{width:"90%",borderRadius:"10px"}}  src="./images/Rectangle1.png" alt="image" /></div>
+            </Slider>
           </Right>
         </Firstprompt>
         <Secondprompt>

@@ -9,7 +9,7 @@ const Container = styled.div`
   padding: 40px 88px;
   gap: 8px;
   width: 100%;
-  height: 70vh;
+  height: fit-content;
   padding: 50px;
   @media only screen and (max-width: 850px) {
     padding: 10px;

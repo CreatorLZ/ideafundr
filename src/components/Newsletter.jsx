@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 width: 100%;
-height: 70vh;
+height: fit-content;
 flex-direction: column;
 background: white;
 color: #3A4F5C;
@@ -11,6 +11,7 @@ overflow: hidden;
 display: flex;
 position: relative;
 align-items: center;
+padding-bottom: 40px;
 
 form{
     margin-top: 40px;
