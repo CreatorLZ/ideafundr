@@ -56,7 +56,7 @@ const Firstprompt = styled.div`
     overflow: hidden;
     padding-left: 20px;
     line-height: 40px;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom:10px;
     height: fit-content;
   }
