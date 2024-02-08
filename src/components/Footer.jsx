@@ -13,7 +13,7 @@ const Container = styled.div`
   padding: 50px;
   @media only screen and (max-width: 850px) {
     padding: 10px;
-    padding-top: 50px;
+    padding-top: 10px;
   }
   @media only screen and (max-width: 500px) {
     flex-direction: column;
@@ -21,7 +21,7 @@ const Container = styled.div`
     justify-content: flex-end;
     padding: 0px;
     height: 70vh;
-    padding-top: 40px;
+    padding-top: 10px;
     padding-bottom:20px;
   }
 `;
