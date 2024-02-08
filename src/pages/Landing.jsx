@@ -12,6 +12,7 @@ const Container = styled.div`
   padding: 0;
   margin-top: 80px;
 `;
+
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
@@ -30,7 +31,7 @@ const Firstprompt = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 15px 60px;
-  padding-top: 50px;
+  padding-top: 20px;
   @media only screen and (max-width: 850px) {
     img {
       display: none;
@@ -60,7 +61,7 @@ const Firstprompt = styled.div`
     padding-left: 20px;
     line-height: 40px;
     padding-top: 40px;
-    padding-bottom:40px;
+    padding-bottom: 40px;
     height: fit-content;
   }
 `;
@@ -70,11 +71,8 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   img {
-    width: 552px;
-    height: 455px;
-    object-fit: cover;
-    margin-left: 30px;
-    margin-bottom: 150px;
+    width: 80%;
+    height: 80%;
   }
   @media only screen and (max-width: 500px) {
     display: none;
@@ -85,10 +83,11 @@ const Right2 = styled.div`
   height: 100%;
   display: none;
   align-items: center;
-  img{
+  img {
     height: 100%;
+    border-radius: 10px;
   }
- 
+
   @media only screen and (max-width: 500px) {
     display: flex;
     align-items: center;
@@ -201,7 +200,7 @@ export const Button1 = styled.div`
   width: 250px;
   transition: ease 1s;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: 0;
@@ -278,7 +277,7 @@ const Left = styled.div`
   flex-direction: column;
   width: 60vw;
   @media only screen and (max-width: 500px) {
-   width: 100vw;
+    width: 100vw;
   }
 `;
 
@@ -365,12 +364,12 @@ const Thirdprompt = styled.div`
       color: #3a4f5c;
       gap: 15px;
       li {
-      display: flex;
-      &::before {
-        content: "✅";
-        margin-right: 8px;
+        display: flex;
+        &::before {
+          content: "✅";
+          margin-right: 8px;
+        }
       }
-    }
     }
     button {
       display: none;
@@ -417,12 +416,12 @@ export const Thirdprompt2 = styled.div`
       padding: 20px;
       height: 100%;
       li {
-      display: flex;
-      &::before {
-        content: "🔥";
-        margin-right: 8px;
+        display: flex;
+        &::before {
+          content: "🔥";
+          margin-right: 8px;
+        }
       }
-    }
     }
   }
 `;
@@ -646,7 +645,6 @@ const Secondprompttext = styled.div`
 `;
 
 const Landing = () => {
-
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -654,7 +652,7 @@ const Landing = () => {
         className={className}
         style={{
           ...style,
-          display: "flex",
+          display: "none",
           alignItems: "center",
           justifyContent: "center",
           background: "rgba(109, 107, 107, 0.2)",
@@ -674,7 +672,7 @@ const Landing = () => {
         className={className}
         style={{
           ...style,
-          display: "flex",
+          display: "none",
           alignItems: "center",
           justifyContent: "center",
           background: "rgba(109, 107, 107, 0.2)",
@@ -690,7 +688,7 @@ const Landing = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 200,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
@@ -742,30 +740,80 @@ const Landing = () => {
             </Secondp>
             <Buttondiv>
               <Link style={{ textDecoration: "none" }} to="/Login">
-                <Button1 style={{fontSize:"18px"}}>Log in</Button1>
+                <Button1 style={{ fontSize: "18px" }}>Log in</Button1>
               </Link>
               <Link to="/Register">
-                <Button2 style={{fontSize:"18px"}}>Get started</Button2>
+                <Button2 style={{ fontSize: "18px" }}>Get started</Button2>
               </Link>
             </Buttondiv>
-          <Right2 style={{paddingTop:"40px"}}>
-            <Slider style={{width:"100%",  paddingLeft:"40px" ,display:"flex", justifyContent:"center"}}{...settings}>
-              <div> <img style={{width:"90%",height:"100%", borderRadius:"10px"}} src="./images/invent.jfif" alt="image" /></div>
-              <div> <img style={{width:"90%",height:"100%",borderRadius:"10px"}}  src="./images/invent2.jfif" alt="image" /></div>
-              <div> <img style={{width:"90%",height:"100%",borderRadius:"10px"}}  src="./images/Rectangle1.png" alt="image" /></div>
-            </Slider>
-          </Right2>
+            <Right2 style={{ paddingTop: "40px" }}>
+              <Slider
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  paddingLeft: "20px",
+                  border: "none",
+                }}
+                {...settings}
+              >
+                <img
+                  style={{ width: "90%", height: "100%", borderRadius: "10px" }}
+                  src="./images/invent5.png"
+                  alt="image1"
+                />
+                <img
+                  style={{ width: "90%", height: "100%", borderRadius: "10px" }}
+                  src="./images/invent3.jfif"
+                  alt="image2"
+                />
+                <img
+                  style={{ width: "90%", height: "100%", borderRadius: "10px" }}
+                  src="./images/invent.jfif"
+                  alt="image3"
+                />
+              </Slider>
+            </Right2>
           </Left>
-          <Right style={{paddingTop:"30px"}}>
-            <Slider style={{width:"100%", padding:"5px 20px" ,display:"flex", justifyContent:"center"}}{...settings}>
-              <div> <img style={{width:"90%", borderRadius:"10px"}} src="./images/invent.jfif" alt="image" /></div>
-              <div> <img style={{width:"90%",borderRadius:"10px"}}  src="./images/invent2.jfif" alt="image" /></div>
-              <div> <img style={{width:"90%",borderRadius:"10px"}}  src="./images/Rectangle1.png" alt="image" /></div>
+          <Right style={{ paddingTop: "0px" }}>
+            <Slider
+              style={{
+                width: "100%",
+                padding: "5px 20px",
+                display: "flex",
+                justifyContent: "center",
+                border: "none",
+              }}
+              {...settings}
+            >
+              <div>
+                {" "}
+                <img
+                  style={{ width: "90%", borderRadius: "10px" }}
+                  src="/images/invent5.png"
+                  alt="image4"
+                />
+              </div>
+              <div>
+                {" "}
+                <img
+                  style={{ width: "90%", borderRadius: "10px" }}
+                  src="/images/invent3.jfif"
+                  alt="image5"
+                />
+              </div>
+              <div>
+                {" "}
+                <img
+                  style={{ width: "90%", borderRadius: "10px" }}
+                  src="/images/invent.jfif"
+                  alt="image6"
+                />
+              </div>
             </Slider>
           </Right>
         </Firstprompt>
         <Secondprompt>
-          <img src="./images/Rectangle2.png" alt="image" />
+          <img src="./images/Rectangle2.png" alt="image8" />
           <Secondprompttext>
             <P1>Are you an inventor?</P1>
             <P2>
@@ -847,7 +895,7 @@ const Landing = () => {
               </ul>
             </Buttondiv>
           </Secondprompttext>
-          <img src="./images/Rectangle3.png" alt="image" />
+          <img src="./images/Rectangle3.png" alt="image9" />
         </Thirdprompt>
         <Thirdprompt2>
           <Whybox>
