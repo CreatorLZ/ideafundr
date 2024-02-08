@@ -13,13 +13,15 @@ const Container = styled.div`
   padding: 50px;
   @media only screen and (max-width: 850px) {
     padding: 10px;
+    padding-top: 50px;
   }
   @media only screen and (max-width: 500px) {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
     padding: 0px;
-    height: 60vh;
+    height: 70vh;
+    padding-top: 40px;
     padding-bottom:20px;
   }
 `;
@@ -155,7 +157,7 @@ const Footer = () => {
             <img src="./images/004-instagram.png" alt="image" />
           </Icons>
         </Socialdiv>
-        <p>Copyright © 2023. Ideafundr. All rights reserved.</p>
+        <p>Copyright © 2024. Ideafundr. All rights reserved.</p>
       </div>
     </Container>
   );

@@ -72,6 +72,7 @@ export const Wrappercard2 = styled.div`
   grid-template-rows: repeat(1, 410px);
   grid-gap: 20px;
   padding: 55px;
+  padding-bottom:30px;
   align-items: center;
   justify-content: center;
 
@@ -166,7 +167,7 @@ export const Child2 = styled.div`
   }
   @media only screen and (max-width: 500px) {
     background: rgba(253, 253, 253, 0.1);
-    box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2);
+    /* box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2); */
     width: 100vw;
     height: 100%;
     /* margin-bottom: 50px; */
@@ -176,8 +177,9 @@ export const Child2 = styled.div`
       margin-top: 15px;
     }
     img {
-      height: 60vh;
+      height: 40vh;
       width: 100vw;
+      padding: 5px 60px;
     }
     button {
       display: none;

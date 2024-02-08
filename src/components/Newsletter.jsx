@@ -5,7 +5,11 @@ const Container = styled.div`
 width: 100%;
 height: fit-content;
 flex-direction: column;
-background: white;
+background: linear-gradient(
+    101.97deg,
+    #fdfafa 0.31%,
+    rgba(217, 217, 217, 0.48) 100%
+  );
 color: #3A4F5C;
 overflow: hidden;
 display: flex;
@@ -35,6 +39,9 @@ form{
 const Checkbox = styled.div`
 display: flex;
 gap: 10px;
+p{
+  font-size: 12px;
+}
 `
 
 const Whybox = styled.div`
@@ -62,6 +69,7 @@ const Button = styled.button`
 padding: 16px 32px;
 gap: 8px;
 background-color: #00806E;
+color: white;
 border: none;
 border-radius:8px;
 cursor: pointer;
