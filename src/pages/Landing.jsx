@@ -227,6 +227,7 @@ export const Button1 = styled.div`
   @media only screen and (max-width: 500px) {
     width: 168px;
     border-bottom: 2px solid #00806e;
+    padding: 10px 32px;
   }
 `;
 

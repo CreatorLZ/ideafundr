@@ -20,7 +20,8 @@ const Container = styled.div`
     align-items: flex-start;
     justify-content: flex-end;
     padding: 0px;
-    height: 70vh;
+    min-height: 40vh;
+    max-height: fit-content;
     padding-top: 10px;
     padding-bottom:20px;
   }
