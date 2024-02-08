@@ -32,6 +32,9 @@ const Firstprompt = styled.div`
   justify-content: space-between;
   padding: 15px 60px;
   padding-top: 20px;
+  img{
+    border-radius: 10px;
+  }
   @media only screen and (max-width: 850px) {
     img {
       display: none;
@@ -73,6 +76,7 @@ const Right = styled.div`
   img {
     width: 80%;
     height: 80%;
+    border-radius: 10px;
   }
   @media only screen and (max-width: 500px) {
     display: none;
@@ -311,10 +315,11 @@ const Secondprompt = styled.div`
     }
   }
   img {
-    width: 553px;
-    height: 387px;
+    width: 40%;
+    height: 60vh;
     padding-left: 88px;
     object-fit: cover;
+    border-radius: 10px;
   }
   @media only screen and (max-width: 850px) {
     img {
@@ -347,10 +352,11 @@ const Thirdprompt = styled.div`
     display: none;
   }
   img {
-    width: 553px;
-    height: 387px;
+    width: 40%;
+    height: 60vh;
     padding-left: 88px;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   @media only screen and (max-width: 850px) {
@@ -785,30 +791,28 @@ const Landing = () => {
               }}
               {...settings}
             >
-              <div>
-                {" "}
+             
                 <img
                   style={{ width: "90%", borderRadius: "10px" }}
                   src="/images/invent5.png"
                   alt="image4"
                 />
-              </div>
-              <div>
-                {" "}
+             
+              
                 <img
                   style={{ width: "90%", borderRadius: "10px" }}
                   src="/images/invent3.jfif"
                   alt="image5"
                 />
-              </div>
-              <div>
+              
+             
                 {" "}
                 <img
                   style={{ width: "90%", borderRadius: "10px" }}
                   src="/images/invent.jfif"
                   alt="image6"
                 />
-              </div>
+              
             </Slider>
           </Right>
         </Firstprompt>
@@ -868,7 +872,7 @@ const Landing = () => {
             <Whattododiv>
               <Whattodobox2 style={{ background: "#1D2D35" }}>
                 <p style={{ color: "#FFFFFF" }}>
-                  Create a detailed profile of your invention
+                  Create a detailed profile featuring your interests
                 </p>
               </Whattodobox2>
               <Whattodobox2 style={{ background: "#1D2D35" }}>
@@ -884,7 +888,7 @@ const Landing = () => {
               <Button2>Discover New Inventions</Button2>
               <ul>
                 <li>
-                  <p>Create a detailed profile of your invention</p>
+                  <p>Create a detailed profile featuring your interests</p>
                 </li>
                 <li>
                   <p>Search for inventions based on your investment criteria</p>
