@@ -76,10 +76,12 @@ export const Wrappercard2 = styled.div`
   justify-content: center;
 
   @media only screen and (max-width: 500px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    padding: 20px;
-    overflow-x: scroll;
+    /* grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); */
+    width: auto;
+    display: flex;
+    /* padding: 20px; */
+    overflow: scroll;
     p {
       display: none;
     }
@@ -165,27 +167,22 @@ export const Child2 = styled.div`
   @media only screen and (max-width: 500px) {
     background: rgba(253, 253, 253, 0.1);
     box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2);
-    width: 210px;
-    height: 260px;
-    margin-bottom: 50px;
+    width: 100vw;
+    height: 100%;
+    /* margin-bottom: 50px; */
     padding: 10px;
     text-align: center;
     h4 {
       margin-top: 15px;
     }
     img {
-      height: 180px;
-      width: 100%;
+      height: 60vh;
+      width: 100vw;
     }
     button {
       display: none;
     }
-    &:nth-child(3) {
-      grid-row: 1 / 3;
-      grid-column: 1 / 2;
-      align-self: center;
-      margin-left: 10px;
-    }
+   
   }
 `;
 
