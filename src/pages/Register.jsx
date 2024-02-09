@@ -23,18 +23,25 @@ export const AnimatedLoader = styled.img`
 export const Container = styled.div`
   width: 100%;
   height: 100%;
+  /* overflow: scroll; */
   padding: 37px;
   background: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 80px;
+  @media only screen and (max-width: 850px) {
+    margin-top:0px;
+    height: 100vh;
+  }
 `;
 
 const Register = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
 
   useEffect(() => {
     // Use onAuthStateChanged to listen for authentication state changes
@@ -90,8 +97,10 @@ const Register = () => {
       await signInWithEmailAndPassword(auth, email, password);
 
       setLoading(false);
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
+      console.log(error.message)
+      setErrorMsg(error.message)
       setError(true);
       setLoading(false);
     }
@@ -149,7 +158,8 @@ const Register = () => {
                 margin: "20px",
               }}
             >
-              something went wrong...
+              {/* something went wrong... */}
+              {errorMsg}
             </span>
           )}
           <Button>

@@ -33,6 +33,7 @@ const Logo = styled.img`
   @media only screen and (max-width: 500px) {
     width: 180px;
     margin-left: 10px;
+    padding-top: 10px;
   }
 `;
 

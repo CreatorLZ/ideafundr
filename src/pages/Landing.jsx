@@ -226,7 +226,7 @@ export const Button1 = styled.div`
   }
   @media only screen and (max-width: 500px) {
     width: 168px;
-    border-bottom: 2px solid #00806e;
+    border: 1px solid #00806e;
     padding: 10px 32px;
   }
 `;
@@ -746,7 +746,7 @@ const Landing = () => {
               immersive virtual environment.
             </Secondp>
             <Buttondiv>
-              <Link style={{ textDecoration: "none" }} to="/Login">
+              <Link to="/Login" style={{ textDecoration: "none" }}>
                 <Button1 style={{ fontSize: "18px" }}>Log in</Button1>
               </Link>
               <Link to="/Register">

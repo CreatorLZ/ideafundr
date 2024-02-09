@@ -18,7 +18,7 @@ export const AnimatedLoader = styled.img`
 
 export const Container = styled.div`
   width: 100%;
-  height: vh;
+  height: 100vh;
 
   background: #fafafa;
   display: flex;
@@ -31,6 +31,7 @@ export const Container = styled.div`
 
 const Login = () => {
   const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -72,6 +73,9 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error) {
+      console.log(error);
+      console.log(error.message);
+      setErrorMsg(error.message);
       setError(true);
       setLoading(false);
     }
@@ -103,7 +107,8 @@ const Login = () => {
                 margin: "20px",
               }}
             >
-              something went wrong...
+              {/* something went wrong... */}
+              {errorMsg}
             </span>
           )}
           <Button>

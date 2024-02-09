@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Slider from "../components/Slider";
-import { Button, Button1, Whybox } from "./Landing";
+import {Whybox } from "./Landing";
 import Coming from "../components/Coming";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
@@ -116,7 +116,10 @@ const Child = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 8px;
-    background: #ff6b6b;
+    /* background: #ff6b6b; */
+    &:hover{
+      background: #f3f0f0;
+    }
   }
   @media only screen and (max-width: 500px) {
     width: 180px;
@@ -163,7 +166,11 @@ export const Child2 = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 8px;
-    background: #ff6b6b;
+      /* background: #ff6b6b; */
+      &:hover{
+      background: #f3f0f0;
+    }
+  
   }
   @media only screen and (max-width: 500px) {
     background: rgba(253, 253, 253, 0.1);
@@ -189,7 +196,7 @@ export const Child2 = styled.div`
 `;
 
 const Categories = styled.div`
-  height: 100vhpx;
+  height: fit-content;
   width: 100%;
   background: #ffffff;
   display: flex;
@@ -198,8 +205,8 @@ const Categories = styled.div`
   justify-content: center;
 
   @media only screen and (max-width: 500px) {
-    margin-top: 100px;
-    margin-bottom: 50px;
+    /* margin-top: 100px; */
+    /* margin-bottom: 50px; */
   }
 `;
 
@@ -211,6 +218,7 @@ const Categorycard = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
   img {
     width: 100%;
     height: 100px;
@@ -219,7 +227,7 @@ const Categorycard = styled.div`
   p {
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 33px;
     padding: 5px;
   }
@@ -236,6 +244,24 @@ const Categorydiv = styled.div`
   }
 `;
 
+export const Button = styled.button`
+  padding: 16px 32px;
+  background-color: transparent;
+  color: #00806e;
+  text-decoration: none;
+  border: 1px solid #00806e;
+  border-radius: 5px;
+  cursor: pointer;
+  :hover {
+    transition: 250ms;
+    background-color: #f8f4f4;
+    color: #02a791;
+  }
+  :focus {
+    outline: none;
+  }
+`;
+
 const Home = () => {
   return (
     <Container>
@@ -244,8 +270,8 @@ const Home = () => {
         <MobileSlider />
       </Wrapper>
       <Buttondiv>
-        <Button style={{ width: "fit-content" }}>Explore Investments</Button>
-        <Button1 style={{ width: "fit-content" }}>Add Invention</Button1>
+        <Button >Explore Investments</Button>
+        <Button >Add Invention</Button>
       </Buttondiv>
       <Whybox style={{ paddingTop: "80px" }}>
         <p>Trending Inventions </p>
@@ -498,7 +524,7 @@ const Home = () => {
         >
           <Categorycard>
             <img src="images/Frame 436.png" alt="" />
-            <p>Home</p>
+            <p>Appliances</p>
           </Categorycard>
           <Categorycard>
             <img src="images/Frame 437.png" alt="" />

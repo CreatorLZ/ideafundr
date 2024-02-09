@@ -11,7 +11,7 @@ const Container = styled.div`
   position: fixed;
   width: 100vw;
   z-index: 40;
-  top:0;
+  top: 0;
   padding-bottom: 87px;
   Link {
     text-decoration: none;
@@ -164,7 +164,7 @@ const Button = styled.button`
   color: #fefefe;
   border: none;
   border-radius: 8px;
-  p{
+  p {
     width: 100%;
   }
   cursor: pointer;
@@ -236,7 +236,7 @@ const Login = styled.div`
   cursor: pointer;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: 0;
@@ -292,20 +292,22 @@ const Navbar2 = () => {
           {" "}
           <Logo src="./images/Logo.png" alt="Logo" />
         </Link>
-       
+
         <Right>
-        <Link to="/Login" style={{ textDecoration: "none" }}>
-              {" "}
-               <Login> Log in</Login>
-            </Link>
-            <Link to="/Register" style={{ textDecoration: "none" }}>
-              {" "}
-              <Button><p>Get started</p></Button>{" "}
-            </Link>
-      
+          <Link to="/Login" style={{ textDecoration: "none" }}>
+            {" "}
+            <Login> Log in</Login>
+          </Link>
+          <Link to="/Register" style={{ textDecoration: "none" }}>
+            {" "}
+            <Button>
+              <p>Get started</p>
+            </Button>{" "}
+          </Link>
+
           {/* <img onClick={toggleNav} src="./images/vertical.png" alt="menu" /> */}
 
-          <UserModal navbar={navbar}>
+          {/* <UserModal navbar={navbar}>
             <ul>
               <Link to="/Profile" style={{ textDecoration: "none" }}>
                 {" "}
@@ -313,7 +315,7 @@ const Navbar2 = () => {
               </Link>
               <li onClick={handleSignOut}>Log out</li>
             </ul>
-          </UserModal>
+          </UserModal> */}
         </Right>
         <Overlay sidebar={sidebar} onClick={showSidebar} />
         <Hamburger onClick={showSidebar} src="./images/menu.png" alt="menu" />
@@ -333,23 +335,7 @@ const Navbar2 = () => {
               >
                 <p>Home</p>
               </Link>
-            
-              {/* <Link
-                to="/Inventors"
-                style={{ textDecoration: "none", color: "#3A4F5C" }}
-                sidebar={sidebar}
-                onClick={showSidebar}
-              >
-                <p>Inventors</p>
-              </Link>
-              <Link
-                to="/Investors"
-                style={{ textDecoration: "none", color: "#3A4F5C" }}
-                sidebar={sidebar}
-                onClick={showSidebar}
-              >
-                <p>Investors</p>
-              </Link> */}
+
               <Link
                 to="/About"
                 style={{ textDecoration: "none", color: "#3A4F5C" }}
@@ -359,29 +345,46 @@ const Navbar2 = () => {
                 {" "}
                 <p>About Us</p>
               </Link>
-           
             </Siderbarlinks>
             <Sidebarbuttons>
-              <Button1
+              <Link
+                to="Login"
                 style={{
+                  textDecoration: "none",
+                  color: "#3A4F5C",
                   marginTop: "50px",
                   border: "none",
                   width: "70%",
                   height: "45px",
-                  fontSize:"20px"
+                  fontSize: "20px",
                 }}
                 sidebar={sidebar}
                 onClick={showSidebar}
               >
-                Log in
-              </Button1>
-
+                <Button1 style={{}} sidebar={sidebar} onClick={showSidebar}>
+                  Log in
+                </Button1>
+              </Link>
+              <Link
+                to="Register"
+                style={{
+                  textDecoration: "none",
+                  color: "#3A4F5C",
+                  marginTop: "10px",
+                  border: "none",
+                  width: "70%",
+                  height: "45px",
+                  fontSize: "20px",
+                }}
+                sidebar={sidebar}
+                onClick={showSidebar}
+              >
               <Button
-                style={{ width: "70%", height: "45px",fontSize:"16px" }}
-                
+                style={{padding:"20px 55px" }}
               >
                 Get started
               </Button>
+              </Link>
             </Sidebarbuttons>
           </SidebarWrap>
         </SidebarNav>
