@@ -143,7 +143,7 @@ const Leftbox = styled.div`
   width: 100%;
   height: fit-content;
   padding-left: 0px;
-  padding: 10px;
+  padding: 20px;
   }
 `;
 const Rightbox = styled.div`
@@ -169,7 +169,7 @@ const Rightbox = styled.div`
   }
   @media only screen and (max-width: 580px) {
  width: 100%;
- padding: 0px;
+ padding: 10px;
   }
 `;
 
@@ -182,7 +182,7 @@ const Contactdetails = styled.div`
   @media only screen and (max-width: 580px) {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
   }
 `;
 
@@ -244,40 +244,40 @@ const Profile = () => {
         <Leftbox>
           <h3>Investment Preferences</h3>
           <ul>
-            <li>Industry: </li>
-            <li>Stage: </li>
-            <li>Location: </li>
+            <li>Industry: Loading...</li>
+            <li>Stage: Loading... </li>
+            <li>Location: Loading...</li>
           </ul>
           <hr />
           <h3>Investment Portfolio</h3>
           <ul>
-            <li>Amount</li>
-            <li>Valuation</li>
-            <li>Percentage Ownership</li>
+            <li>Amount: Loading...</li>
+            <li>Valuation: Loading...</li>
+            <li>Percentage Ownership: Loading...</li>
           </ul>
           <hr />
           <h3>Active Deal</h3>
           <ul>
-            <li>Size</li>
-            <li>stage</li>
-            <li>Expected ROI</li>
+            <li>Size: Loading...</li>
+            <li>stage: Loading...</li>
+            <li>Expected ROI: Loading...</li>
           </ul>
           <hr />
           <h3>Patent</h3>
           <ul>
-            <li>Size</li>
-            <li>stage</li>
-            <li>Expected ROI</li>
+            <li>Size: Loading...</li>
+            <li>stage: Loading...</li>
+            <li>Expected ROI: Loading...</li>
           </ul>
           <hr />
           <h3>Patent</h3>
           <ul>
-            <li>Size</li>
-            <li>stage</li>
-            <li>Expected ROI</li>
+            <li>Size: Loading...</li>
+            <li>stage: Loading...</li>
+            <li>Expected ROI: Loading...</li>
           </ul>
           <hr />
-          <h3>Projects that might interest you</h3>
+          {/* <h3>Projects that might interest you</h3> */}
         </Leftbox>
       </Descriptionbox>
       <Footer />
