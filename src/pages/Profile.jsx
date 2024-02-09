@@ -12,7 +12,9 @@ const Container = styled.div`
   flex-direction: column;
   padding-top:100px;
   @media only screen and (max-width: 580px) {
+    padding: 0px;
     padding-top: 10px;
+    width: 100vw;
   }
 `;
 const Wrapper = styled.div`
@@ -104,7 +106,8 @@ const Descriptionbox = styled.div`
   @media only screen and (max-width: 580px) {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
+  padding: 0px;
   }
   
 `;
