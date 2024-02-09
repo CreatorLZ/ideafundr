@@ -10,7 +10,10 @@ const Container = styled.div`
   background: #f5f5f5;
   display: flex;
   flex-direction: column;
-  padding-top:100px
+  padding-top:100px;
+  @media only screen and (max-width: 580px) {
+    padding-top: 10px;
+  }
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -20,6 +23,12 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 120px;
+  @media only screen and (max-width: 580px) {
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    padding: 10px;
+  }
 `;
 
 export const Info = styled.div`
@@ -43,12 +52,16 @@ export const Info = styled.div`
   p {
     color: #1d2d35;
   }
+  @media only screen and (max-width: 580px) {
+   justify-content: center;
+   height: fit-content;
+  }
 `;
 export const Imagebox = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  width: 70%;
+  width: fit-content;
   height: 108px;
   padding-top: 140px;
   img {
@@ -56,6 +69,12 @@ export const Imagebox = styled.div`
     width: 204px;
     height: 94px;
     border-radius: 100%;
+  }
+  @media only screen and (max-width: 580px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: fit-content;
   }
 `;
 
@@ -65,9 +84,14 @@ export const Namebox = styled.div`
   text-align: center;
   gap: 10px;
   display: flex;
+  flex-direction: column;
   width: 400px;
-  height: 100%;
+  height: fit-content;
   padding: 10px;
+  @media only screen and (max-width: 580px) {
+  display: flex;
+  flex-direction: column;
+  }
 `;
 
 const Descriptionbox = styled.div`
@@ -77,6 +101,12 @@ const Descriptionbox = styled.div`
   height: 100%;
   padding: 100px;
   padding-top: 150px;
+  @media only screen and (max-width: 580px) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  }
+  
 `;
 const Leftbox = styled.div`
   display: flex;
@@ -104,6 +134,13 @@ const Leftbox = styled.div`
     width: 100%;
     height: 1px;
   }
+  @media only screen and (max-width: 580px) {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding-left: 0px;
+  padding: 10px;
+  }
 `;
 const Rightbox = styled.div`
   display: flex;
@@ -126,6 +163,10 @@ const Rightbox = styled.div`
   p {
     color: #ffffff;
   }
+  @media only screen and (max-width: 580px) {
+ width: 100%;
+ padding: 0px;
+  }
 `;
 
 const Contactdetails = styled.div`
@@ -134,6 +175,11 @@ const Contactdetails = styled.div`
   align-items: flex-start;
   padding: 60px;
   gap: 10px;
+  @media only screen and (max-width: 580px) {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  }
 `;
 
 const Profile = () => {
@@ -143,14 +189,15 @@ const Profile = () => {
       <Wrapper>
         <Info>
           <Imagebox>
+            <Namebox>
             <img src={currentUser.photoURL} alt="image" />
-            <Namebox style={{ display: "flex", flexDirection: "column" }}>
               <h3>{currentUser.displayName}</h3>
-              <p>Ogun State, Nigeria 1:00am Local time</p>
+              <p>Ogun State, Nigeria </p>
+              <p>1:00am Local time</p>
             </Namebox>
           </Imagebox>
         </Info>
-        <Button1>Profile settings</Button1>
+        
       </Wrapper>
       <Descriptionbox>
         <Rightbox>
