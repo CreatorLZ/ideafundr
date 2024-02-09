@@ -10,7 +10,7 @@ const Container = styled.div`
   background: #f5f5f5;
   display: flex;
   flex-direction: column;
-  padding-top:100px;
+  padding-top:200px;
   @media only screen and (max-width: 580px) {
     padding: 0px;
     padding-top: 10px;
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     height: fit-content;
     justify-content: center;
-    padding: 10px;
+    padding: 0px;
   }
 `;
 
@@ -57,6 +57,7 @@ export const Info = styled.div`
   @media only screen and (max-width: 580px) {
    justify-content: center;
    height: fit-content;
+   width: fit-content;
   }
 `;
 export const Imagebox = styled.div`
@@ -69,8 +70,8 @@ export const Imagebox = styled.div`
   img {
     object-fit: cover;
     width: 204px;
-    height: 94px;
-    border-radius: 100%;
+    height: 204px;
+    border-radius: 50%;
   }
   @media only screen and (max-width: 580px) {
     display: flex;
@@ -106,7 +107,7 @@ const Descriptionbox = styled.div`
   @media only screen and (max-width: 580px) {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   padding: 0px;
   }
   
