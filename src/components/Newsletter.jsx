@@ -76,9 +76,12 @@ cursor: pointer;
 :hover{
   transition:250ms;
   background-color: white;
+  color:  #00806E;
 }
 @media only screen and (max-width: 480px) {
-
+&:hover {
+  color: black;
+}
 }
 `
 

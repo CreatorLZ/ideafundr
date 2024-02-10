@@ -32,8 +32,9 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 80px;
   @media only screen and (max-width: 850px) {
-    margin-top:0px;
-    height: 100vh;
+    margin-top:100px;
+    height: 110vh;
+    padding-top: 20px;
   }
 `;
 
