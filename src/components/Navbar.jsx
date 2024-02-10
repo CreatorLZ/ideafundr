@@ -106,6 +106,7 @@ const SidebarNav = styled.nav`
   @media only screen and (max-width: 500px) {
     width: 300px;
     display: flex;
+    
   }
 `;
 const Adjust = styled.img`
@@ -121,7 +122,7 @@ const SidebarWrap = styled.div`
   width: 100%;
   margin-top: 50px;
   overflow-y: scroll;
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
@@ -129,7 +130,7 @@ const SidebarWrap = styled.div`
   }
   ::-webkit-scrollbar-thumb {
     background-color: #d1cfcf;
-  }
+  } */
 `;
 const Sidebarbuttons = styled.div`
   display: flex;
@@ -223,13 +224,18 @@ const Siderbarlinks = styled.div`
       cursor: pointer;
     }
   }
+  width: 100%;
 `;
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
   const { currentUser } = useContext(AuthContext);
   const [navbar, setNavBar] = useState(false);
+  const showSidebar = () =>{ 
+    setSidebar(!sidebar);
+    document.body.style.overflow = sidebar ? "visible" : "hidden";
+    
+  }
 
   const toggleNav = () => {
     setNavBar(!navbar);
