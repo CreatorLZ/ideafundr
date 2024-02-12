@@ -22,19 +22,20 @@ export const AnimatedLoader = styled.img`
 `;
 export const Container = styled.div`
   width: 100%;
-  height: 100%;
+  height: fit-content;
   /* overflow: scroll; */
   padding: 37px;
+  padding-top: 60px;
   background: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 40px;
   @media only screen and (max-width: 850px) {
-    margin-top:100px;
-    height: 110vh;
-    padding-top: 20px;
+    margin-top:60px;
+    height: fit-content;
+    padding-top: 50px;
   }
 `;
 
@@ -111,16 +112,20 @@ const Register = () => {
 
   return (
     <Container>
-      <Wrapper>
+      <Wrapper style={{textAlign:"flex-start"}}>
         <form onSubmit={handleSubmit}>
+          <label htmlFor="name">First name</label>
           <input placeholder="First name" type="text" name="name" required />
+          <label htmlFor="lastname">Last name</label>
           <input placeholder="Last Name" type="name" name="lastname" required />
+          <label htmlFor="Email">Email</label>
           <input
             placeholder="email address"
             type="email"
             name="email"
             required
           />
+          <label htmlFor="Password">Password</label>
           <input
             placeholder="password"
             type="password"
@@ -128,6 +133,7 @@ const Register = () => {
             name="password"
             required
           />
+          <label htmlFor="password">Re-enter password</label>
           <input
             placeholder="re-enter password"
             type="password"
@@ -173,7 +179,7 @@ const Register = () => {
         </form>
         <p>
           Already have an account?{" "}
-          <Link style={{ textDecoration: "none" }} to="/login">
+          <Link style={{ textDecoration: "none", color:"#00806e" }} to="/login">
             Sign in
           </Link>
         </p>

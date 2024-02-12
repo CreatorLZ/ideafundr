@@ -107,11 +107,11 @@ const Path = () => {
         Join as an inventor or investor
       </h2>
       <Wrapper>
-        <PathChoice>
+        <PathChoice onClick={handleCheckboxChange1}>
           <p>I am an inventor</p>
           <Checkbox checked={isChecked1} onChange={handleCheckboxChange1} />
         </PathChoice>
-        <PathChoice>
+        <PathChoice onClick={handleCheckboxChange2}>
           <p>I am an investor</p>
           <Checkbox checked={isChecked2} onChange={handleCheckboxChange2} />
         </PathChoice>

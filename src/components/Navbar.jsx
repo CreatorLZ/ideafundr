@@ -233,7 +233,7 @@ const Navbar = () => {
   const [navbar, setNavBar] = useState(false);
   const showSidebar = () =>{ 
     setSidebar(!sidebar);
-    document.body.style.overflow = sidebar ? "visible" : "hidden";
+    // document.body.style.overflow = sidebar ? "visible" : "hidden";
     
   }
 

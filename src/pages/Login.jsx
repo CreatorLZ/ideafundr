@@ -122,7 +122,7 @@ const Login = () => {
         <p>
           Don't have an account?{" "}
           <Link
-            style={{ textDecoration: "none", color: " #8095A2;" }}
+            style={{ textDecoration: "none", color: " #00806e" }}
             to="/Path"
           >
             Sign up

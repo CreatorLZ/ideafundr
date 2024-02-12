@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
-height: 100vh;
+height: 100%;
 width: 45%;
 border-radius: 10px;
 display: flex;
@@ -36,7 +36,7 @@ form{
     flex-direction: column;
     width: 100%;
     height: 100%;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
      img{
     width: 30px;
@@ -48,7 +48,8 @@ form{
         align-items: center;
         gap: 10px;
         color:  #8095A2;
-        font-size: 12px;
+        padding: 5px;
+        font-size: 14px;
         cursor: pointer;
     }
 }

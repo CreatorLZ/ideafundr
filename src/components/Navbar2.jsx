@@ -120,16 +120,6 @@ const Adjust = styled.img`
 const SidebarWrap = styled.div`
   width: 100%;
   margin-top: 50px;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: white;
-  }
-  ::-webkit-scrollbar-thumb {
-    background-color: #d1cfcf;
-  }
 `;
 const Sidebarbuttons = styled.div`
   display: flex;
