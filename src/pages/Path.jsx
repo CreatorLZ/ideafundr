@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useHistory, useNavigate } from "react-router-dom"; // Import useHistory for redirection
+import { useNavigate } from "react-router-dom"; 
 import { Button } from "../components/Navbar";
 
 const Container = styled.div`
