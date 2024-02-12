@@ -15,6 +15,7 @@ import GlobalStyles from "./Global";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 import Navbar2 from "./components/Navbar2";
+import Path from "./pages/Path";
 const Landing = lazy(() => import("./pages/Landing"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -80,6 +81,17 @@ function App() {
               {/* <ProtectedRoute> */}
                 {" "}
                 <About />
+              {/* </ProtectedRoute> */}
+            </Suspense>
+          }
+        />
+         <Route
+          path="/Path"
+          element={
+            <Suspense fallback={<Spinneranimation />}>
+              {/* <ProtectedRoute> */}
+                {" "}
+                <Path />
               {/* </ProtectedRoute> */}
             </Suspense>
           }

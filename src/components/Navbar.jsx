@@ -155,7 +155,7 @@ const Overlay = styled.div`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   padding: 16px 32px;
   gap: 8px;
   display: flex;
@@ -308,7 +308,7 @@ const Navbar = () => {
           {currentUser ? (
             <Button onClick={handleSignOut}>Log out</Button>
           ) : (
-            <Link to="/Landing" style={{ textDecoration: "none" }}>
+            <Link to="/Path" style={{ textDecoration: "none" }}>
               {" "}
               <Button>Sign Up</Button>{" "}
             </Link>

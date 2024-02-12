@@ -298,7 +298,7 @@ const Navbar2 = () => {
             {" "}
             <Login> Log in</Login>
           </Link>
-          <Link to="/Register" style={{ textDecoration: "none" }}>
+          <Link to="/Path" style={{ textDecoration: "none" }}>
             {" "}
             <Button>
               <p>Get started</p>
@@ -366,7 +366,7 @@ const Navbar2 = () => {
                 </Button1>
               </Link>
               <Link
-                to="Register"
+                to="Path"
                 style={{
                   textDecoration: "none",
                   color: "#3A4F5C",

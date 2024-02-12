@@ -749,7 +749,7 @@ const Landing = () => {
               <Link to="/Login" style={{ textDecoration: "none" }}>
                 <Button1 style={{ fontSize: "18px" }}>Log in</Button1>
               </Link>
-              <Link to="/Register">
+              <Link to="/Path">
                 <Button2 style={{ fontSize: "18px" }}>Get started</Button2>
               </Link>
             </Buttondiv>

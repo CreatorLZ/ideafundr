@@ -123,7 +123,7 @@ const Login = () => {
           Don't have an account?{" "}
           <Link
             style={{ textDecoration: "none", color: " #8095A2;" }}
-            to="/Register"
+            to="/Path"
           >
             Sign up
           </Link>
