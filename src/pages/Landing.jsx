@@ -231,8 +231,8 @@ export const Button1 = styled.div`
   }
 `;
 
-const Button2 = styled.button`
-  padding: 16px 32px;
+export const Button2 = styled.button`
+  padding: 18px 32px;
   gap: 8px;
   background-color: #00806e;
   color: white;

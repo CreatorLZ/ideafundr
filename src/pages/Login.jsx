@@ -85,12 +85,15 @@ const Login = () => {
     <Container>
       <Wrapper style={{ paddingTop: "100px" }}>
         <form onSubmit={handleSubmit}>
+          <label>Email</label>
+
           <input
             placeholder="email address"
             type="email"
             name="email"
             required
           />
+          <label>Password</label>
           <input
             placeholder="password"
             type="password"
@@ -111,7 +114,7 @@ const Login = () => {
               {errorMsg}
             </span>
           )}
-          <Button>
+          <Button >
             {loading ? (
               <AnimatedLoader src="./images/loading-gif2.gif" alt="loading" />
             ) : (

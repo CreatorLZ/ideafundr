@@ -120,6 +120,9 @@ const Adjust = styled.img`
 const SidebarWrap = styled.div`
   width: 100%;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 const Sidebarbuttons = styled.div`
   display: flex;
@@ -127,6 +130,10 @@ const Sidebarbuttons = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 20px;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+   
+  }
 `;
 
 const Overlay = styled.div`
@@ -351,7 +358,7 @@ const Navbar2 = () => {
                 sidebar={sidebar}
                 onClick={showSidebar}
               >
-                <Button1 style={{}} sidebar={sidebar} onClick={showSidebar}>
+                <Button1 style={{padding:"15px",width:"100%"}} sidebar={sidebar} onClick={showSidebar}>
                   Log in
                 </Button1>
               </Link>
@@ -370,7 +377,7 @@ const Navbar2 = () => {
                 onClick={showSidebar}
               >
               <Button
-                style={{padding:"20px 55px" }}
+                style={{padding:"20px 55px", width:"100%" }}
               >
                 Get started
               </Button>

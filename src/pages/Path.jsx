@@ -36,6 +36,7 @@ const PathChoice = styled.div`
   justify-content: center;
   font-weight: 400;
   font-size: 18px;
+  cursor: pointer;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
   position: relative;
   @media only screen and (max-width: 580px) {

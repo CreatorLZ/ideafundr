@@ -17,7 +17,7 @@ align-items: center;
 margin-bottom:30px;
 padding: 12px 24px;
 gap: 4px;
-width: 550px;
+width: 100%;
 height: 56px;
 border: 0.2px solid #8095A2;
 border-radius: 4px;
