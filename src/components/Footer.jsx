@@ -160,7 +160,7 @@ const Footer = () => {
           </Icons>
         </Socialdiv>
         <p>Copyright © 2024. Ideafundr. All rights reserved.</p>
-        <p style={{fontWeight:"bold"}}>With ❤️, Isaac C Anyim</p>
+        <p style={{fontWeight:"bold"}}>Made with ❤️ by, Isaac C Anyim</p>
       </div>
     </Container>
   );

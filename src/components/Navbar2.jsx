@@ -301,18 +301,6 @@ const Navbar2 = () => {
               <p>Get started</p>
             </Button>{" "}
           </Link>
-
-          {/* <img onClick={toggleNav} src="./images/vertical.png" alt="menu" /> */}
-
-          {/* <UserModal navbar={navbar}>
-            <ul>
-              <Link to="/Profile" style={{ textDecoration: "none" }}>
-                {" "}
-                <li>Profile</li>
-              </Link>
-              <li onClick={handleSignOut}>Log out</li>
-            </ul>
-          </UserModal> */}
         </Right>
         <Overlay sidebar={sidebar} onClick={showSidebar} />
         <Hamburger onClick={showSidebar} src="./images/menu.png" alt="menu" />

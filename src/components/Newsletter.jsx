@@ -93,7 +93,7 @@ const Newsletter = () => {
             <form>
                 <input type='text' placeholder='name@gmail.com'/>
                 <Checkbox>
-                <input type='checkbox' style={{width:"30px", cursor:"pointer"}}/>
+                <input type='checkbox' style={{width:"20px", cursor:"pointer"}}/>
                 <p>I agree to the Terms of Use and have read and understand <br/>the Privacy Policy</p>
                 </Checkbox>
                 <Button>Join Newsletter</Button>

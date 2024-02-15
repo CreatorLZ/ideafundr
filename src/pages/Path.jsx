@@ -63,7 +63,7 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
   cursor: pointer;
 
   &:checked {
-    background-color: transparent;
+    background-color: #00806e;
   }
 
   &:checked::before {
@@ -73,7 +73,7 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #00806e;
+    color: white;
     font-weight: bold;
   }
 `;

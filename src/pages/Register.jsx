@@ -18,7 +18,7 @@ import { Wrapper } from "../components/Registerstyles";
 export const AnimatedLoader = styled.img`
   width: 1px;
   height: 1px;
-  object-fit: cover;
+  padding: 0;
 `;
 export const Container = styled.div`
   width: 100%;

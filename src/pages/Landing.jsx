@@ -785,23 +785,22 @@ const Landing = () => {
             <Slider
               style={{
                 width: "100%",
+                height: "100%",
                 padding: "5px 20px",
-                display: "flex",
-                justifyContent: "center",
                 border: "none",
               }}
               {...settings}
             >
              
                 <img
-                  style={{ width: "90%", borderRadius: "10px" }}
+                  style={{ width: "90%", height: "100%", borderRadius: "10px" }}
                   src="/images/invent5.png"
                   alt="image4"
                 />
              
               
                 <img
-                  style={{ width: "90%", borderRadius: "10px" }}
+                  style={{ width: "90%",height: "100%", borderRadius: "10px" }}
                   src="/images/invent3.jfif"
                   alt="image5"
                 />
@@ -809,7 +808,7 @@ const Landing = () => {
              
                 {" "}
                 <img
-                  style={{ width: "90%", borderRadius: "10px" }}
+                  style={{ width: "90%",height: "100%", borderRadius: "10px" }}
                   src="/images/invent.jfif"
                   alt="image6"
                 />
