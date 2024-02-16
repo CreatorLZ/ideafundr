@@ -11,7 +11,7 @@ const Container = styled.div`
   position: fixed;
   width: 100vw;
   z-index: 40;
-  top:0;
+  top: 0;
   padding-bottom: 87px;
   Link {
     text-decoration: none;
@@ -43,7 +43,7 @@ const Center = styled.div`
   align-items: center;
   padding: 0px;
   gap: 32px;
-  width: 576px;
+  width: 40%;
   line-height: 33px;
 
   p {
@@ -59,12 +59,13 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   padding: 0px;
-  gap: 32px;
+  gap: 15px;
+  width: 20%;
 
   img {
     object-fit: cover;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
   }
   @media only screen and (max-width: 500px) {
     display: none;
@@ -106,7 +107,6 @@ const SidebarNav = styled.nav`
   @media only screen and (max-width: 500px) {
     width: 300px;
     display: flex;
-    
   }
 `;
 const Adjust = styled.img`
@@ -178,22 +178,31 @@ export const Button = styled.button`
 
 const UserModal = styled.div`
   position: absolute;
-  padding: ${({ navbar }) => (navbar ? "5px 5px" : "0px 0px")};
-  border-radius: 10px;
-  background: #f5f5f5;
-  top: ${({ navbar }) => (navbar ? "80px" : "70px")};
+  /* border-radius: 10px; */
+  background: #f2f2f2;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+  width: 100px;
+  top: ${({ navbar }) => (navbar ? "100px" : "70px")};
   opacity: ${({ navbar }) => (navbar ? "1" : "0")};
   transition: 450ms;
-  right: 10px;
+  right: 160px;
   display: flex;
   flex-direction: column;
   ul {
     list-style: none;
     width: 100%;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    Link{
+      &:hover{
+        color: #ffffff;
+      }
+    }
     li {
       padding: 10px;
-      border-radius: 5px;
       cursor: pointer;
       width: 100%;
       color: #3a4f5c;
@@ -231,11 +240,10 @@ const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
   const { currentUser } = useContext(AuthContext);
   const [navbar, setNavBar] = useState(false);
-  const showSidebar = () =>{ 
+  const showSidebar = () => {
     setSidebar(!sidebar);
     // document.body.style.overflow = sidebar ? "visible" : "hidden";
-    
-  }
+  };
 
   const toggleNav = () => {
     setNavBar(!navbar);
@@ -305,6 +313,19 @@ const Navbar = () => {
         </Center>
         <Right>
           <img src="./images/Vector.png" alt="search" />
+          <img onClick={toggleNav} src="./images/vertical.png" alt="menu" />
+
+          <UserModal navbar={navbar}>
+            <ul>
+              {" "}
+              <li>
+                <Link to="/Profile" style={{ textDecoration: "none",color:"#3a4f5c" }}>
+                   Profile
+                </Link>
+              </li>
+              <li onClick={handleSignOut}>Log out</li>
+            </ul>
+          </UserModal>
           {currentUser ? (
             <Button onClick={handleSignOut}>Log out</Button>
           ) : (
@@ -313,17 +334,6 @@ const Navbar = () => {
               <Button>Sign Up</Button>{" "}
             </Link>
           )}
-          <img onClick={toggleNav} src="./images/vertical.png" alt="menu" />
-
-          <UserModal navbar={navbar}>
-            <ul>
-              <Link to="/Profile" style={{ textDecoration: "none" }}>
-                {" "}
-                <li>Profile</li>
-              </Link>
-              <li onClick={handleSignOut}>Log out</li>
-            </ul>
-          </UserModal>
         </Right>
         <Overlay sidebar={sidebar} onClick={showSidebar} />
         <Hamburger onClick={showSidebar} src="./images/menu.png" alt="menu" />
@@ -348,7 +358,7 @@ const Navbar = () => {
                 style={{ textDecoration: "none", color: "#3A4F5C" }}
                 sidebar={sidebar}
                 onClick={showSidebar}
-              > 
+              >
                 {" "}
                 <p>Explore</p>
               </Link>

@@ -4,7 +4,12 @@ import { Button1 } from "./Landing";
 import Footer from "../components/Footer";
 import { AuthContext } from "../context/AuthContext";
 import { storage } from "../firebase"; // Import Firebase storage
-import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 
 const Container = styled.div`
   width: 100%;
@@ -12,7 +17,7 @@ const Container = styled.div`
   background: #f5f5f5;
   display: flex;
   flex-direction: column;
-  padding-top:200px;
+  padding-top: 200px;
   @media only screen and (max-width: 580px) {
     padding: 0px;
     padding-top: 10px;
@@ -57,9 +62,9 @@ export const Info = styled.div`
     color: #1d2d35;
   }
   @media only screen and (max-width: 580px) {
-   justify-content: center;
-   height: fit-content;
-   width: fit-content;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
   }
 `;
 export const Imagebox = styled.div`
@@ -94,8 +99,8 @@ export const Namebox = styled.div`
   height: fit-content;
   padding: 10px;
   @media only screen and (max-width: 580px) {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 `;
 
@@ -107,12 +112,11 @@ const Descriptionbox = styled.div`
   padding: 100px;
   padding-top: 150px;
   @media only screen and (max-width: 580px) {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px;
   }
-  
 `;
 const Leftbox = styled.div`
   display: flex;
@@ -141,11 +145,11 @@ const Leftbox = styled.div`
     height: 1px;
   }
   @media only screen and (max-width: 580px) {
-  display: flex;
-  width: 100%;
-  height: fit-content;
-  padding-left: 0px;
-  padding: 20px;
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding-left: 0px;
+    padding: 20px;
   }
 `;
 const Rightbox = styled.div`
@@ -170,8 +174,8 @@ const Rightbox = styled.div`
     color: #ffffff;
   }
   @media only screen and (max-width: 580px) {
- width: 100%;
- padding: 10px;
+    width: 100%;
+    padding: 10px;
   }
 `;
 
@@ -182,16 +186,16 @@ const Contactdetails = styled.div`
   padding: 60px;
   gap: 10px;
   @media only screen and (max-width: 580px) {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
   }
 `;
 
 const Profile = () => {
-  const { currentUser,  updateCurrentUser } = useContext(AuthContext);
+  const { currentUser, updateCurrentUser } = useContext(AuthContext);
   const [image, setImage] = useState(null);
-  const [uploadPercentage, setUploadPercentage] = useState("")
+  const [uploadPercentage, setUploadPercentage] = useState("");
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -202,16 +206,19 @@ const Profile = () => {
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       // Progress tracking observer
-      uploadTask.on('state_changed', 
+      uploadTask.on(
+        "state_changed",
         (snapshot) => {
-          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-          // You can update the UI with the progress if needed
-        }, 
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            setUploadPercentage("Upload is " + progress + "% done")
+          console.log("Upload is " + progress + "% done");
+         
+        },
         (error) => {
           // Handle unsuccessful uploads
-          console.error('Upload error:', error);
-        }, 
+          console.error("Upload error:", error);
+        },
         () => {
           // Handle successful uploads on complete
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -229,26 +236,32 @@ const Profile = () => {
         <Info>
           <Imagebox>
             <Namebox>
-            <img src={currentUser.photoURL} alt="image" />
-            <label htmlFor="picture" style={{display:"flex", alignItems:"center", gap:"3px"}}>
-            <span>Change profile picture</span>
-            <img style={{width:"30px", height:"30px",cursor:"pointer"}} src="./images/picture.png" alt="profile" />
-          </label>
-          
-          {/* Input for file upload */}
-          <input 
-            type="file" 
-            id="fileInput" 
-            onChange={handleFileUpload} 
-            style={{ display: 'none' }} // Hide the default input styling
-          />
+              <img src={currentUser.photoURL} alt="image" />
+              <span style={{color:"#00806e",fontSize:"14px"}}>{uploadPercentage}</span> 
+              <input
+                type="file"
+                id="fileInput"
+                onChange={handleFileUpload}
+                style={{ display: "none" }}
+              />
+              <label
+                htmlFor="fileInput"
+                style={{ display: "flex", alignItems: "center", gap: "3px" }}
+              >
+                <span style={{cursor:"pointer"}}>Change profile picture</span>
+                <img
+                  style={{ width: "30px", height: "30px", cursor: "pointer" }}
+                  src="./images/picture.png"
+                  alt="profile"
+                />
+              </label>
+
               <h3>{currentUser.displayName}</h3>
               <p>Ogun State, Nigeria </p>
               <p>1:00am Local time</p>
             </Namebox>
           </Imagebox>
         </Info>
-        
       </Wrapper>
       <Descriptionbox>
         <Rightbox>
