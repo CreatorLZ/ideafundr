@@ -1,8 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { Button1 } from "./Landing";
 import Footer from "../components/Footer";
 import { AuthContext } from "../context/AuthContext";
+import { storage } from "../firebase"; // Import Firebase storage
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 const Container = styled.div`
   width: 100%;
@@ -187,7 +189,40 @@ const Contactdetails = styled.div`
 `;
 
 const Profile = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser,  updateCurrentUser } = useContext(AuthContext);
+  const [image, setImage] = useState(null);
+  const [uploadPercentage, setUploadPercentage] = useState("")
+
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const storage = getStorage();
+      const storageRef = ref(storage, `profileImages/${currentUser.uid}`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      // Progress tracking observer
+      uploadTask.on('state_changed', 
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          // You can update the UI with the progress if needed
+        }, 
+        (error) => {
+          // Handle unsuccessful uploads
+          console.error('Upload error:', error);
+        }, 
+        () => {
+          // Handle successful uploads on complete
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            // Update the user's photoURL in the AuthContext
+            updateCurrentUser({ ...currentUser, photoURL: downloadURL });
+          });
+        }
+      );
+    }
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -195,6 +230,18 @@ const Profile = () => {
           <Imagebox>
             <Namebox>
             <img src={currentUser.photoURL} alt="image" />
+            <label htmlFor="picture" style={{display:"flex", alignItems:"center", gap:"3px"}}>
+            <span>Change profile picture</span>
+            <img style={{width:"30px", height:"30px",cursor:"pointer"}} src="./images/picture.png" alt="profile" />
+          </label>
+          
+          {/* Input for file upload */}
+          <input 
+            type="file" 
+            id="fileInput" 
+            onChange={handleFileUpload} 
+            style={{ display: 'none' }} // Hide the default input styling
+          />
               <h3>{currentUser.displayName}</h3>
               <p>Ogun State, Nigeria </p>
               <p>1:00am Local time</p>

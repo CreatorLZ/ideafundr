@@ -14,6 +14,16 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./Landing";
 import styled from "styled-components";
 import { Wrapper } from "../components/Registerstyles";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+const schema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+  reenterpassword: z.string().min(8),
+  firstname: z.string().min(8),
+});
 
 export const AnimatedLoader = styled.img`
   width: 1px;
@@ -33,7 +43,7 @@ export const Container = styled.div`
   justify-content: center;
   margin-top: 40px;
   @media only screen and (max-width: 850px) {
-    margin-top:60px;
+    margin-top: 60px;
     height: fit-content;
     padding-top: 50px;
   }
@@ -42,8 +52,18 @@ export const Container = styled.div`
 const Register = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+
+
+  const {
+    register,
+    handleSubmit,
+    setValue, 
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
   useEffect(() => {
     // Use onAuthStateChanged to listen for authentication state changes
@@ -57,27 +77,36 @@ const Register = () => {
     return () => unsubscribe(); // Cleanup the listener on component unmount
   }, [navigate]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const onSubmit = async (data) => {
+  //   await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  //   console.log(data);
+  // };
+
+  const handleSubmit2 = async (data) => {
     const oneHourInMs = 60 * 60 * 1000;
-    // record all required form events
-    const email = e.target[2].value;
-    const password = e.target[3].value;
-    const displayName = e.target[0].value;
-    const file = e.target[5].files[0];
+    // record all   form events
+    const email = data.email;
+    const password = data.password;
+    const displayName = data.firstname;
+    const file = selectedFile;
 
     try {
       // Create user
-      setLoading(true);
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
       // Create a unique image name
       const date = new Date().getTime();
       const storageRef = ref(storage, `${displayName + date}`);
 
-      await uploadBytesResumable(storageRef, file);
-      const downloadURL = await getDownloadURL(storageRef);
+      // Create FormData object and append file data
+      // const formData = new FormData();
+      // formData.append("file", file);
 
+      await uploadBytesResumable(storageRef, file);
+
+      const downloadURL = await getDownloadURL(storageRef);
+      console.log("Download URL:", downloadURL);
       // Update profile
       await updateProfile(res.user, {
         displayName,
@@ -98,60 +127,114 @@ const Register = () => {
       // Sign in with the created user
       await signInWithEmailAndPassword(auth, email, password);
 
-      setLoading(false);
+   
     } catch (error) {
       console.log(error);
-      console.log(error.message)
-      setErrorMsg(error.message)
+      console.log(error.message);
+      setErrorMsg(error.message);
       setError(true);
-      setLoading(false);
+  
     }
   };
 
-
-
   return (
     <Container>
-      <Wrapper style={{textAlign:"flex-start"}}>
-        <form onSubmit={handleSubmit}>
+      <Wrapper style={{ textAlign: "flex-start" }}>
+        <form onSubmit={handleSubmit(handleSubmit2)}>
           <label htmlFor="name">First name</label>
-          <input placeholder="First name" type="text" name="name" required />
+          <input
+            {...register("firstname")}
+            placeholder="First name"
+            type="text"
+          />
+          {errors.firstname && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: "red",
+                fontWeight: "200",
+              }}
+            >
+              {/* something went wrong... */}
+              {errors.firstname.message}
+            </span>
+          )}
           <label htmlFor="lastname">Last name</label>
-          <input placeholder="Last Name" type="name" name="lastname" required />
+          <input
+            {...register("last Name")}
+            placeholder="Last Name"
+            type="text"
+          />
           <label htmlFor="Email">Email</label>
           <input
+            {...register("email")}
             placeholder="email address"
             type="email"
-            name="email"
-            required
           />
+          {errors.email && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: "red",
+                fontWeight: "200",
+              }}
+            >
+              {/* something went wrong... */}
+              {errors.email.message}
+            </span>
+          )}
           <label htmlFor="Password">Password</label>
           <input
+            {...register("password")}
             placeholder="password"
             type="password"
-            minLength="6"
-            name="password"
-            required
           />
+          {errors.password && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: "red",
+                fontWeight: "200",
+              }}
+            >
+              {/* something went wrong... */}
+              {errors.password.message}
+            </span>
+          )}
           <label htmlFor="password">Re-enter password</label>
           <input
+            {...register("reenterpassword")}
             placeholder="re-enter password"
             type="password"
-            minLength="6"
-            name="password"
-            required
           />
+          {errors.reenterpassword && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: "red",
+                fontWeight: "200",
+              }}
+            >
+              {/* something went wrong... */}
+              {errors.reenterpassword.message}
+            </span>
+          )}
           <input
             type="file"
-            name="file"
+            {...register("picture")}
             id="picture"
             style={{ display: "none" }}
-            required
+            onChange={(e) => {
+              const file = e.target.files[0];
+              setSelectedFile(file);
+              setValue("picture", selectedFile); 
+            }}
           />
           <label htmlFor="picture">
             <img src="./images/picture.png" alt="profile" />
             <span>choose a profile picture</span>
           </label>
+
           <p style={{ marginBottom: "20px" }}>
             By clicking “Sign Up” you agree to our Term of use and our Privacy
             Policy
@@ -169,17 +252,27 @@ const Register = () => {
               {errorMsg}
             </span>
           )}
-          <Button>
+          {/* <Button>
             {loading ? (
               <AnimatedLoader src="./images/loading-gif2.gif" alt="loading" />
             ) : (
               " Sign up"
             )}
+          </Button> */}
+          <Button disabled={isSubmitting} type="submit">
+            {isSubmitting ? (
+              <AnimatedLoader src="./images/loading-gif2.gif" alt="loading" />
+            ) : (
+              "Sign up"
+            )}
           </Button>
         </form>
         <p>
           Already have an account?{" "}
-          <Link style={{ textDecoration: "none", color:"#00806e" }} to="/login">
+          <Link
+            style={{ textDecoration: "none", color: "#00806e" }}
+            to="/login"
+          >
             Sign in
           </Link>
         </p>
