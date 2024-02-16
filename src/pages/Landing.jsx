@@ -283,6 +283,7 @@ const Left = styled.div`
   width: 60vw;
   @media only screen and (max-width: 500px) {
     width: 100vw;
+    padding-right: 15px;
   }
 `;
 
