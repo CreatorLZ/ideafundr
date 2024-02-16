@@ -55,11 +55,10 @@ const Register = () => {
   const [errorMsg, setErrorMsg] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
 
-
   const {
     register,
     handleSubmit,
-    setValue, 
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm({
     resolver: zodResolver(schema),
@@ -76,12 +75,6 @@ const Register = () => {
 
     return () => unsubscribe(); // Cleanup the listener on component unmount
   }, [navigate]);
-
-  // const onSubmit = async (data) => {
-  //   await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  //   console.log(data);
-  // };
 
   const handleSubmit2 = async (data) => {
     const oneHourInMs = 60 * 60 * 1000;
@@ -126,14 +119,11 @@ const Register = () => {
 
       // Sign in with the created user
       await signInWithEmailAndPassword(auth, email, password);
-
-   
     } catch (error) {
       console.log(error);
       console.log(error.message);
       setErrorMsg(error.message);
       setError(true);
-  
     }
   };
 
@@ -227,7 +217,7 @@ const Register = () => {
             onChange={(e) => {
               const file = e.target.files[0];
               setSelectedFile(file);
-              setValue("picture", selectedFile); 
+              setValue("picture", selectedFile);
             }}
           />
           <label htmlFor="picture">

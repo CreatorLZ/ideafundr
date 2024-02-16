@@ -196,8 +196,8 @@ const UserModal = styled.div`
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    Link{
-      &:hover{
+    Link {
+      &:hover {
         color: #ffffff;
       }
     }
@@ -319,8 +319,11 @@ const Navbar = () => {
             <ul>
               {" "}
               <li>
-                <Link to="/Profile" style={{ textDecoration: "none",color:"#3a4f5c" }}>
-                   Profile
+                <Link
+                  to="/Profile"
+                  style={{ textDecoration: "none", color: "#3a4f5c" }}
+                >
+                  Profile
                 </Link>
               </li>
               <li onClick={handleSignOut}>Log out</li>

@@ -211,9 +211,8 @@ const Profile = () => {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            setUploadPercentage("Upload is " + progress + "% done")
+          setUploadPercentage("Upload is " + progress + "% done");
           console.log("Upload is " + progress + "% done");
-         
         },
         (error) => {
           // Handle unsuccessful uploads
@@ -237,7 +236,9 @@ const Profile = () => {
           <Imagebox>
             <Namebox>
               <img src={currentUser.photoURL} alt="image" />
-              <span style={{color:"#00806e",fontSize:"14px"}}>{uploadPercentage}</span> 
+              <span style={{ color: "#00806e", fontSize: "14px" }}>
+                {uploadPercentage}
+              </span>
               <input
                 type="file"
                 id="fileInput"
@@ -248,7 +249,9 @@ const Profile = () => {
                 htmlFor="fileInput"
                 style={{ display: "flex", alignItems: "center", gap: "3px" }}
               >
-                <span style={{cursor:"pointer"}}>Change profile picture</span>
+                <span style={{ cursor: "pointer" }}>
+                  Change profile picture
+                </span>
                 <img
                   style={{ width: "30px", height: "30px", cursor: "pointer" }}
                   src="./images/picture.png"
