@@ -249,37 +249,37 @@ const Name = styled.p`
 `;
 
 const Firstnameinput = styled.input`
-  width: 400px;
+  width: 400px !important;
   @media only screen and (max-width: 1000px) {
     min-width: 80vw !important;
   }
 `;
 const Lastnameinput = styled.input`
-  width: 400px;
+  width: 400px !important;
   @media only screen and (max-width: 1000px) {
     min-width: 80vw !important;
   }
 `;
 const Emailinput = styled.input`
-  width: 400px;
+  width: 400px !important;
   @media only screen and (max-width: 1000px) {
     min-width: 80vw !important;
   }
 `;
 const Phoneinput = styled.input`
-  width: 400px;
+  width: 400px !important;
   @media only screen and (max-width: 1000px) {
     min-width: 80vw !important;
   }
 `;
 const Passwordinput = styled.input`
-  width: 400px;
+  width: 400px !important;
   @media only screen and (max-width: 1000px) {
     min-width: 80vw !important;
   }
 `;
 const Confirmpasswordinput = styled.input`
-  width: 400px;
+  width: 400px !important;
   @media only screen and (max-width: 1000px) {
     min-width: 80vw !important;
   }
