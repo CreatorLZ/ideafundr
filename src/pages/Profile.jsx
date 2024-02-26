@@ -1,9 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button1 } from "./Landing";
 import Footer from "../components/Footer";
 import { AuthContext } from "../context/AuthContext";
-import { storage } from "../firebase"; // Import Firebase storage
+import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 import {
   getStorage,
   ref,
@@ -194,7 +195,6 @@ const Contactdetails = styled.div`
 
 const Profile = () => {
   const { currentUser, updateCurrentUser } = useContext(AuthContext);
-  const [image, setImage] = useState(null);
   const [uploadPercentage, setUploadPercentage] = useState("");
 
   const handleFileUpload = (e) => {
@@ -218,16 +218,54 @@ const Profile = () => {
           // Handle unsuccessful uploads
           console.error("Upload error:", error);
         },
-        () => {
+        async () => {
           // Handle successful uploads on complete
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            // Update the user's photoURL in the AuthContext
-            updateCurrentUser({ ...currentUser, photoURL: downloadURL });
-          });
+          const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+
+          // Update the user's photoURL in the AuthContext
+          updateCurrentUser({ ...currentUser, photoURL: downloadURL });
+
+          // Update the user's photoURL in Firestore
+          const userDocRef = doc(db, "users", currentUser.uid);
+          await setDoc(
+            userDocRef,
+            {
+              uid: currentUser.uid,
+              displayName: currentUser.displayName,
+              email: currentUser.email,
+              photoURL: downloadURL,
+            },
+            { merge: true } // Use merge to only update the specified fields
+          );
         }
       );
     }
   };
+
+  // Use useEffect to listen for changes in currentUser and update Firestore document
+  useEffect(() => {
+    const updateUserFirestore = async () => {
+      if (currentUser.uid) {
+        const userDocRef = doc(db, "users", currentUser.uid);
+        const userDocSnapshot = await getDoc(userDocRef);
+
+        if (userDocSnapshot.exists()) {
+          const userData = userDocSnapshot.data();
+
+          // If photoURL is different in Firestore, update it
+          if (userData.photoURL !== currentUser.photoURL) {
+            await setDoc(
+              userDocRef,
+              { photoURL: currentUser.photoURL },
+              { merge: true }
+            );
+          }
+        }
+      }
+    };
+
+    updateUserFirestore();
+  }, [currentUser]);
 
   return (
     <Container>

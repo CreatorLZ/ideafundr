@@ -9,6 +9,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./Landing";
 import styled from "styled-components";
 import { Wrapper } from "../components/Registerstyles";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+
+
+const schema = z.object({
+  email: z.string().email("Invalid email").refine((data) => !!data, {
+    message: "Enter a valid email address",
+  }), 
+  password: z.string().min(1, "Enter password"),
+  
+});
 
 export const AnimatedLoader = styled.img`
   width: 1px;
@@ -36,6 +48,14 @@ const Login = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
@@ -64,49 +84,74 @@ const Login = () => {
     return () => clearTimeout(sessionTimeout);
   }, [user]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const email = e.target[0].value;
-    const password = e.target[1].value;
+  const handleSubmit2 = async (data) => {
+    const email = data.email;
+    const password = data.password;
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error) {
       console.log(error);
-      console.log(error.message);
       setErrorMsg(error.message);
       setError(true);
-      setLoading(false);
+    
     }
   };
 
   return (
     <Container>
       <Wrapper style={{ paddingTop: "100px" }}>
-        <form onSubmit={handleSubmit}>
-          <label>Email</label>
-
+        <form style={{gap:"10px"}} onSubmit={handleSubmit(handleSubmit2)}>
+        <label htmlFor="Email">Email</label>
           <input
+            {...register("email")}
             placeholder="email address"
             type="email"
-            name="email"
-            required
           />
-          <label>Password</label>
+          {errors.email && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: "red",
+                fontWeight: "400",
+              }}
+            >
+              {/* something went wrong... */}
+              {errors.email.message}
+            </span>
+          )}
+         <label htmlFor="Password">Password</label>
           <input
+            {...register("password")}
             placeholder="password"
             type="password"
-            minLength="6"
-            name="password"
-            required
           />
+          {errors.password && (
+            <span
+              style={{
+                fontSize: "14px",
+                color: "red",
+                fontWeight: "400",
+              }}
+            >
+              {/* something went wrong... */}
+              {errors.password.message}
+            </span>
+          )}
+          <Button style={{marginTop:"10px"}} disabled={isSubmitting} type="submit">
+            {isSubmitting ? (
+              <AnimatedLoader src="./images/loading-gif2.gif" alt="loading" />
+            ) : (
+              "Log in"
+            )}
+          </Button>
           {error && (
             <span
               style={{
                 fontSize: "14px",
                 color: "red",
-                fontWeight: "200",
+                fontWeight: "400",
                 margin: "20px",
               }}
             >
@@ -114,13 +159,6 @@ const Login = () => {
               {errorMsg}
             </span>
           )}
-          <Button >
-            {loading ? (
-              <AnimatedLoader src="./images/loading-gif2.gif" alt="loading" />
-            ) : (
-              " Sign in"
-            )}
-          </Button>
         </form>
         <p>
           Don't have an account?{" "}

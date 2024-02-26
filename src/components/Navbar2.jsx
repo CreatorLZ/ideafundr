@@ -9,6 +9,7 @@ import { Button1 } from "../pages/Landing";
 const Container = styled.div`
   height: 60px;
   position: fixed;
+  letter-spacing: 1px;
   width: 100vw;
   z-index: 40;
   top: 0;
@@ -95,6 +96,7 @@ const SidebarNav = styled.nav`
   height: 100vh;
   display: none;
   justify-content: center;
+  letter-spacing: 1px;
   position: fixed;
   top: 0;
   right: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
@@ -123,12 +125,14 @@ const SidebarWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  letter-spacing: 1px;
 `;
 const Sidebarbuttons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  letter-spacing: 1px;
   gap: 20px;
   @media only screen and (max-width: 500px) {
     width: 100%;
@@ -160,6 +164,7 @@ const Button = styled.button`
   background-color: #00806e;
   color: #fefefe;
   border: none;
+  letter-spacing: 1px;
   border-radius: 8px;
   p {
     width: 100%;

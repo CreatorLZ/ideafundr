@@ -702,8 +702,8 @@ const Landing = () => {
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: false,
     cssEase: "linear",
     responsive: [
       {
