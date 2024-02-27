@@ -65,6 +65,8 @@ const Allinventions = () => {
                   "model_compression_level": 5,
                   "compress_image": true,
                   "image_compression_level": 5,
+                  "tooltip": "View in your Space",
+                  "auto_rotate": true,
                   "use_ar": true
                 }
               })

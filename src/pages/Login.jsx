@@ -6,39 +6,86 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "./Landing";
 import styled from "styled-components";
-import { Wrapper } from "../components/Registerstyles";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-
-const schema = z.object({
-  email: z.string().email("Invalid email").refine((data) => !!data, {
-    message: "Enter a valid email address",
-  }), 
-  password: z.string().min(1, "Enter password"),
-  
-});
-
-export const AnimatedLoader = styled.img`
-  width: 1px;
-  height: 1px;
-  object-fit: cover;
-`;
-
-export const Container = styled.div`
-  width: 100%;
+const Container = styled.div`
+  width: 100vw !important;
   height: 100vh;
+  background: linear-gradient(to bottom, #fafafa 20%, #e5e5e5);
 
-  background: #fafafa;
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 500px) {
   }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px !important;
+  width: 100%;
+  height: 100%;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    input {
+      padding: 16px 24px;
+      border: 1px solid #8095a2;
+      font-size: 16px;
+      border-radius: 5px;
+      :focus {
+        outline: 2px solid #8095a2;
+      }
+    }
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+`;
+const Button = styled.button`
+  padding: 20px 32px;
+  background-color: #00806e;
+  color: #fefefe;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  :hover {
+    transition: 250ms;
+    background-color: #038d7b;
+    color: white;
+  }
+  :focus {
+    outline: none;
+  }
+`;
+
+const schema = z.object({
+  email: z
+    .string()
+    .email("Invalid email")
+    .refine((data) => !!data, {
+      message: "Enter a valid email address",
+    }),
+  password: z.string().min(1, "Enter password"),
+});
+
+export const AnimatedLoader = styled.img`
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  padding: 0;
 `;
 
 const Login = () => {
@@ -47,7 +94,6 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-
 
   const {
     register,
@@ -92,18 +138,30 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error) {
+      let errorMessage =
+      "An error occurred during registration. Please try again.";
+
+    // Check for specific Firebase error codes and customize the error message
+    if (error.code === "auth/network-request-failed") {
+      errorMessage =
+        "Network error. Please check your internet connection and try again.";
+    } else if (error.code === "auth/wrong-password") {
+      errorMessage =
+        "Wrong password. Please try again";
+    }
       console.log(error);
-      setErrorMsg(error.message);
+      console.log(error.message);
+      setErrorMsg(errorMessage);
       setError(true);
-    
+      return;
     }
   };
 
   return (
     <Container>
       <Wrapper style={{ paddingTop: "100px" }}>
-        <form style={{gap:"10px"}} onSubmit={handleSubmit(handleSubmit2)}>
-        <label htmlFor="Email">Email</label>
+        <form style={{ gap: "10px" }} onSubmit={handleSubmit(handleSubmit2)}>
+          <label htmlFor="Email">Email</label>
           <input
             {...register("email")}
             placeholder="email address"
@@ -121,7 +179,7 @@ const Login = () => {
               {errors.email.message}
             </span>
           )}
-         <label htmlFor="Password">Password</label>
+          <label htmlFor="Password">Password</label>
           <input
             {...register("password")}
             placeholder="password"
@@ -139,7 +197,7 @@ const Login = () => {
               {errors.password.message}
             </span>
           )}
-          <Button style={{marginTop:"10px"}} disabled={isSubmitting} type="submit">
+          <Button disabled={isSubmitting} type="submit">
             {isSubmitting ? (
               <AnimatedLoader src="./images/loading-gif2.gif" alt="loading" />
             ) : (

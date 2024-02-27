@@ -171,8 +171,15 @@ const Left = styled.div`
   @media only screen and (max-width: 1000px) {
     padding: 10px;
     background: transparent;
+    height: 100vh !important;
+    input{
+      padding: 20px 24px;
+      margin-bottom:10px;
+    }
     form {
-      /* padding-left: 0px; */
+      height: 60vh;
+      justify-content: flex-start;
+      
     }
   }
 `;
@@ -188,7 +195,10 @@ const Right = styled.div`
   @media only screen and (max-width: 1000px) {
     padding: 10px;
     background: transparent;
+    flex: none;
+    height: 100px !important;
   }
+
 `;
 
 const RightContainer = styled.div`
@@ -251,37 +261,43 @@ const Name = styled.p`
 const Firstnameinput = styled.input`
   width: 400px !important;
   @media only screen and (max-width: 1000px) {
-    min-width: 80vw !important;
+    width: 80vw !important;
+    font-size: 16px;
   }
 `;
 const Lastnameinput = styled.input`
   width: 400px !important;
   @media only screen and (max-width: 1000px) {
-    min-width: 80vw !important;
+    width: 80vw !important;
+    font-size: 16px;
   }
 `;
 const Emailinput = styled.input`
   width: 400px !important;
   @media only screen and (max-width: 1000px) {
-    min-width: 80vw !important;
+    width: 80vw !important;
+    font-size: 16px;
   }
 `;
 const Phoneinput = styled.input`
   width: 400px !important;
   @media only screen and (max-width: 1000px) {
-    min-width: 80vw !important;
+    width: 80vw !important;
+    font-size: 16px;
   }
 `;
 const Passwordinput = styled.input`
   width: 400px !important;
   @media only screen and (max-width: 1000px) {
-    min-width: 80vw !important;
+    width: 80vw !important;
+    font-size: 16px;
   }
 `;
 const Confirmpasswordinput = styled.input`
   width: 400px !important;
   @media only screen and (max-width: 1000px) {
-    min-width: 80vw !important;
+    width: 80vw !important;
+    font-size: 16px;
   }
 `;
 const ProgressBar = styled.progress`
@@ -696,7 +712,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                <div style={{ display: "flex" }}>
+                <div style={{ display: "flex", paddingTop:"10px" }}>
                   <div style={{ display: "flex", flexDirection: "column" }}>
                     <label htmlFor="City">City</label>
                     <input
