@@ -76,7 +76,7 @@ export const Wrappercard2 = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1000px) {
     /* grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); */
     width: auto;
@@ -172,7 +172,7 @@ export const Child2 = styled.div`
     }
   
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1000px) {
     background: rgba(253, 253, 253, 0.1);
     /* box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2); */
     width: 100vw;

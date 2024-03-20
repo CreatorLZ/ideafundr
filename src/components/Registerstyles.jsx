@@ -71,6 +71,8 @@ export const Wrapper = styled.div`
 
 export const Buttondiv = styled.div`
 display: none;
+background: transparent;
+margin: 0;
 @media only screen and (max-width: 1000px) {
   display: flex;
   align-items: center;

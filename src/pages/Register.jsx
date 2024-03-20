@@ -7,15 +7,14 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { auth, db, storage } from "../firebase";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { auth, db} from "../firebase";
+// import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { Link, useNavigate } from "react-router-dom";
-import { Button } from "./Landing";
+import { useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { Wrapper, Buttondiv } from "../components/Registerstyles";
 import { countryStateData } from "../components/CountryStateData";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { motion } from "framer-motion";
@@ -168,10 +167,12 @@ const Left = styled.div`
   ::-webkit-scrollbar {
     width: 8px;
   }
+  
   @media only screen and (max-width: 1000px) {
     padding: 10px;
     background: transparent;
     height: 100vh !important;
+    margin-bottom: 20px;
     input{
       padding: 20px 24px;
       margin-bottom:10px;
@@ -190,13 +191,27 @@ const Right = styled.div`
   padding: 50px 40px;
   /* background-color: #0bbeaa; */
   background: linear-gradient(to bottom, #fafafa 20%, #e5e5e5);
-
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  /* Customize scrollbar track */
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Background color of the scrollbar track */
+  }
+
+  /* Customize scrollbar thumb */
+  &::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+  }
   @media only screen and (max-width: 1000px) {
     padding: 10px;
     background: transparent;
     flex: none;
     height: 100px !important;
+    overflow: hidden;
   }
 
 `;
@@ -367,7 +382,7 @@ const Register = () => {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const [errorMsg, setErrorMsg] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
+  // const [selectedFile, setSelectedFile] = useState(null);
   const [previousStep, setPreviousStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedCountry, setSelectedCountry] = useState("");
@@ -392,8 +407,8 @@ const Register = () => {
     register,
     handleSubmit,
     setValue,
-    watch,
-    reset,
+    // watch,
+    // reset,
     trigger,
     formState: { errors, isSubmitting },
   } = useForm({
@@ -439,7 +454,7 @@ const Register = () => {
   }, [navigate]);
 
   const handleSubmit2 = async (data) => {
-    const oneHourInMs = 60 * 60 * 1000;
+    // const oneHourInMs = 60 * 60 * 1000;
     // record all   form events
     const email = data.email;
     const password = data.password;
@@ -915,7 +930,7 @@ const Register = () => {
                     There was an error during registration. Please try again.
                   </p>
                 ) : (
-                  <p>
+                  <p style={{ color: "#8095a2", fontSize: "20px" }}>
                     Welcome to Ideafundr {formData.firstname} your account has
                     been successfully created!
                   </p>

@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
 const Firstprompt = styled.div`
   width: 100%;
-  height: 98vh;
+  height: 100vh;
   background: #f5f5f5;
   overflow-y: hidden;
   display: flex;
@@ -32,32 +32,19 @@ const Firstprompt = styled.div`
   justify-content: space-between;
   padding: 15px 60px;
   padding-top: 20px;
-  img{
+  img {
     border-radius: 10px;
   }
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 1000px) {
+    width: 100vw;
     img {
       display: none;
     }
-    /* background: linear-gradient(
-        101.97deg,
-        #fdfafa 0.31%,
-        rgba(217, 217, 217, 0.48) 100%
-      ),
-      url(./images/Rectangle1.png) no-repeat center center fixed;
-    background-size: cover;
-    overflow: hidden; */
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     img {
       display: none;
     }
-    /* background: linear-gradient(
-        101.97deg,
-        #fdfafa 0.31%,
-        rgba(217, 217, 217, 0.48) 50%
-      ),
-      url(./images/Rectangle1.png) no-repeat center center fixed; */
 
     background-size: cover;
     overflow: hidden;
@@ -78,7 +65,7 @@ const Right = styled.div`
     height: 80%;
     border-radius: 10px;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 1000px) {
     display: none;
   }
 `;
@@ -92,7 +79,7 @@ const Right2 = styled.div`
     border-radius: 10px;
   }
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     display: flex;
     align-items: center;
   }
@@ -113,7 +100,7 @@ const P2 = styled.p`
   line-height: 22px;
   color: white;
 
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     br {
       display: none;
     }
@@ -128,7 +115,7 @@ const P3 = styled.p`
   color: white;
   margin-top: 25px;
   margin-bottom: 10px;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     margin-bottom: 40px;
   }
 `;
@@ -136,7 +123,7 @@ const Whattododiv = styled.div`
   display: flex;
   gap: 20px;
   margin-bottom: 80px;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     display: none;
   }
 `;
@@ -165,7 +152,7 @@ const Whattodobox2 = styled.div`
   @media only screen and (max-width: 550px) {
     width: 140px;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     display: none;
   }
 `;
@@ -197,7 +184,6 @@ export const Button1 = styled.div`
   justify-content: center;
   font-size: 18px;
   color: #00806e;
-  /* border: 1px solid #00806e; */
   text-decoration: none;
   border-radius: 8px;
   cursor: pointer;
@@ -224,7 +210,7 @@ export const Button1 = styled.div`
   @media only screen and (max-width: 580px) {
     width: 230px;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     width: 168px;
     border: 1px solid #00806e;
     padding: 10px 32px;
@@ -250,7 +236,7 @@ export const Button2 = styled.button`
   @media only screen and (max-width: 580px) {
     width: 230px;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     width: 168px;
   }
 `;
@@ -260,7 +246,11 @@ const Firstp = styled.p`
   font-weight: 600;
   font-size: 64px;
   line-height: 87px;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 100px) {
+    line-height: 50px;
+    font-size: 40px;
+  }
+  @media only screen and (max-width: 670px) {
     line-height: 40px;
     font-size: 30px;
   }
@@ -272,7 +262,7 @@ const Secondp = styled.p`
   line-height: 33px;
   margin-bottom: 30px;
   color: grey;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     font-size: 20px;
   }
 `;
@@ -281,7 +271,8 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   width: 60vw;
-  @media only screen and (max-width: 500px) {
+  height: fit-content;
+  @media only screen and (max-width: 670px) {
     width: 100vw;
     padding-right: 15px;
   }
@@ -294,6 +285,7 @@ const Buttondiv = styled.div`
   Link {
     text-decoration: none;
   }
+
 `;
 
 const Secondprompt = styled.div`
@@ -323,7 +315,7 @@ const Secondprompt = styled.div`
     object-fit: cover;
     border-radius: 10px;
   }
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 1000px) {
     img {
       display: none;
     }
@@ -331,7 +323,7 @@ const Secondprompt = styled.div`
       display: none;
     }
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     img {
       display: none;
     }
@@ -361,13 +353,13 @@ const Thirdprompt = styled.div`
     border-radius: 10px;
   }
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 1000px) {
     img {
       display: none;
     }
     overflow: scroll;
     ul {
-      display: flex;
+      display: none;
       flex-direction: column;
       color: #3a4f5c;
       gap: 15px;
@@ -384,7 +376,7 @@ const Thirdprompt = styled.div`
     }
     margin-left: none;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     height: 90vh;
   }
 `;
@@ -409,12 +401,25 @@ export const Thirdprompt2 = styled.div`
     padding-left: 88px;
     object-fit: cover;
   }
-  @media only screen and (max-width: 850px) {
-    img {
-      display: none;
+  @media only screen and (max-width: 1000px) {
+    height: 100%;
+    ul {
+      display: flex;
+      flex-direction: column;
+      color: #3a4f5c;
+      gap: 35px;
+      padding: 20px;
+      height: 100%;
+      li {
+        display: flex;
+        &::before {
+          content: "🔥";
+          margin-right: 8px;
+        }
+      }
     }
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     height: 100%;
     ul {
       display: flex;
@@ -448,7 +453,7 @@ export const Whybox = styled.div`
   @media only screen and (max-width: 850px) {
     margin-bottom: 38px;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     p {
       font-size: 2em;
       text-align: center;
@@ -484,11 +489,10 @@ export const Thirdpromptdiv1 = styled.div`
     line-height: 22px;
     text-align: center;
   }
-  @media only screen and (max-width: 850px) {
-    width: 250px;
-    margin-left: 30px;
+  @media only screen and (max-width: 1000px) {
+   display: none;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     display: none;
   }
 `;
@@ -520,12 +524,10 @@ export const Thirdpromptdiv2 = styled.div`
     line-height: 22px;
     text-align: center;
   }
-  @media only screen and (max-width: 850px) {
-    width: 250px;
-    left: 45px;
-    top: 350px;
+  @media only screen and (max-width: 1000px) {
+    display: none;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     display: none;
   }
 `;
@@ -558,12 +560,10 @@ export const Thirdpromptdiv3 = styled.div`
     line-height: 22px;
     text-align: center;
   }
-  @media only screen and (max-width: 850px) {
-    width: 260px;
-    left: 320px;
-    top: 150px;
+  @media only screen and (max-width: 1000px) {
+    display: none;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     display: none;
   }
 `;
@@ -596,12 +596,10 @@ export const Thirdpromptdiv4 = styled.div`
     line-height: 22px;
     text-align: center;
   }
-  @media only screen and (max-width: 850px) {
-    width: 260px;
-    left: 310px;
-    top: 350px;
+  @media only screen and (max-width: 1000px) {
+   display: none;
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     display: none;
   }
 `;
@@ -646,7 +644,7 @@ const Secondprompttext = styled.div`
   flex-direction: column;
   margin-left: 40px;
   gap: 20px;
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 670px) {
     margin: 0;
     padding: 20px;
   }
@@ -792,28 +790,21 @@ const Landing = () => {
               }}
               {...settings}
             >
-             
-                <img
-                  style={{ width: "90%", height: "100%", borderRadius: "10px" }}
-                  src="/images/invent5.png"
-                  alt="image4"
-                />
-             
-              
-                <img
-                  style={{ width: "90%",height: "100%", borderRadius: "10px" }}
-                  src="/images/invent3.jfif"
-                  alt="image5"
-                />
-              
-             
-                {" "}
-                <img
-                  style={{ width: "90%",height: "100%", borderRadius: "10px" }}
-                  src="/images/invent.jfif"
-                  alt="image6"
-                />
-              
+              <img
+                style={{ width: "90%", height: "100%", borderRadius: "10px" }}
+                src="/images/invent5.png"
+                alt="image4"
+              />
+              <img
+                style={{ width: "90%", height: "100%", borderRadius: "10px" }}
+                src="/images/invent3.jfif"
+                alt="image5"
+              />{" "}
+              <img
+                style={{ width: "90%", height: "100%", borderRadius: "10px" }}
+                src="/images/invent.jfif"
+                alt="image6"
+              />
             </Slider>
           </Right>
         </Firstprompt>
