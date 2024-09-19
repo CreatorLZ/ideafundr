@@ -7,6 +7,7 @@ import { Child2, Wrappercard2 } from "./Home";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Faq from "../components/Faq";
 
 const Container = styled.div`
   padding: 0;
@@ -285,7 +286,6 @@ const Buttondiv = styled.div`
   Link {
     text-decoration: none;
   }
-
 `;
 
 const Secondprompt = styled.div`
@@ -359,7 +359,7 @@ const Thirdprompt = styled.div`
     }
     overflow: scroll;
     ul {
-      display: none;
+      display: flex;
       flex-direction: column;
       color: #3a4f5c;
       gap: 15px;
@@ -490,7 +490,7 @@ export const Thirdpromptdiv1 = styled.div`
     text-align: center;
   }
   @media only screen and (max-width: 1000px) {
-   display: none;
+    display: none;
   }
   @media only screen and (max-width: 670px) {
     display: none;
@@ -597,7 +597,7 @@ export const Thirdpromptdiv4 = styled.div`
     text-align: center;
   }
   @media only screen and (max-width: 1000px) {
-   display: none;
+    display: none;
   }
   @media only screen and (max-width: 670px) {
     display: none;
@@ -608,6 +608,7 @@ export const Thirdprompt3 = styled.div`
   width: 100%;
   margin-top: 40px;
   padding-top: 50px;
+  padding-bottom: 50px;
   height: 90vh;
   flex-direction: column;
   background: white;
@@ -1029,13 +1030,16 @@ const Landing = () => {
         </Buttondiv>
 
         <Thirdprompt3>
-          <Whybox>
+          <Whybox style={{ flexDirection: "column", gap: "20px" }}>
             {" "}
-            <p>Frequently asked questions (FAQs)</p>{" "}
+            <div>
+              <p>Frequently asked questions (FAQs)</p>
+            </div>
+            <Faq />
           </Whybox>
-          <Comingsoon>
+          {/* <Comingsoon>
             <p>Coming Soon</p>
-          </Comingsoon>
+          </Comingsoon> */}
         </Thirdprompt3>
         <Newsletter />
         <Footer />
