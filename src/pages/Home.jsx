@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Slider from "../components/Slider";
-import {Whybox } from "./Landing";
+import { Whybox } from "./Landing";
 import Coming from "../components/Coming";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
@@ -15,7 +15,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top:70px;
+  padding-top: 70px;
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -72,7 +72,7 @@ export const Wrappercard2 = styled.div`
   grid-template-rows: repeat(1, 410px);
   grid-gap: 20px;
   padding: 55px;
-  padding-bottom:30px;
+  padding-bottom: 30px;
   align-items: center;
   justify-content: center;
 
@@ -94,7 +94,7 @@ const Child = styled.div`
   height: 410px;
   display: flex;
   flex-direction: column;
-  box-shadow: 10px 10px 16px rgba(210, 208, 208, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   background: rgba(253, 253, 253, 0.1);
   /* border: 1px solid lightgray; */
   border-radius: 10px;
@@ -117,7 +117,7 @@ const Child = styled.div`
     padding: 8px 24px;
     gap: 8px;
     /* background: #ff6b6b; */
-    &:hover{
+    &:hover {
       background: #f3f0f0;
     }
   }
@@ -166,11 +166,10 @@ export const Child2 = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 8px;
-      /* background: #ff6b6b; */
-      &:hover{
+    /* background: #ff6b6b; */
+    &:hover {
       background: #f3f0f0;
     }
-  
   }
   @media only screen and (max-width: 1000px) {
     background: rgba(253, 253, 253, 0.1);
@@ -191,7 +190,6 @@ export const Child2 = styled.div`
     button {
       display: none;
     }
-   
   }
 `;
 
@@ -270,8 +268,8 @@ const Home = () => {
         <MobileSlider />
       </Wrapper>
       <Buttondiv>
-        <Button >Explore Investments</Button>
-        <Button >Add Invention</Button>
+        <Button>Explore Investments</Button>
+        <Button>Add Invention</Button>
       </Buttondiv>
       <Whybox style={{ paddingTop: "80px" }}>
         <p>Trending Inventions </p>

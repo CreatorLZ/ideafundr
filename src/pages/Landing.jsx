@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Faq from "../components/Faq";
+import Testimonials from "../components/Testimonials";
 
 const Container = styled.div`
   padding: 0;
@@ -1028,7 +1029,7 @@ const Landing = () => {
         >
           <Button>View All Inventions</Button>
         </Buttondiv>
-
+        <Testimonials />
         <Thirdprompt3>
           <Whybox style={{ flexDirection: "column", gap: "20px" }}>
             {" "}
@@ -1037,9 +1038,6 @@ const Landing = () => {
             </div>
             <Faq />
           </Whybox>
-          {/* <Comingsoon>
-            <p>Coming Soon</p>
-          </Comingsoon> */}
         </Thirdprompt3>
         <Newsletter />
         <Footer />
