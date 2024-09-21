@@ -619,6 +619,9 @@ export const Thirdprompt3 = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 670px) {
+    height: 100vh;
+  }
 `;
 
 export const Comingsoon = styled.div`
