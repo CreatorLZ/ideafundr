@@ -16,6 +16,7 @@ import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";
 import Navbar2 from "./components/Navbar2";
 import Path from "./pages/Path";
+import Upload from "./pages/Upload";
 const Landing = lazy(() => import("./pages/Landing"));
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -162,6 +163,16 @@ function App() {
               <ProtectedRoute>
                 {" "}
                 <Profile />{" "}
+              </ProtectedRoute>
+            </Suspense>
+          }
+        />
+         <Route
+          path="/Upload"
+          element={
+            <Suspense fallback={<Spinneranimation />}>
+              <ProtectedRoute>
+                <Upload />
               </ProtectedRoute>
             </Suspense>
           }

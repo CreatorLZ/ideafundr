@@ -18,7 +18,7 @@ const CarouselContainer = styled.div`
   @media (max-width: 768px) {
     padding: 1rem;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;

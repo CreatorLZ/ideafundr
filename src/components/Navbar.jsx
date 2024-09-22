@@ -43,7 +43,7 @@ const Center = styled.div`
   align-items: center;
   padding: 0px;
   gap: 32px;
-  width: 40%;
+  width: 50%;
   line-height: 33px;
 
   p {
@@ -292,6 +292,13 @@ const Navbar = () => {
             <p>Explore</p>
           </Link>
           <Link
+            to="/Upload"
+            style={{ textDecoration: "none", color: "#3A4F5C" }}
+          >
+            {" "}
+            <p>Upload</p>
+          </Link>
+          <Link
             to="/Inventors"
             style={{ textDecoration: "none", color: "#3A4F5C" }}
           >
@@ -330,7 +337,10 @@ const Navbar = () => {
             </ul>
           </UserModal>
           {currentUser ? (
-            <Button onClick={handleSignOut}>Log out</Button>
+            <Link to="/Upload" style={{ textDecoration: "none" }}>
+              {" "}
+              <Button>Upload</Button>{" "}
+            </Link>
           ) : (
             <Link to="/Path" style={{ textDecoration: "none" }}>
               {" "}
@@ -364,6 +374,13 @@ const Navbar = () => {
               >
                 {" "}
                 <p>Explore</p>
+              </Link>
+              <Link
+                to="/Upload"
+                style={{ textDecoration: "none", color: "#3A4F5C" }}
+              >
+                {" "}
+                <p>Upload</p>
               </Link>
               <Link
                 to="/Inventors"
