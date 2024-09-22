@@ -319,7 +319,7 @@ const Navbar = () => {
           </Link>
         </Center>
         <Right>
-          <img src="./images/Vector.png" alt="search" />
+          {/* <img src="./images/Vector.png" alt="search" /> */}
           <img onClick={toggleNav} src="./images/vertical.png" alt="menu" />
 
           <UserModal navbar={navbar}>
