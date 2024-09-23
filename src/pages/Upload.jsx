@@ -7,7 +7,9 @@ import { db, storage } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-// Styled Components
+const Container = styled.div`
+  width: 100%;
+`;
 const FormContainer = styled.div`
   max-width: 600px;
   margin: 0 auto;
@@ -15,15 +17,18 @@ const FormContainer = styled.div`
   min-height: 100%;
   padding: 20px;
   margin-top: 100px;
+  padding-bottom: 50px;
 
   @media (max-width: 768px) {
     padding: 1rem;
     margin-top: 100px;
+    padding-bottom: 50px;
   }
 
   @media (max-width: 480px) {
     padding: 0.5rem;
     margin-top: 100px;
+    padding-bottom: 50px;
   }
 `;
 
@@ -425,192 +430,194 @@ const Upload = () => {
   };
 
   return (
-    <FormContainer>
-      <Title>Upload Invention</Title>
-      <Form onSubmit={handleSubmit}>
-        {/* Product Name */}
-        <FormGroup>
-          <Label htmlFor="productName">Product Name</Label>
-          <VisibleInput
-            type="text"
-            id="productName"
-            name="productName"
-            value={formData.productName}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-
-        {/* Product Category */}
-        <FormGroup>
-          <Label htmlFor="productCategory">Product Category</Label>
-          <VisibleInput
-            type="text"
-            id="productCategory"
-            name="productCategory"
-            value={formData.productCategory}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-
-        {/* Product Key Features */}
-        <FormGroup>
-          <Label htmlFor="keyFeatures">Product Key Features</Label>
-          <Textarea
-            id="keyFeatures"
-            name="keyFeatures"
-            value={formData.keyFeatures}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-
-        {/* Product Key Benefits */}
-        <FormGroup>
-          <Label htmlFor="keyBenefits">Product Key Benefits</Label>
-          <Textarea
-            id="keyBenefits"
-            name="keyBenefits"
-            value={formData.keyBenefits}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-
-        {/* Product Description */}
-        <FormGroup>
-          <Label htmlFor="productDescription">Product Description</Label>
-          <Textarea
-            id="productDescription"
-            name="productDescription"
-            value={formData.productDescription}
-            onChange={handleInputChange}
-            required
-          />
-        </FormGroup>
-
-        {/* Technical Specifications */}
-        <FormGroup>
-          <Label>Technical Specification</Label>
-          <TechnicalSpecsGroup>
+    <Container>
+      <FormContainer>
+        <Title>Upload Invention</Title>
+        <Form onSubmit={handleSubmit}>
+          {/* Product Name */}
+          <FormGroup>
+            <Label htmlFor="productName">Product Name</Label>
             <VisibleInput
               type="text"
-              placeholder="Size"
-              name="size"
-              value={formData.size}
+              id="productName"
+              name="productName"
+              value={formData.productName}
               onChange={handleInputChange}
+              required
             />
+          </FormGroup>
+
+          {/* Product Category */}
+          <FormGroup>
+            <Label htmlFor="productCategory">Product Category</Label>
             <VisibleInput
               type="text"
-              placeholder="Weight"
-              name="weight"
-              value={formData.weight}
+              id="productCategory"
+              name="productCategory"
+              value={formData.productCategory}
               onChange={handleInputChange}
+              required
             />
-          </TechnicalSpecsGroup>
-          <VisibleInput
-            type="text"
-            placeholder="Material Used"
-            name="materialUsed"
-            value={formData.materialUsed}
-            onChange={handleInputChange}
-            style={{ marginTop: "1rem" }}
-          />
-        </FormGroup>
+          </FormGroup>
 
-        {/* Product Image Upload */}
-        <FormGroup>
-          <Label htmlFor="imageUpload">Product Image</Label>
-          {/* Hidden input for Image */}
-          <HiddenInput
-            type="file"
-            id="imageUpload"
-            name="image" // Added name attribute
-            accept="image/*"
-            onChange={(e) => handleFileChange(e, setImageFile)}
-            required
-          />
+          {/* Product Key Features */}
+          <FormGroup>
+            <Label htmlFor="keyFeatures">Product Key Features</Label>
+            <Textarea
+              id="keyFeatures"
+              name="keyFeatures"
+              value={formData.keyFeatures}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
 
-          {/* Custom styled upload area */}
-          <UploadArea
-            onClick={() => document.getElementById("imageUpload").click()}
-          >
-            <ImageIconStyled />
-            <UploadText>
-              {imageFile
-                ? `Selected File: ${imageFile.name}`
-                : "Click or drag and drop to upload Product Image"}
-            </UploadText>
-          </UploadArea>
-        </FormGroup>
+          {/* Product Key Benefits */}
+          <FormGroup>
+            <Label htmlFor="keyBenefits">Product Key Benefits</Label>
+            <Textarea
+              id="keyBenefits"
+              name="keyBenefits"
+              value={formData.keyBenefits}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
 
-        {/* Product Video Upload */}
-        <FormGroup>
-          <Label htmlFor="videoUpload">Product Video (Optional)</Label>
-          {/* Hidden input for Video */}
-          <HiddenInput
-            type="file"
-            id="videoUpload"
-            name="video"
-            accept="video/*"
-            onChange={(e) => handleFileChange(e, setVideoFile)}
-          />
+          {/* Product Description */}
+          <FormGroup>
+            <Label htmlFor="productDescription">Product Description</Label>
+            <Textarea
+              id="productDescription"
+              name="productDescription"
+              value={formData.productDescription}
+              onChange={handleInputChange}
+              required
+            />
+          </FormGroup>
 
-          {/* Custom styled upload area */}
-          <UploadArea
-            onClick={() => document.getElementById("videoUpload").click()}
-          >
-            <VideoIconStyled />
-            <UploadText>
-              {videoFile
-                ? `Selected File: ${videoFile.name}`
-                : "Click or drag and drop to upload Product Video"}
-            </UploadText>
-          </UploadArea>
-        </FormGroup>
+          {/* Technical Specifications */}
+          <FormGroup>
+            <Label>Technical Specification</Label>
+            <TechnicalSpecsGroup>
+              <VisibleInput
+                type="text"
+                placeholder="Size"
+                name="size"
+                value={formData.size}
+                onChange={handleInputChange}
+              />
+              <VisibleInput
+                type="text"
+                placeholder="Weight"
+                name="weight"
+                value={formData.weight}
+                onChange={handleInputChange}
+              />
+            </TechnicalSpecsGroup>
+            <VisibleInput
+              type="text"
+              placeholder="Material Used"
+              name="materialUsed"
+              value={formData.materialUsed}
+              onChange={handleInputChange}
+              style={{ marginTop: "1rem" }}
+            />
+          </FormGroup>
 
-        {/* 3D Model Upload */}
-        <FormGroup>
-          <Label htmlFor="threeDModel">Upload 3D Model (AR/VR)</Label>
-          {/* Hidden input for 3D file */}
-          <HiddenInput
-            type="file"
-            id="threeDModel"
-            name="threeDModel"
-            accept=".glb,.gltf"
-            onChange={handle3DFileChange}
-            required // Ensure this is required if necessary
-          />
+          {/* Product Image Upload */}
+          <FormGroup>
+            <Label htmlFor="imageUpload">Product Image</Label>
+            {/* Hidden input for Image */}
+            <HiddenInput
+              type="file"
+              id="imageUpload"
+              name="image" // Added name attribute
+              accept="image/*"
+              onChange={(e) => handleFileChange(e, setImageFile)}
+              required
+            />
 
-          {/* Custom styled upload area */}
-          <UploadArea
-            onClick={() => document.getElementById("threeDModel").click()}
-          >
-            <UploadIconStyled />
-            <UploadText>
-              {selected3DFile
-                ? `Selected File: ${selected3DFile}`
-                : "Click or drag and drop to upload 3D Model"}
-            </UploadText>
-          </UploadArea>
-        </FormGroup>
+            {/* Custom styled upload area */}
+            <UploadArea
+              onClick={() => document.getElementById("imageUpload").click()}
+            >
+              <ImageIconStyled />
+              <UploadText>
+                {imageFile
+                  ? `Selected File: ${imageFile.name}`
+                  : "Click or drag and drop to upload Product Image"}
+              </UploadText>
+            </UploadArea>
+          </FormGroup>
 
-        {/* Display error message if any */}
-        {error && <ErrorMessage>{errorMsg}</ErrorMessage>}
+          {/* Product Video Upload */}
+          <FormGroup>
+            <Label htmlFor="videoUpload">Product Video (Optional)</Label>
+            {/* Hidden input for Video */}
+            <HiddenInput
+              type="file"
+              id="videoUpload"
+              name="video"
+              accept="video/*"
+              onChange={(e) => handleFileChange(e, setVideoFile)}
+            />
 
-        {/* Display success message if submission was successful */}
-        {success && (
-          <SuccessMessage>Invention uploaded successfully!</SuccessMessage>
-        )}
+            {/* Custom styled upload area */}
+            <UploadArea
+              onClick={() => document.getElementById("videoUpload").click()}
+            >
+              <VideoIconStyled />
+              <UploadText>
+                {videoFile
+                  ? `Selected File: ${videoFile.name}`
+                  : "Click or drag and drop to upload Product Video"}
+              </UploadText>
+            </UploadArea>
+          </FormGroup>
 
-        {/* Submit Button with Loading Indicator. add disabled={loading} to enable button for prod */}
-        <SubmitButton type="submit" disabled>
-          {loading ? "Submitting..." : "Submit Invention"}
-        </SubmitButton>
-      </Form>
+          {/* 3D Model Upload */}
+          <FormGroup>
+            <Label htmlFor="threeDModel">Upload 3D Model (AR/VR)</Label>
+            {/* Hidden input for 3D file */}
+            <HiddenInput
+              type="file"
+              id="threeDModel"
+              name="threeDModel"
+              accept=".glb,.gltf"
+              onChange={handle3DFileChange}
+              required // Ensure this is required if necessary
+            />
+
+            {/* Custom styled upload area */}
+            <UploadArea
+              onClick={() => document.getElementById("threeDModel").click()}
+            >
+              <UploadIconStyled />
+              <UploadText>
+                {selected3DFile
+                  ? `Selected File: ${selected3DFile}`
+                  : "Click or drag and drop to upload 3D Model"}
+              </UploadText>
+            </UploadArea>
+          </FormGroup>
+
+          {/* Display error message if any */}
+          {error && <ErrorMessage>{errorMsg}</ErrorMessage>}
+
+          {/* Display success message if submission was successful */}
+          {success && (
+            <SuccessMessage>Invention uploaded successfully!</SuccessMessage>
+          )}
+
+          {/* Submit Button with Loading Indicator. add disabled={loading} to enable button for prod */}
+          <SubmitButton type="submit" disabled>
+            {loading ? "Submitting..." : "Submit Invention"}
+          </SubmitButton>
+        </Form>
+      </FormContainer>
       <Footer />
-    </FormContainer>
+    </Container>
   );
 };
 
